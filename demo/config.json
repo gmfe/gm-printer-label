@@ -1,0 +1,16 @@
+{
+  "page": {
+    "type": "70X50"
+  },
+  "blocks": [
+    {
+      "text": "配送单",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "0px",
+        "right": "0px"
+      }
+    }
+  ]
+}

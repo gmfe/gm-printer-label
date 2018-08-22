@@ -1,0 +1,68 @@
+html,
+body {
+  background: whitesmoke;
+  font-size: 14px;
+}
+
+.gm-printer {
+  margin: 10px auto;
+  background: white;
+}
+
+// block
+.gm-printer-block {
+  position: relative;
+  cursor: move;
+
+  &:hover,
+  &.active {
+    outline: 1px solid rgb(82, 146, 247);
+  }
+
+  .gm-printer-block-text-edit {
+    position: absolute;
+    z-index: 99;
+    background: white;
+    top: calc(100% + 5px);
+    left: 0;
+    min-width: 100%;
+    font-size: initial;
+  }
+}
+
+// page
+.gm-printer-page {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  // 开发阶段不 overflow
+  //overflow: hidden;
+
+  &-inner {
+    position: relative;
+    outline: 1px dotted #daebf4;
+  }
+}
+
+@media print {
+  * {
+    outline: none !important;
+  }
+
+  .gm-printer {
+    margin: 0;
+  }
+
+  .gm-printer-page {
+    box-shadow: none;
+    overflow: hidden;
+  }
+
+  .gm-printer-block {
+    .gm-printer-block-text-edit {
+      display: none;
+    }
+  }
+}
+
+@page {
+  margin: 0;
+}
