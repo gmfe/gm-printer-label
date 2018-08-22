@@ -6,6 +6,7 @@ import Page from './page'
 import _ from 'lodash'
 import { insertCSS } from '../util'
 import Block from './block'
+import { toKey } from './key'
 
 function addPageSizeStyle (rule) {
   insertCSS(`@page {size: ${rule}; }`)
@@ -27,7 +28,7 @@ class Printer extends React.Component {
       printerStore.setGap(gap)
     }
 
-    printerStore.setData(props.data)
+    printerStore.setData(toKey(props.data))
 
     if (type) {
       addPageSizeStyle(type)

@@ -1,8 +1,9 @@
 import { PrinterEdit } from './edit'
-import { Printer, doPrint } from './printer'
+import { Printer, getHtml, getCSS } from './printer'
 
 export {
   PrinterEdit,
   Printer,
-  doPrint
+  getHtml,
+  getCSS
 }

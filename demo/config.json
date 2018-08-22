@@ -13,7 +13,7 @@
     },
     {
       "type": "qrcode",
-      "qrcode": "{{data.food_security_code}}",
+      "qrcode": "{{溯源码}}",
       "style": {
         "position": "absolute",
         "left": "197px",

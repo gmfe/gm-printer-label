@@ -48,7 +48,7 @@ class PrinterStore {
       return _.template(text, {
         interpolate: /{{([\s\S]+?)}}/g
       })({
-        data: this.data
+        ...this.data
       })
     } catch (err) {
       console.warn(err)
