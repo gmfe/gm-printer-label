@@ -1,4 +1,6 @@
 .gm-printer-label-edit {
+  min-height: 100vh;
+
   .gm-printer-label-edit-header {
     position: fixed;
     top: 0;
@@ -45,16 +47,40 @@
     padding-right: 300px;
   }
 
+  // 覆盖 printer
   .gm-printer-label-block-type-qrcode {
     div[data-qrcode] {
       outline: 1px solid red;
+
       &::before {
         content: attr(data-placeholder);
         position: absolute;
         font-style: italic;
-        color: rgba(0, 0, 0, 0.1);
         left: calc(50% - 1.5em);
         top: calc(50% - 0.5em);
+      }
+    }
+  }
+}
+
+@media print {
+  * {
+    outline: none !important;
+  }
+
+  .gm-printer-label-edit {
+    min-height: auto;
+
+    .gm-printer-label-edit-header {
+      display: none;
+
+    }
+
+    .gm-printer-label-edit-content {
+      padding-right: 0;
+
+      .gm-printer-label-edit-help {
+        display: none;
       }
     }
   }

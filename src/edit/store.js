@@ -21,6 +21,11 @@ class EditStore {
   }
 
   @action
+  setSizePageType (type) {
+    this.config.page.type = type
+  }
+
+  @action
   setSelected (selected = null) {
     this.selected = selected
   }
@@ -59,7 +64,7 @@ class EditStore {
     } else if (type === 'qrcode') {
       this.config.blocks.push({
         type,
-        qrcode: '{{data.food_security_code}}',
+        qrcode: '{{溯源码}}',
         style: {
           position: 'absolute',
           left: '0px',

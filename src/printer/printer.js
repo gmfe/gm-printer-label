@@ -1,57 +1,39 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
-import printerStore from './store'
 import Page from './page'
 import _ from 'lodash'
-import { insertCSS } from '../util'
 import Block from './block'
 import { toKey } from './key'
-
-function addPageSizeStyle (rule) {
-  insertCSS(`@page {size: ${rule}; }`)
-}
+import { pageTypeMap } from '../config'
 
 @observer
 class Printer extends React.Component {
   constructor (props) {
     super(props)
 
-    printerStore.init()
-
-    const {type, size, gap} = props.config.page
-    if (_.isString(type)) {
-      printerStore.setSize(type)
-      printerStore.setGap(type)
-    } else {
-      printerStore.setSize(size)
-      printerStore.setGap(gap)
-    }
-
-    printerStore.setData(toKey(props.data))
-
-    if (type) {
-      addPageSizeStyle(type)
-    } else {
-      addPageSizeStyle(`${size.width} ${size.height}`)
+    this.state = {
+      data: toKey(props.data, props.options)
     }
   }
 
   render () {
     const {config, selected} = this.props
+    const {data} = this.state
 
     return (
       <div className='gm-printer' style={{
-        width: printerStore.size.width,
-        height: printerStore.size.height
+        width: pageTypeMap[config.page.type].width,
+        height: pageTypeMap[config.page.type].height
       }}>
-        <Page>
+        <Page config={config.page}>
           {_.map(config.blocks, (block, i) => (
             <Block
               key={i}
               index={i}
               selected={selected}
               config={block}
+              data={data}
             />
           ))}
         </Page>
@@ -62,8 +44,13 @@ class Printer extends React.Component {
 
 Printer.propTypes = {
   selected: PropTypes.number,
+  config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  config: PropTypes.object.isRequired
+  options: PropTypes.object // 传一些业务逻辑
+}
+
+Printer.defaultProps = {
+  options: {}
 }
 
 export default Printer

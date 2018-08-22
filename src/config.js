@@ -1,27 +1,15 @@
-const pageSizeMap = {
+const pageTypeMap = {
   '70X50': {
-    size: {
-      width: '70mm',
-      height: '50mm'
-    },
-    gap: {
-      paddingTop: '2mm',
-      paddingRight: '2mm',
-      paddingBottom: '2mm',
-      paddingLeft: '2mm'
-    }
+    width: '70mm',
+    height: '50mm'
   },
-  '自定义': {
-    size: {
-      width: '70mm',
-      height: '50mm'
-    },
-    gap: {
-      paddingTop: '2mm',
-      paddingRight: '2mm',
-      paddingBottom: '2mm',
-      paddingLeft: '2mm'
-    }
+  '60X40': {
+    width: '60mm',
+    height: '50mm'
+  },
+  '40X30': {
+    width: '40mm',
+    height: '30mm'
   }
 }
 
@@ -49,9 +37,14 @@ const blockTypeList = [
   {value: 'qrcode', text: '二维码'}
 ]
 
+const configTempList = [
+  {value: '1', text: '模板1', config: require('./config_temp/1.json')}
+]
+
 export {
   fontSizeList,
   borderStyleList,
   blockTypeList,
-  pageSizeMap
+  pageTypeMap,
+  configTempList
 }

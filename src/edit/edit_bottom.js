@@ -18,7 +18,7 @@ class EditBottom extends React.Component {
   }
 
   renderBlocks () {
-    const {type, text, style, link} = editStore.config.blocks[editStore.selected]
+    const {type, text, style} = editStore.config.blocks[editStore.selected]
 
     return (
       <React.Fragment>
@@ -55,7 +55,7 @@ class EditBottom extends React.Component {
   }
 
   render () {
-    let content = '单击选中内容编辑，或拖动内容以摆放位置'
+    let content = '单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置'
 
     if (editStore.selected !== null) {
       content = this.renderBlocks()

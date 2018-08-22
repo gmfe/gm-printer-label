@@ -33,16 +33,17 @@ body {
 // page
 .gm-printer-label-page {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-
-  &-inner {
-    position: relative;
-    outline: 1px dotted #daebf4;
-  }
+  position: relative;
 }
 
 @media print {
   * {
     outline: none !important;
+  }
+
+  html,
+  body {
+    background: white;
   }
 
   .gm-printer {

@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "precommit": "lint-staged",
-    "start": "webpack-dev-server",
-    "build": "webpack -p"
+    "start": "webpack-dev-server"
   },
   "lint-staged": {
     "./printer/*.js": [
@@ -38,6 +37,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "big.js": "^5.1.2",
     "classnames": "^2.2.5",
+    "clipboard": "^2.0.1",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",

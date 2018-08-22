@@ -9,6 +9,8 @@ import { getStyleWithDiff, insertCSS } from '../util'
 import { observer } from 'mobx-react/index'
 import EditBottom from './edit_bottom'
 import EditTop from './edit_top'
+import Help from './help'
+import data from './data'
 
 insertCSS(getCSS())
 insertCSS(editCSS)
@@ -96,10 +98,6 @@ class Edit extends React.Component {
   }
 
   render () {
-    const {
-      data
-    } = this.props
-
     return (
       <div className='gm-printer-label-edit'>
         <div className='gm-printer-label-edit-header'>
@@ -114,6 +112,7 @@ class Edit extends React.Component {
             data={data}
             onChange={this.handleChange}
           />
+          <Help data={data}/>
         </div>
       </div>
     )
@@ -121,7 +120,6 @@ class Edit extends React.Component {
 }
 
 Edit.propTypes = {
-  data: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
   onSave: PropTypes.func
 }

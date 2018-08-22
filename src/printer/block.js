@@ -2,8 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react/index'
-import printerStore from './store'
-import { getStyleWithDiff, dispatchMsg } from '../util'
+import { getStyleWithDiff, dispatchMsg, template } from '../util'
 
 @observer
 class Block extends React.Component {
@@ -52,11 +51,14 @@ class Block extends React.Component {
   }
 
   handleDoubleClick = () => {
-    this.setState({
-      isEdit: true
-    }, () => {
-      this.refEdit.focus()
-    })
+    const {config: {type}} = this.props
+    if (!type || type === 'text') {
+      this.setState({
+        isEdit: true
+      }, () => {
+        this.refEdit.focus()
+      })
+    }
   }
 
   handleEditBlur = () => {
@@ -76,6 +78,7 @@ class Block extends React.Component {
       index,
       selected,
       config: {type, text, qrcode, style},
+      data,
       className,
       ...rest
     } = this.props
@@ -83,13 +86,13 @@ class Block extends React.Component {
 
     let content = null
     if (!type || type === 'text') {
-      content = printerStore.template(text)
+      content = template(text, data)
     } else if (type === 'line') {
       content = null
     } else if (type === 'qrcode') {
       content = (
         <div
-          data-qrcode={printerStore.template(qrcode)}
+          data-qrcode={template(qrcode, data)}
           data-width={style.width}
           data-height={style.height}
           style={{width: '100%', height: '100%'}}
@@ -131,6 +134,7 @@ class Block extends React.Component {
 Block.propTypes = {
   index: PropTypes.number.isRequired,
   config: PropTypes.object.isRequired,
+  data: PropTypes.object.isRequired,
   selected: PropTypes.number
 }
 
