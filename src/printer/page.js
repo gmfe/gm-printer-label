@@ -9,12 +9,12 @@ class Page extends React.Component {
     const {paddingTop, paddingRight, paddingBottom, paddingLeft} = printerStore.gap
 
     return (
-      <div className='gm-printer-page' style={{
+      <div className='gm-printer-label-page' style={{
         width: `calc(${printerStore.size.width} - ${paddingLeft} - ${paddingRight})`,
         height: `calc(${printerStore.size.height} - ${paddingTop} - ${paddingBottom})`,
         padding: `${paddingTop} ${paddingRight} ${paddingBottom} ${paddingLeft}`
       }}>
-        <div className='gm-printer-page-inner' style={{
+        <div className='gm-printer-label-page-inner' style={{
           width: `calc(${printerStore.size.width} - ${paddingLeft} - ${paddingRight})`,
           height: `calc(${printerStore.size.height} - ${paddingTop} - ${paddingBottom})`
         }}>

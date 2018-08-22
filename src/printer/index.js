@@ -1,8 +1,18 @@
+import normalizeCSS from 'normalize.css/normalize.css'
+import printerCSS from './style.less'
+import ReactDOMServer from 'react-dom/server'
 import Printer from './printer'
-import BatchPrinter from './batch_printer'
-import { doPrint, doBatchPrint } from './do_print'
+
+function getHtml (props) {
+  return ReactDOMServer.renderToString(<Printer {...props}/>)
+}
+
+function getCSS () {
+  return normalizeCSS.toString() + printerCSS.toString()
+}
 
 export {
-  doPrint, doBatchPrint,
-  Printer, BatchPrinter
+  getHtml,
+  getCSS,
+  Printer
 }

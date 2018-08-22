@@ -1,5 +1,3 @@
-import normalizeCSS from 'normalize.css/normalize.css'
-import printerCSS from './style.less'
 import React from 'react'
 import { observer } from 'mobx-react'
 import PropTypes from 'prop-types'
@@ -8,9 +6,6 @@ import Page from './page'
 import _ from 'lodash'
 import { insertCSS } from '../util'
 import Block from './block'
-
-insertCSS(normalizeCSS.toString())
-insertCSS(printerCSS.toString())
 
 function addPageSizeStyle (rule) {
   insertCSS(`@page {size: ${rule}; }`)

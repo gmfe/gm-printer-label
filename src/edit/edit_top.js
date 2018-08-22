@@ -25,7 +25,7 @@ class EditTop extends React.Component {
 
   render () {
     return (
-      <div className='gm-printer-edit-header-top'>
+      <div className='gm-printer-label-edit-header-top'>
         <div style={{textAlign: 'right'}}>
           <button onClick={this.handleTestPrint}>测试打印</button>
           <button onClick={this.props.onSave}>保存</button>

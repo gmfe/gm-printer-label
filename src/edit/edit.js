@@ -3,13 +3,14 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { toJS } from 'mobx'
 import editStore from './store'
-import { Printer } from '../printer'
+import { Printer, getCSS } from '../printer'
 import editCSS from './style.less'
 import { getStyleWithDiff, insertCSS } from '../util'
 import { observer } from 'mobx-react/index'
 import EditBottom from './edit_bottom'
 import EditTop from './edit_top'
 
+insertCSS(getCSS())
 insertCSS(editCSS)
 
 @observer
@@ -23,16 +24,16 @@ class Edit extends React.Component {
   }
 
   componentDidMount () {
-    window.document.addEventListener('gm-printer-select', this.handlePrinterSelect)
-    window.document.addEventListener('gm-printer-block-style-set', this.handlePrinterBlockStyleSet)
-    window.document.addEventListener('gm-printer-block-text-set', this.handlePrinterBlockTextSet)
+    window.document.addEventListener('gm-printer-label-select', this.handlePrinterSelect)
+    window.document.addEventListener('gm-printer-label-block-style-set', this.handlePrinterBlockStyleSet)
+    window.document.addEventListener('gm-printer-label-block-text-set', this.handlePrinterBlockTextSet)
     window.document.addEventListener('keydown', this.handleKeyDown)
   }
 
   componentWillUnmount () {
-    window.document.removeEventListener('gm-printer-select', this.handlePrinterSelect)
-    window.document.removeEventListener('gm-printer-block-style-set', this.handlePrinterBlockStyleSet)
-    window.document.removeEventListener('gm-printer-block-text-set', this.handlePrinterBlockTextSet)
+    window.document.removeEventListener('gm-printer-label-select', this.handlePrinterSelect)
+    window.document.removeEventListener('gm-printer-label-block-style-set', this.handlePrinterBlockStyleSet)
+    window.document.removeEventListener('gm-printer-label-block-text-set', this.handlePrinterBlockTextSet)
     window.document.removeEventListener('keydown', this.handleKeyDown)
   }
 
@@ -100,13 +101,13 @@ class Edit extends React.Component {
     } = this.props
 
     return (
-      <div className='gm-printer-edit'>
-        <div className='gm-printer-edit-header'>
+      <div className='gm-printer-label-edit'>
+        <div className='gm-printer-label-edit-header'>
           <EditTop data={data} onSave={this.handleSave}/>
           <hr/>
           <EditBottom/>
         </div>
-        <div className='gm-printer-edit-content' onClick={this.handleCancel}>
+        <div className='gm-printer-label-edit-content' onClick={this.handleCancel}>
           <Printer
             selected={editStore.selected}
             config={editStore.config}

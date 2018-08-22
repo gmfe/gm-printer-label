@@ -154,13 +154,13 @@ class Fonter extends React.Component {
     const {style} = this.props
 
     return (
-      <span className='gm-printer-edit-fonter'>
+      <span className='gm-printer-label-edit-fonter'>
         <select value={style.fontSize || '14px'} onChange={e => this.handleChange('fontSize', e.target.value)}>
           {_.map(fontSizeList, v => <option key={v} value={v}>{v.slice(0, -2)}</option>)}
         </select>
         <Separator/>
         <span
-          className={classNames('gm-printer-edit-btn', {
+          className={classNames('gm-printer-label-edit-btn', {
             active: style.fontWeight === 'bold'
           })}
           style={{fontWeight: 'bold'}}
@@ -169,14 +169,14 @@ class Fonter extends React.Component {
           B
         </span>
         <span
-          className={classNames('gm-printer-edit-btn', {active: style.fontStyle === 'italic'})}
+          className={classNames('gm-printer-label-edit-btn', {active: style.fontStyle === 'italic'})}
           style={{fontStyle: 'italic'}}
           onClick={() => this.handleChange('fontStyle', style.fontStyle === 'italic' ? '' : 'italic')}
         >
           I
         </span>
         <span
-          className={classNames('gm-printer-edit-btn', {active: style.textDecoration === 'underline'})}
+          className={classNames('gm-printer-label-edit-btn', {active: style.textDecoration === 'underline'})}
           style={{textDecoration: 'underline'}}
           onClick={() => this.handleChange('textDecoration', style.textDecoration === 'underline' ? '' : 'underline')}
         >
@@ -206,21 +206,21 @@ class TextAlign extends React.Component {
 
     // TODO icon
     return (
-      <span className='gm-printer-edit-text-align'>
+      <span className='gm-printer-label-edit-text-align'>
         <span
-          className={classNames('gm-printer-edit-btn', {
+          className={classNames('gm-printer-label-edit-btn', {
             active: textAlign === 'left'
           })}
           onClick={() => this.handleChange('left')}
         ><IconAlign textAlign='left'/></span>
         <span
-          className={classNames('gm-printer-edit-btn', {
+          className={classNames('gm-printer-label-edit-btn', {
             active: textAlign === 'center'
           })}
           onClick={() => this.handleChange('center')}
         ><IconAlign textAlign='center'/></span>
         <span
-          className={classNames('gm-printer-edit-btn', {
+          className={classNames('gm-printer-label-edit-btn', {
             active: textAlign === 'right'
           })}
           onClick={() => this.handleChange('right')}

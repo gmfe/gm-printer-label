@@ -31,7 +31,8 @@ const data = {
   'receiver_phone': '15919615480',
   'city': '\u6cc9\u5dde\u5e02',
   'id': 'PL1919073',
-  'abnormals': []
+  'abnormals': [],
+  'food_security_code': 123
 }
 
 export default data

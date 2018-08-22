@@ -45,7 +45,7 @@ class EditStore {
       })
     } else if (type === 'line') {
       this.config.blocks.push({
-        type: 'line',
+        type,
         style: {
           position: 'absolute',
           left: '0px',
@@ -56,16 +56,16 @@ class EditStore {
           width: '100%'
         }
       })
-    } else if (type === 'image') {
+    } else if (type === 'qrcode') {
       this.config.blocks.push({
-        type: 'image',
-        link: '',
+        type,
+        qrcode: '{{data.food_security_code}}',
         style: {
           position: 'absolute',
           left: '0px',
           top: '0px',
-          width: '100px',
-          height: '100px'
+          width: '50px',
+          height: '50px'
         }
       })
     } else {

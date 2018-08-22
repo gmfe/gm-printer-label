@@ -43,40 +43,15 @@ const borderStyleList = [
   {value: 'dotted', text: '圆点'}
 ]
 
-const tableClassNameList = [
-  {value: '', text: '默认'},
-  {value: 'className1', text: '样式一'}
-]
-
-const TABLETYPE_CATEGORY1TOTAL = 'typeCategory1Total'
-
-const tableTypeList = [
-  {value: '', text: '默认'},
-  {value: TABLETYPE_CATEGORY1TOTAL, text: '一级分类+总计'}
-]
-
-const panelList = [
-  {value: 'header', text: '页眉'},
-  {value: 'top', text: '顶部'},
-  {value: 'table', text: '表格'},
-  {value: 'bottom', text: '底部'},
-  {value: 'sign', text: '签名'},
-  {value: 'footer', text: '页脚'}
-]
-
 const blockTypeList = [
   {value: '', text: '文本'},
   {value: 'line', text: '线条'},
-  {value: 'image', text: '图片'}
+  {value: 'qrcode', text: '二维码'}
 ]
 
 export {
   fontSizeList,
   borderStyleList,
-  tableClassNameList,
-  tableTypeList,
-  TABLETYPE_CATEGORY1TOTAL,
-  panelList,
   blockTypeList,
   pageSizeMap
 }

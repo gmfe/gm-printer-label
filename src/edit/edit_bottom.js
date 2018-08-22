@@ -45,15 +45,9 @@ class EditBottom extends React.Component {
         {type === 'line' && (
           <Line style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
         )}
-        {type === 'image' && (
+        {type === 'qrcode' && (
           <div>
             <Size style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
-            <br/>
-            <Textarea
-              value={link}
-              placeholder='请输入链接'
-              onChange={this.handleChangeBlock.bind(this, 'link')}
-            />
           </div>
         )}
       </React.Fragment>
@@ -67,7 +61,7 @@ class EditBottom extends React.Component {
       content = this.renderBlocks()
     }
 
-    return <div className='gm-printer-edit-header-bottom'>{content}</div>
+    return <div className='gm-printer-label-edit-header-bottom'>{content}</div>
   }
 }
 

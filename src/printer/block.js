@@ -24,7 +24,7 @@ class Block extends React.Component {
       clientY
     })
 
-    window.document.dispatchEvent(new window.CustomEvent('gm-printer-select', {
+    window.document.dispatchEvent(new window.CustomEvent('gm-printer-label-select', {
       detail: {
         selected: index
       }
@@ -38,7 +38,7 @@ class Block extends React.Component {
 
     const style = getStyleWithDiff(config.style, diffX, diffY)
 
-    dispatchMsg('gm-printer-block-style-set', {
+    dispatchMsg('gm-printer-label-block-style-set', {
       style
     })
   }
@@ -46,7 +46,7 @@ class Block extends React.Component {
   handleClick = () => {
     const {index} = this.props
 
-    dispatchMsg('gm-printer-select', {
+    dispatchMsg('gm-printer-label-select', {
       selected: index
     })
   }
@@ -66,7 +66,7 @@ class Block extends React.Component {
   }
 
   handleText = (e) => {
-    dispatchMsg('gm-printer-block-text-set', {
+    dispatchMsg('gm-printer-label-block-text-set', {
       text: e.target.value
     })
   }
@@ -75,7 +75,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, link, style},
+      config: {type, text, qrcode, style},
       className,
       ...rest
     } = this.props
@@ -86,8 +86,17 @@ class Block extends React.Component {
       content = printerStore.template(text)
     } else if (type === 'line') {
       content = null
-    } else if (type === 'image') {
-      content = <img src={link} style={{width: '100%', height: '100%'}} alt=''/>
+    } else if (type === 'qrcode') {
+      content = (
+        <div
+          data-qrcode={printerStore.template(qrcode)}
+          data-width={style.width}
+          data-height={style.height}
+          style={{width: '100%', height: '100%'}}
+          data-placeholder="二维码"
+        />
+      )
+
     }
 
     const active = index === selected
@@ -96,7 +105,7 @@ class Block extends React.Component {
       <div
         {...rest}
         style={style}
-        className={classNames('gm-printer-block', className, {
+        className={classNames('gm-printer-label-block', `gm-printer-label-block-type-${type}`, className, {
           active
         })}
         draggable
@@ -109,7 +118,7 @@ class Block extends React.Component {
         {(!type || type === 'text') && active && isEdit && (
           <textarea
             ref={ref => (this.refEdit = ref)}
-            className='gm-printer-block-text-edit' value={text}
+            className='gm-printer-label-block-text-edit' value={text}
             onChange={this.handleText}
             onBlur={this.handleEditBlur}
           />

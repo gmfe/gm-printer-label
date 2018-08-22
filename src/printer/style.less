@@ -10,7 +10,7 @@ body {
 }
 
 // block
-.gm-printer-block {
+.gm-printer-label-block {
   position: relative;
   cursor: move;
 
@@ -19,7 +19,7 @@ body {
     outline: 1px solid rgb(82, 146, 247);
   }
 
-  .gm-printer-block-text-edit {
+  .gm-printer-label-block-text-edit {
     position: absolute;
     z-index: 99;
     background: white;
@@ -31,10 +31,8 @@ body {
 }
 
 // page
-.gm-printer-page {
+.gm-printer-label-page {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  // 开发阶段不 overflow
-  //overflow: hidden;
 
   &-inner {
     position: relative;
@@ -51,13 +49,13 @@ body {
     margin: 0;
   }
 
-  .gm-printer-page {
+  .gm-printer-label-page {
     box-shadow: none;
     overflow: hidden;
   }
 
-  .gm-printer-block {
-    .gm-printer-block-text-edit {
+  .gm-printer-label-block {
+    .gm-printer-label-block-text-edit {
       display: none;
     }
   }
