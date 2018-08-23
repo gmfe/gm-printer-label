@@ -22,7 +22,7 @@ class Printer extends React.Component {
     const {data} = this.state
 
     return (
-      <div className='gm-printer' style={{
+      <div className='gm-printer-label' style={{
         width: pageTypeMap[config.page.type].width,
         height: pageTypeMap[config.page.type].height
       }}>

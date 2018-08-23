@@ -1,6 +1,6 @@
 {
-  "name": "gm-printer",
-  "version": "0.0.7",
+  "name": "gm-printer-label",
+  "version": "0.0.1",
   "description": "",
   "main": "src/index.js",
   "scripts": {
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gmfe/gm-printer.git"
+    "url": "git+https://github.com/gmfe/gm-printer-label.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/gmfe/gm-printer/issues"
+    "url": "https://github.com/gmfe/gm-printer-label/issues"
   },
-  "homepage": "https://github.com/gmfe/gm-printer#readme",
+  "homepage": "https://github.com/gmfe/gm-printer-label#readme",
   "devDependencies": {
     "autoprefixer": "^8.5.1",
     "babel-eslint": "^8.2.5",
