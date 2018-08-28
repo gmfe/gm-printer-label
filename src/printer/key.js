@@ -24,6 +24,7 @@ function toKey (data, options = {}) {
   const {
     station_name,
     receiver_name,
+    route_name,
     sort_id,
     source_sort_id,
     address_id, source_address_id,
@@ -69,9 +70,11 @@ function toKey (data, options = {}) {
     '分拣号': k_sort_id,
 
     '司机': k_driver_name,
-    '收货地址': k_address_name,
-    '收货地_ID': k_address_id,
-    '商户名': receiver_name,
+    '商户名': k_address_name,
+    '商户地址': k_address_id,
+    '收货人': receiver_name,
+    '路线': route_name,
+
     '站点名': station_name,
     '备注': remark,
 

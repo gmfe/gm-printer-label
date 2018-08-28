@@ -25,7 +25,7 @@
       }
     },
     {
-      "text": "地址:{{收货地址}}",
+      "text": "地址:{{商户地址}}",
       "style": {
         "position": "absolute",
         "left": "8px",
