@@ -55,7 +55,7 @@ class EditBottom extends React.Component {
   }
 
   render () {
-    let content = '单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置'
+    let content = null
 
     if (editStore.selected !== null) {
       content = this.renderBlocks()

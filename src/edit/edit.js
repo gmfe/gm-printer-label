@@ -106,6 +106,7 @@ class Edit extends React.Component {
           <EditBottom/>
         </div>
         <div className='gm-printer-label-edit-content' onClick={this.handleCancel}>
+          <div className='gm-printer-label-edit-tip'>单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置</div>
           <Printer
             selected={editStore.selected}
             config={editStore.config}
