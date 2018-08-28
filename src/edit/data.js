@@ -4,7 +4,7 @@ const data = {
   'sale_unit_price': 581,
   'driver': {'source_driver_name': null, 'name': '*自营司机'},
   'sort_id_format': 3,
-  'remark': null,
+  'remark': '这是备注，这是备注',
   'category_id_1': 'A6153',
   'std_sale_price': 1162,
   'order': {
