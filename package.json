@@ -8,11 +8,7 @@
     "start": "webpack-dev-server"
   },
   "lint-staged": {
-    "./printer/*.js": [
-      "eslint --cache --fix",
-      "git add"
-    ],
-    "./src/*.js": [
+    "./src/**/*.js": [
       "eslint --cache --fix",
       "git add"
     ]
@@ -27,6 +23,17 @@
     "url": "https://github.com/gmfe/gm-printer-label/issues"
   },
   "homepage": "https://github.com/gmfe/gm-printer-label#readme",
+  "peerDependencies": {
+    "big.js": "^5.1.2",
+    "classnames": "^2.2.5",
+    "lodash": "^4.17.10",
+    "mobx": "^4.3.0",
+    "mobx-react": "^5.1.2",
+    "moment": "^2.22.2",
+    "normalize.css": "^8.0.0",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0"
+  },
   "devDependencies": {
     "autoprefixer": "^8.5.1",
     "babel-eslint": "^8.2.5",
@@ -60,7 +67,6 @@
     "postcss-loader": "^2.1.5",
     "precss": "^3.1.2",
     "prop-types": "^15.6.1",
-    "qr.js": "0.0.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-hot-loader": "^3.1.3",

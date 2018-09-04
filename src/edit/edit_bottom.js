@@ -18,7 +18,7 @@ class EditBottom extends React.Component {
   }
 
   renderBlocks () {
-    const {type, text, style} = editStore.config.blocks[editStore.selected]
+    const { type, text, style } = editStore.config.blocks[editStore.selected]
 
     return (
       <React.Fragment>

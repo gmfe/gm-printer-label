@@ -47,24 +47,31 @@
     padding-right: 300px;
   }
 
-  // 覆盖 printer
-  .gm-printer-label-block-type-qrcode {
-    div[data-qrcode] {
-      outline: 1px solid red;
-
-      &::before {
-        content: attr(data-placeholder);
-        position: absolute;
-        font-style: italic;
-        left: calc(50% - 1.5em);
-        top: calc(50% - 0.5em);
-      }
-    }
-  }
-
   .gm-printer-label-edit-tip {
     padding: 10px;
     text-align: center;
+  }
+
+  // 覆盖 printer
+  .gm-printer-label {
+    .gm-printer-label-page {
+      background-image: linear-gradient(whitesmoke 1px, transparent 0), linear-gradient(90deg, whitesmoke 1px, transparent 0);
+      background-size: 5px 5px, 5px 5px;
+    }
+
+    .gm-printer-label-block-type-qrcode {
+      div[data-qrcode] {
+        outline: 1px solid red;
+
+        &::before {
+          content: attr(data-placeholder);
+          position: absolute;
+          font-style: italic;
+          left: calc(50% - 1.5em);
+          top: calc(50% - 0.5em);
+        }
+      }
+    }
   }
 }
 
@@ -78,7 +85,6 @@
 
     .gm-printer-label-edit-header {
       display: none;
-
     }
 
     .gm-printer-label-edit-content {

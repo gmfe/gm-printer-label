@@ -96,10 +96,9 @@ class Block extends React.Component {
           data-width={style.width}
           data-height={style.height}
           style={{width: '100%', height: '100%'}}
-          data-placeholder="二维码"
+          data-placeholder='二维码'
         />
       )
-
     }
 
     const active = index === selected

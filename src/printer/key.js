@@ -28,7 +28,7 @@ function toKey (data, options = {}) {
     sort_id,
     source_sort_id,
     address_id, source_address_id,
-    address_name, source_address_name,
+    address_name, source_address_name
   } = order
 
   // TODO ximin 补注释
@@ -50,7 +50,7 @@ function toKey (data, options = {}) {
 
   const k_xiadan =
     quantity + sale_unit_name +
-    `(${ parseFloat(Big(sale_ratio).times(quantity).toFixed(2))}${std_unit_name})`
+    `(${parseFloat(Big(sale_ratio).times(quantity).toFixed(2))}${std_unit_name})`
 
   let k_shichen =
     (is_weight ? weighting_quantity : (

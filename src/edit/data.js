@@ -2,7 +2,7 @@ const data = {
   'sale_ratio': 0.5,
   'name_pinyin': 'baoheye|0.5jin',
   'sale_unit_price': 581,
-  'driver': {'source_driver_name': null, 'name': '*自营司机'},
+  'driver': { 'source_driver_name': null, 'name': '*自营司机' },
   'sort_id_format': 3,
   'remark': '这是备注，这是备注',
   'category_id_1': 'A6153',

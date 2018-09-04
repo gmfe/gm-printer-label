@@ -35,7 +35,7 @@ class EditTop extends React.Component {
           <div>
             载入模板
             <select onChange={this.handleInsertTemp}>
-              <option value="">请选择</option>
+              <option value=''>请选择</option>
               {_.map(configTempList, temp => <option key={temp.value} value={temp.value}>{temp.text}</option>)}
             </select>
           </div>

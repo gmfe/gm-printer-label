@@ -1,6 +1,3 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Clipboard from 'clipboard'
 import _ from 'lodash'
 
 function pxAdd (origin, add) {
@@ -38,28 +35,6 @@ function dispatchMsg (event, data) {
   }))
 }
 
-class Copy extends React.Component {
-  componentDidMount () {
-    this.clipboard = new Clipboard(ReactDOM.findDOMNode(this), {
-      text: () => this.props.text
-    })
-
-    this.clipboard.on('success', () => {
-    })
-
-    this.clipboard.on('error', () => {
-    })
-  }
-
-  componentWillUnmount () {
-    this.clipboard.destroy()
-  }
-
-  render () {
-    return this.props.children
-  }
-}
-
 function template (text, data) {
   try {
     return _.template(text, {
@@ -74,7 +49,6 @@ function template (text, data) {
 }
 
 export {
-  Copy,
   pxAdd,
   getStyleWithDiff,
   insertCSS,
