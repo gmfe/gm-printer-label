@@ -1,3 +1,4 @@
+import React from 'react'
 import normalizeCSS from 'normalize.css/normalize.css'
 import printerCSS from './style.less'
 import ReactDOMServer from 'react-dom/server'
