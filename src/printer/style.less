@@ -1,12 +1,15 @@
 html,
 body {
-  background: whitesmoke;
   font-size: 14px;
 }
 
 .gm-printer-label {
-  margin: 10px auto;
   background: white;
+}
+
+.gm-printer-label-page {
+  overflow: hidden;
+  position: relative;
 }
 
 // block
@@ -14,51 +17,8 @@ body {
   position: relative;
   cursor: move;
 
-  &:hover,
-  &.active {
-    outline: 1px solid rgb(82, 146, 247);
-  }
-
   .gm-printer-label-block-text-edit {
-    position: absolute;
-    z-index: 99;
-    background: white;
-    top: calc(100% + 5px);
-    left: 0;
-    min-width: 100%;
-    font-size: initial;
-  }
-}
-
-// page
-.gm-printer-label-page {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  position: relative;
-}
-
-@media print {
-  * {
-    outline: none !important;
-  }
-
-  html,
-  body {
-    background: white;
-  }
-
-  .gm-printer-label {
-    margin: 0;
-  }
-
-  .gm-printer-label-page {
-    box-shadow: none;
-    overflow: hidden;
-  }
-
-  .gm-printer-label-block {
-    .gm-printer-label-block-text-edit {
-      display: none;
-    }
+    display: none;
   }
 }
 
