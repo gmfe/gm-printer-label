@@ -16,18 +16,12 @@ module.exports = {
       test: /\.js$/,
       use: 'babel-loader'
     }, {
-      test: /\.less$/,
+      test: /\.(css|less)$/,
       use: [
-        // 'style-loader',
+        'style-loader',
         'css-loader',
         'postcss-loader',
         'less-loader'
-      ]
-    }, {
-      test: /\.css$/,
-      use: [
-        // 'style-loader',
-        'css-loader'
       ]
     }, {
       test: /(fontawesome-webfont|glyphicons-halflings-regular|iconfont)\.(woff|woff2|ttf|eot|svg)($|\?)/,

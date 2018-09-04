@@ -15,7 +15,6 @@ body {
 // block
 .gm-printer-label-block {
   position: relative;
-  cursor: move;
 
   .gm-printer-label-block-text-edit {
     display: none;

@@ -4,7 +4,7 @@ import _ from 'lodash'
 import { toJS } from 'mobx'
 import editStore from './store'
 import { Printer, getCSS } from '../printer'
-import editCSS from './style.less'
+import './style.less'
 import { getStyleWithDiff, insertCSS } from '../util'
 import { observer } from 'mobx-react/index'
 import EditBottom from './edit_bottom'
@@ -13,7 +13,6 @@ import Help from './help'
 import data from './data'
 
 insertCSS(getCSS())
-insertCSS(editCSS)
 
 const STORAGE_CACHE = 'GM-PRINTER-LABEL-CACHE'
 
