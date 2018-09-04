@@ -10,7 +10,6 @@ lodash
 mobx mobx-react
 big.js
 moment
-normalize.css
 
 ## edit 额外依赖
 clipboard
