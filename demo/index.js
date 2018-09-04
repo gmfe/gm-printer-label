@@ -8,13 +8,8 @@ class App extends React.Component {
   constructor (props) {
     super(props)
 
-    let cConfig = window.localStorage.getItem('GM-PRINTER-LABEL-CACHE')
-    if (cConfig) {
-      cConfig = JSON.parse(cConfig)
-    }
-
     this.state = {
-      config: cConfig || config
+      config
     }
   }
 
@@ -24,8 +19,6 @@ class App extends React.Component {
     this.setState({
       config
     })
-
-    window.localStorage.setItem('GM-PRINTER-LABEL-CACHE', JSON.stringify(config))
   }
 
   render () {

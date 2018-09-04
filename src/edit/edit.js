@@ -15,14 +15,32 @@ import data from './data'
 insertCSS(getCSS())
 insertCSS(editCSS)
 
+const STORAGE_CACHE = 'GM-PRINTER-LABEL-CACHE'
+
 @observer
 class Edit extends React.Component {
   constructor (props) {
     super(props)
 
-    editStore.init()
+    let config = props.config
 
-    editStore.setConfig(props.config)
+    let sConfig = window.localStorage.getItem(STORAGE_CACHE)
+    if (sConfig) {
+      try {
+        if (sConfig !== JSON.stringify(config)) {
+          sConfig = JSON.parse(sConfig)
+
+          if (window.confirm('发现草稿，是否加载')) {
+            config = sConfig
+          } else {
+            window.localStorage.removeItem(STORAGE_CACHE)
+          }
+        }
+      } catch (err) {
+      }
+    }
+
+    editStore.init(config)
   }
 
   componentDidMount () {
@@ -30,6 +48,10 @@ class Edit extends React.Component {
     window.document.addEventListener('gm-printer-label-block-style-set', this.handlePrinterBlockStyleSet)
     window.document.addEventListener('gm-printer-label-block-text-set', this.handlePrinterBlockTextSet)
     window.document.addEventListener('keydown', this.handleKeyDown)
+
+    this.draftSaveTimer = setInterval(() => {
+      window.localStorage.setItem(STORAGE_CACHE, JSON.stringify(toJS(editStore.config)))
+    }, 2000)
   }
 
   componentWillUnmount () {
@@ -37,6 +59,8 @@ class Edit extends React.Component {
     window.document.removeEventListener('gm-printer-label-block-style-set', this.handlePrinterBlockStyleSet)
     window.document.removeEventListener('gm-printer-label-block-text-set', this.handlePrinterBlockTextSet)
     window.document.removeEventListener('keydown', this.handleKeyDown)
+
+    clearInterval(this.draftSaveTimer)
   }
 
   handleSave = () => {

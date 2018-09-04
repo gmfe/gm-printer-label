@@ -25,7 +25,7 @@
       }
     },
     {
-      "text": "地址:{{商户地址}}",
+      "text": "商户:{{商户名}}{{商户ID}}",
       "style": {
         "position": "absolute",
         "left": "8px",

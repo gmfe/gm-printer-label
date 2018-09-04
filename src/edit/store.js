@@ -10,8 +10,8 @@ class EditStore {
   selected = null
 
   @action
-  init () {
-    this.config = null
+  init (config) {
+    this.config = config
     this.selected = null
   }
 

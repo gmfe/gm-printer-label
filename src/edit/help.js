@@ -11,7 +11,7 @@ class Help extends React.Component {
     const newData = toKey(data)
 
     return (
-      <div className='gm-printer-label-edit-help' style={{ padding: '10px' }}>
+      <div className='gm-printer-label-edit-help' style={{ padding: '10px', fontSize: '12px' }}>
         <hr/>
         使用举例： "SKU：{'{{SKU}}'}" 生成 "SKU：{data.name}"
         <br/>
@@ -22,7 +22,7 @@ class Help extends React.Component {
             if (k !== '_origin') {
               return (
                 <Copy key={k} text={`{{${k}}}`}>
-                  <div style={{ margin: '5px' }}>
+                  <div>
                     <span style={{ padding: '0 10px', display: 'inline-block' }}>
                       {'{{'}{k}{'}}'}
                       &nbsp;=>&nbsp;

@@ -74,18 +74,7 @@ body {
         outline: 1px solid rgb(82, 146, 247);
       }
 
-      .gm-printer-label-block-text-edit {
-        display: inline-block;
-        position: absolute;
-        z-index: 99;
-        background: white;
-        top: calc(100% + 5px);
-        left: 0;
-        min-width: 100%;
-        font-size: initial;
-      }
-
-      .gm-printer-label-block-type-qrcode {
+      &.gm-printer-label-block-type-qrcode {
         div[data-qrcode] {
           outline: 1px solid red;
 
@@ -97,6 +86,17 @@ body {
             top: calc(50% - 0.5em);
           }
         }
+      }
+
+      .gm-printer-label-block-text-edit {
+        display: inline-block;
+        position: absolute;
+        z-index: 99;
+        background: white;
+        top: calc(100% + 5px);
+        left: 0;
+        min-width: 100%;
+        font-size: initial;
       }
     }
   }
