@@ -5,6 +5,7 @@ body {
 
 .gm-printer-label {
   background: white;
+  page-break-before: always
 }
 
 .gm-printer-label-page {
