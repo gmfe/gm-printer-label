@@ -1,0 +1,119 @@
+{
+  "page": {
+    "type": "70X50"
+  },
+  "blocks": [
+    {
+      "text": "{{当前时间_年月日}}",
+      "style": {
+        "position": "absolute",
+        "left": "5px",
+        "top": "2px"
+      }
+    },
+    {
+      "text": "{{客服电话}}",
+      "style": {
+        "position": "absolute",
+        "left": "152px",
+        "top": "2px"
+      }
+    },
+    {
+      "text": "客户：{{商户名}}",
+      "style": {
+        "position": "absolute",
+        "left": "3px",
+        "top": "17px",
+        "fontSize": "18px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "{{司机}}",
+      "style": {
+        "position": "absolute",
+        "left": "135px",
+        "top": "70px"
+      }
+    },
+    {
+      "text": "分拣号：{{分拣号}}",
+      "style": {
+        "position": "absolute",
+        "left": "5px",
+        "top": "87px",
+        "fontSize": "16px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "1px",
+        "top": "106px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "商品：{{SKU}}",
+      "style": {
+        "position": "absolute",
+        "left": "5px",
+        "top": "109px",
+        "fontSize": "16px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "下单：{{下单}}",
+      "style": {
+        "position": "absolute",
+        "left": "3px",
+        "top": "149px",
+        "fontSize": "14px"
+      }
+    },
+    {
+      "text": "实称：{{实称}}",
+      "style": {
+        "position": "absolute",
+        "left": "158px",
+        "top": "147px",
+        "fontSize": "16px"
+      }
+    },
+    {
+      "text": "{{备注}}",
+      "style": {
+        "position": "absolute",
+        "left": "6px",
+        "top": "171px"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "1px",
+        "top": "18px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "{{路线}}",
+      "style": {
+        "position": "absolute",
+        "left": "4px",
+        "top": "70px"
+      }
+    }
+  ]
+}

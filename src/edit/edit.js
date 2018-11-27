@@ -11,6 +11,7 @@ import EditBottom from './edit_bottom'
 import EditTop from './edit_top'
 import Help from './help'
 import data from './data'
+import { Copy } from './component'
 
 insertCSS(getCSS())
 
@@ -137,6 +138,13 @@ class Edit extends React.Component {
             onChange={this.handleChange}
           />
           <Help data={data}/>
+          <hr/>
+          <Copy text={JSON.stringify(editStore.config)}>
+            <div>
+              请将以下配置代码发给观麦技术 <button>复制</button>
+              <div>{JSON.stringify(editStore.config)}</div>
+            </div>
+          </Copy>
         </div>
       </div>
     )

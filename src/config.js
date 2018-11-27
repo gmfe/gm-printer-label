@@ -38,7 +38,8 @@ const blockTypeList = [
 ]
 
 const configTempList = [
-  {value: '1', text: '模板1', config: require('./config_temp/1.json')}
+  { value: '1', text: '模板1', config: require('./config_temp/1.json') },
+  { value: '2', text: '黄马甲', config: require('./config_temp/hmj.json') }
 ]
 
 export {
