@@ -1,0 +1,136 @@
+{
+  "page": {
+    "type": "70X50"
+  },
+  "blocks": [
+    {
+      "text": "{{站点名}}",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "0px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{客服电话}}",
+      "style": {
+        "position": "absolute",
+        "right": "8px",
+        "top": "19px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{商户名}}",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "37px",
+        "fontSize": "24px",
+        "fontWeight": "bold",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "73px",
+        "borderTopColor": "black",
+        "borderTopWidth": "0.5px",
+        "borderTopStyle": "solid",
+        "width": "100%",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{SKU}}",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "80px",
+        "fontSize": "24px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{司机}}",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "18px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{下单}}",
+      "style": {
+        "position": "absolute",
+        "left": "56px",
+        "top": "117px",
+        "fontSize": "16px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{实称}}",
+      "style": {
+        "position": "absolute",
+        "left": "199px",
+        "top": "117px",
+        "fontSize": "16px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{备注}}",
+      "style": {
+        "position": "absolute",
+        "left": "3px",
+        "top": "153px",
+        "fontSize": "22px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "{{当前时间_年月日}}",
+      "style": {
+        "position": "absolute",
+        "left": "177px",
+        "top": "0px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "下单数：",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "117px",
+        "fontSize": "16px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "实称数：",
+      "style": {
+        "position": "absolute",
+        "left": "141px",
+        "top": "117px",
+        "fontSize": "16px",
+        "font-family": "Microsoft YaHei"
+      }
+    },
+    {
+      "text": "客服电话:",
+      "style": {
+        "position": "absolute",
+        "left": "106px",
+        "top": "19px",
+        "font-family": "Microsoft YaHei"
+      }
+    }
+  ]
+}

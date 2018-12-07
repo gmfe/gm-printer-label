@@ -28,13 +28,9 @@ class Edit extends React.Component {
     if (sConfig) {
       try {
         if (sConfig !== JSON.stringify(config)) {
-          sConfig = JSON.parse(sConfig)
+          config = JSON.parse(sConfig)
 
-          if (window.confirm('发现草稿，是否加载')) {
-            config = sConfig
-          } else {
-            window.localStorage.removeItem(STORAGE_CACHE)
-          }
+          window.alert('发现草稿，已加载')
         }
       } catch (err) {
       }
@@ -65,6 +61,10 @@ class Edit extends React.Component {
 
   handleSave = () => {
     this.props.onSave(toJS(editStore.config))
+  }
+
+  handleChangeConfig = (e) => {
+    editStore.setConfig(JSON.parse(e.target.value))
   }
 
   handlePrinterSelect = (e) => {
@@ -139,12 +139,22 @@ class Edit extends React.Component {
           />
           <Help data={data}/>
           <hr/>
-          <Copy text={JSON.stringify(editStore.config)}>
-            <div>
-              请将以下配置代码发给观麦技术 <button>复制</button>
-              <div>{JSON.stringify(editStore.config)}</div>
-            </div>
-          </Copy>
+          <div style={{ padding: '10px' }}>
+            <Copy text={JSON.stringify(editStore.config)}>
+              <div>
+                请将以下配置代码发给观麦技术 <button>复制</button>
+              </div>
+            </Copy>
+            <textarea
+              style={{
+                display: 'block',
+                width: '500px',
+                height: '300px'
+              }}
+              value={JSON.stringify(editStore.config, null, 2)}
+              onChange={this.handleChangeConfig}
+            />
+          </div>
         </div>
       </div>
     )

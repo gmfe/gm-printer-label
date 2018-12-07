@@ -1,0 +1,110 @@
+{
+  "page": {
+    "type": "70X50"
+  },
+  "blocks": [
+    {
+      "text": "送货时间:{{当前时间_年月日}}",
+      "style": {
+        "position": "absolute",
+        "left": "8px",
+        "top": "6px",
+        "fontSize": "16px"
+      }
+    },
+    {
+      "text": "商户:{{商户名}}",
+      "style": {
+        "position": "absolute",
+        "left": "8px",
+        "top": "24px",
+        "fontSize": "24px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "司机:{{司机}}",
+      "style": {
+        "position": "absolute",
+        "left": "11px",
+        "top": "104px",
+        "fontWeight": "bold",
+        "fontSize": "18px"
+      }
+    },
+    {
+      "text": "{{SKU}}",
+      "style": {
+        "position": "absolute",
+        "left": "11px",
+        "top": "128px",
+        "fontWeight": "bold",
+        "fontSize": "18px"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "23px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "127px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "数量:{{实称}}",
+      "style": {
+        "position": "absolute",
+        "left": "13px",
+        "top": "148px",
+        "fontSize": "18px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "备注:{{备注}}",
+      "style": {
+        "position": "absolute",
+        "left": "6px",
+        "top": "169px",
+        "right": "78px",
+        "fontSize": "14px"
+      }
+    },
+    {
+      "text": "{{路线}}",
+      "style": {
+        "position": "absolute",
+        "left": "158px",
+        "top": "103px",
+        "fontSize": "24px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "{{分拣号}}",
+      "style": {
+        "position": "absolute",
+        "left": "231px",
+        "top": "103px",
+        "fontSize": "24px",
+        "fontWeight": "bold"
+      }
+    }
+  ]
+}

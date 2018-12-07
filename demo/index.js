@@ -14,8 +14,7 @@ class App extends React.Component {
   }
 
   handleSave = (config) => {
-    console.log(JSON.stringify(config))
-
+    console.log(config)
     this.setState({
       config
     })

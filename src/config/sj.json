@@ -8,28 +8,19 @@
       "style": {
         "position": "absolute",
         "left": "8px",
-        "top": "8px",
-        "fontSize": "12px"
+        "fontSize": "11px",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
-      "type": "qrcode",
-      "qrcode": "{{溯源码}}",
-      "style": {
-        "position": "absolute",
-        "left": "184px",
-        "top": "97px",
-        "width": "70px",
-        "height": "70px",
-        "right": ""
-      }
-    },
-    {
-      "text": "商户:{{商户名}}{{商户ID}}",
+      "text": "商户:{{商户名}}",
       "style": {
         "position": "absolute",
         "left": "8px",
-        "top": "25px"
+        "top": "17px",
+        "fontSize": "27px",
+        "fontWeight": "bold",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -37,17 +28,9 @@
       "style": {
         "position": "absolute",
         "left": "",
-        "top": "8px",
         "right": "8px",
-        "fontSize": "12px"
-      }
-    },
-    {
-      "text": "司机:{{司机}}",
-      "style": {
-        "position": "absolute",
-        "left": "9px",
-        "top": "41px"
+        "fontSize": "11px",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -55,9 +38,10 @@
       "style": {
         "position": "absolute",
         "left": "8px",
-        "top": "60px",
+        "top": "82px",
         "fontWeight": "bold",
-        "fontSize": "16px"
+        "fontSize": "17px",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -65,11 +49,12 @@
       "style": {
         "position": "absolute",
         "left": "0px",
-        "top": "23px",
+        "top": "15px",
         "borderTopColor": "black",
         "borderTopWidth": "1px",
         "borderTopStyle": "solid",
-        "width": "100%"
+        "width": "100%",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -77,19 +62,12 @@
       "style": {
         "position": "absolute",
         "left": "0px",
-        "top": "58px",
+        "top": "80px",
         "borderTopColor": "black",
         "borderTopWidth": "1px",
         "borderTopStyle": "solid",
-        "width": "100%"
-      }
-    },
-    {
-      "text": "下单:{{下单}}",
-      "style": {
-        "position": "absolute",
-        "left": "8px",
-        "top": "97px"
+        "width": "100%",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -97,17 +75,10 @@
       "style": {
         "position": "absolute",
         "left": "8px",
-        "top": "113px"
-      }
-    },
-    {
-      "text": "溯源码:{{溯源码}}",
-      "style": {
-        "position": "absolute",
-        "left": "",
-        "top": "168px",
-        "fontSize": "12px",
-        "right": "8px"
+        "top": "136px",
+        "fontWeight": "bold",
+        "fontSize": "17px",
+        "font-family": "Microsoft YaHei"
       }
     },
     {
@@ -115,8 +86,10 @@
       "style": {
         "position": "absolute",
         "left": "8px",
-        "top": "130px",
-        "right": "78px"
+        "top": "153px",
+        "right": "78px",
+        "fontSize": "11px",
+        "font-family": "Microsoft YaHei"
       }
     }
   ]

@@ -1,0 +1,168 @@
+{
+  "page": {
+    "type": "70X50"
+  },
+  "blocks": [
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "37px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "77px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "115px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "0px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "客户名：{{商户名}}",
+      "style": {
+        "position": "absolute",
+        "left": "9px",
+        "top": "39px",
+        "fontSize": "16px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "宁波聚卿舫食品有限公司",
+      "style": {
+        "position": "absolute",
+        "left": "22px",
+        "top": "9px",
+        "fontSize": "20px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "品名：{{SKU}}",
+      "style": {
+        "position": "absolute",
+        "left": "9px",
+        "top": "78px",
+        "fontWeight": "bold",
+        "fontSize": "16px"
+      }
+    },
+    {
+      "text": "下单数：{{下单}}",
+      "style": {
+        "position": "absolute",
+        "left": "7px",
+        "top": "116px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "text": "实称数：{{实称}}",
+      "style": {
+        "position": "absolute",
+        "left": "150px",
+        "top": "116px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "137px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "打单日期:{{当前时间_年月日}}",
+      "style": {
+        "position": "absolute",
+        "left": "9px",
+        "top": "139px",
+        "fontWeight": "bold"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "0px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "1px",
+        "top": "159px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    },
+    {
+      "text": "备注：{{备注}}",
+      "style": {
+        "position": "absolute",
+        "left": "9px",
+        "top": "161px"
+      }
+    },
+    {
+      "type": "line",
+      "style": {
+        "position": "absolute",
+        "left": "0px",
+        "top": "188px",
+        "borderTopColor": "black",
+        "borderTopWidth": "1px",
+        "borderTopStyle": "solid",
+        "width": "100%"
+      }
+    }
+  ]
+}
