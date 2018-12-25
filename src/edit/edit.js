@@ -23,19 +23,6 @@ class Edit extends React.Component {
     super(props)
 
     let config = props.config
-
-    let sConfig = window.localStorage.getItem(STORAGE_CACHE)
-    if (sConfig) {
-      try {
-        if (sConfig !== JSON.stringify(config)) {
-          config = JSON.parse(sConfig)
-
-          window.alert('发现草稿，已加载')
-        }
-      } catch (err) {
-      }
-    }
-
     editStore.init(config)
   }
 

@@ -1,0 +1,3263 @@
+{
+  "144": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "156px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "客户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "20px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "司机：{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "121px",
+          "top": "60px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "分拣号：{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "83px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "1px",
+          "top": "106px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "109px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "150px",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "148px",
+          "top": "148px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "170px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "1px",
+          "top": "18px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "路线：{{路线}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "61px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "162": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "23px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "8px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "74px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "98px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "95px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "140px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "161px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "200px",
+          "top": "68px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "287": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "17px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "送货时间：{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "1px",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "17px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "93px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "线路：{{路线}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "71px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "95px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "136px",
+          "fontWeight": "bold",
+          "fontSize": "14px"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "152px",
+          "fontWeight": "bold",
+          "fontSize": "14px"
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "170px",
+          "fontWeight": "",
+          "fontSize": "14px"
+        }
+      }
+    ]
+  },
+  "289": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "23px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "8px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "74px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "98px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "95px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "140px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "161px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "200px",
+          "top": "68px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "313": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{站点名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "right": "8px",
+          "top": "19px"
+        }
+      },
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "37px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "73px",
+          "borderTopColor": "black",
+          "borderTopWidth": "0.5px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "fontSize": "24px"
+        }
+      },
+      {
+        "text": "{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "18px"
+        }
+      },
+      {
+        "text": "{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "56px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "199px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "153px",
+          "fontSize": "22px"
+        }
+      },
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "177px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "下单数：",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "实称数：",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "客服电话:",
+        "style": {
+          "position": "absolute",
+          "left": "106px"
+        },
+        "top": "19px"
+      }
+    ]
+  },
+  "366": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "送货时间:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "6px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "24px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "11px",
+          "top": "104px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "11px",
+          "top": "128px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "23px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "127px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "数量:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "13px",
+          "top": "148px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "169px",
+          "fontSize": "14px"
+        }
+      },
+      {
+        "text": "{{路线}}",
+        "style": {
+          "position": "absolute",
+          "left": "158px",
+          "top": "103px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "231px",
+          "top": "103px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "375": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "3px",
+          "fontSize": "14px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "商户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "20px",
+          "fontSize": "18px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "61px",
+          "fontWeight": "bold",
+          "fontSize": "18px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "60px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "14px",
+          "fontWeight": "bold",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "137px",
+          "font-family": "Microsoft YaHei",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "153px",
+          "fontSize": "16px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold",
+          "textAlign": "left"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "-1px",
+          "top": "118px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "线路：{{路线}}",
+        "style": {
+          "position": "absolute",
+          "left": "151px",
+          "top": "101px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "400": {
+    "page": {
+      "type": "60X40"
+    },
+    "blocks": [
+      {
+        "text": "商户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "9px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "-50px",
+          "top": "52px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "76px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "-50px",
+          "top": "74px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "打印时间：{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "56px"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "116px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "-50px",
+          "top": "115px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "137px",
+          "fontWeight": "bold",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "分拣号：{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "160px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "text": "康",
+        "style": {
+          "position": "absolute",
+          "left": "195px",
+          "top": "52px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "乐",
+        "style": {
+          "position": "absolute",
+          "left": "195px",
+          "top": "104px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "欣",
+        "style": {
+          "position": "absolute",
+          "left": "196px",
+          "top": "152px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "602": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{站点名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "right": "8px",
+          "top": "19px"
+        }
+      },
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "37px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "73px",
+          "borderTopColor": "black",
+          "borderTopWidth": "0.5px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "fontSize": "24px"
+        }
+      },
+      {
+        "text": "{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "18px"
+        }
+      },
+      {
+        "text": "{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "56px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "199px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "153px",
+          "fontSize": "22px"
+        }
+      },
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "177px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "下单数：",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "实称数：",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "客服电话:",
+        "style": {
+          "position": "absolute",
+          "left": "106px",
+          "top": "19px"
+        }
+      }
+    ]
+  },
+  "615": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "",
+        "style": {
+          "position": "absolute",
+          "left": "68px",
+          "top": "37px"
+        }
+      },
+      {
+        "text": "生产日期：{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "3px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "客服：{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "3px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "17px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "生产商：好厨房",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "20px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "地址：广东省深圳市平湖白泥坑麻布路5号",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "35px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "50px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "司机：{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "90px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "192px",
+          "top": "77px",
+          "fontSize": "28px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "107px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "109px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "132px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "151px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "168px"
+        }
+      }
+    ]
+  },
+  "630": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "fontSize": "11px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "17px",
+          "fontSize": "27px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "",
+          "right": "8px",
+          "fontSize": "11px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "82px",
+          "fontWeight": "bold",
+          "fontSize": "17px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "15px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "136px",
+          "fontWeight": "bold",
+          "fontSize": "17px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "153px",
+          "fontSize": "11px"
+        }
+      }
+    ]
+  },
+  "636": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "2px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "14px",
+          "fontSize": "20px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "2px",
+          "right": "6px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "56px",
+          "fontSize": "16px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "76px",
+          "fontWeight": "",
+          "fontSize": "20px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "14px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "76px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "117px",
+          "fontSize": "18px",
+          "fontWeight": "",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "136px",
+          "font-family": "Microsoft YaHei",
+          "fontSize": "18px",
+          "fontWeight": ""
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "157px",
+          "fontSize": "14px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "162px",
+          "top": "111px",
+          "fontWeight": "bold",
+          "fontSize": "45px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "",
+        "style": {
+          "position": "absolute",
+          "left": "28px",
+          "top": "55px",
+          "fontWeight": ""
+        }
+      }
+    ]
+  },
+  "644": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{站点名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "right": "8px",
+          "top": "19px"
+        }
+      },
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "37px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "73px",
+          "borderTopColor": "black",
+          "borderTopWidth": "0.5px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "fontSize": "24px"
+        }
+      },
+      {
+        "text": "{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "18px"
+        }
+      },
+      {
+        "text": "{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "56px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "199px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "153px",
+          "fontSize": "22px"
+        }
+      },
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "177px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "下单数：",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "实称数：",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "客服电话:",
+        "style": {
+          "position": "absolute",
+          "left": "106px",
+          "top": "19px"
+        }
+      }
+    ]
+  },
+  "653": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{站点名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "right": "8px",
+          "top": "19px"
+        }
+      },
+      {
+        "text": "{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "37px",
+          "fontSize": "24px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "73px",
+          "borderTopColor": "black",
+          "borderTopWidth": "0.5px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "fontSize": "24px"
+        }
+      },
+      {
+        "text": "{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "18px"
+        }
+      },
+      {
+        "text": "{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "56px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "199px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "153px",
+          "fontSize": "22px"
+        }
+      },
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "177px",
+          "top": "0px"
+        }
+      },
+      {
+        "text": "下单数：",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "实称数：",
+        "style": {
+          "position": "absolute",
+          "left": "141px",
+          "top": "117px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "客服电话:",
+        "style": {
+          "position": "absolute",
+          "left": "106px",
+          "top": "19px"
+        }
+      }
+    ]
+  },
+  "684": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "23px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "8px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "74px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "98px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "95px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "140px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "161px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "200px",
+          "top": "68px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "733": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "23px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "8px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "74px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "98px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "95px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "140px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "161px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "200px",
+          "top": "68px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "747": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "fontSize": "11px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "17px",
+          "fontSize": "27px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "",
+          "right": "8px",
+          "fontSize": "11px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "82px",
+          "fontWeight": "bold",
+          "fontSize": "17px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "15px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "80px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "136px",
+          "fontWeight": "bold",
+          "fontSize": "17px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "8px",
+          "top": "153px",
+          "fontSize": "11px"
+        }
+      }
+    ]
+  },
+  "754": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "156px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "客户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "19px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "分拣号：{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "173px",
+          "top": "67px",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "87px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "88px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "121px",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "141px",
+          "fontSize": "14px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "158px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "1px",
+          "top": "18px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商户ID：{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "65px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "781": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印：{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "3px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "18px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "19px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "87px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "88px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "109px",
+          "fontSize": "16px",
+          "fontWeight": ""
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "127px",
+          "fontSize": "16px",
+          "fontWeight": ""
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "146px",
+          "fontWeight": "bold",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "客服：{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "134px",
+          "top": "3px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机：{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "67px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "205px",
+          "top": "58px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "802": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "37px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "77px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "115px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "客户名：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "9px",
+          "top": "39px",
+          "fontSize": "16px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "宁波聚卿舫食品有限公司",
+        "style": {
+          "position": "absolute",
+          "left": "22px",
+          "top": "9px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "品名：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "9px",
+          "top": "78px",
+          "fontWeight": "bold",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "下单数：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "116px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "实称数：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "150px",
+          "top": "116px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "137px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "打单日期:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "9px",
+          "top": "139px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "0px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "1px",
+          "top": "159px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "9px",
+          "top": "161px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "188px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      }
+    ]
+  },
+  "810": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}{{商户ID}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "23px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "8px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "74px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "98px",
+          "fontWeight": "bold",
+          "fontSize": "20px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "20px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "top": "95px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "120px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "140px",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "161px",
+          "fontSize": "16px"
+        }
+      },
+      {
+        "text": "{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "200px",
+          "top": "68px",
+          "fontSize": "28px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "817": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "2px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "客户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "15px",
+          "fontSize": "20px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "2px",
+          "right": "6px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "61px",
+          "fontSize": "18px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "109px",
+          "fontWeight": "bold",
+          "fontSize": "24px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "14px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "82px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "88px",
+          "fontSize": "14px",
+          "fontWeight": "bold",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "129px",
+          "top": "88px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "公司名称：百佳汇农业科技",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "169px",
+          "fontSize": "14px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "-2px",
+          "top": "165px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "108px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "分拣号：{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "149px",
+          "top": "61px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "",
+        "style": {
+          "position": "absolute",
+          "left": "242px",
+          "top": "130px"
+        }
+      }
+    ]
+  },
+  "854": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "2px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "36px",
+          "fontSize": "20px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "2px",
+          "right": "6px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "167px",
+          "top": "63px",
+          "fontSize": "14px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": ""
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "82px",
+          "fontWeight": "bold",
+          "fontSize": "16px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "14px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "82px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "118px",
+          "fontSize": "14px",
+          "fontWeight": "bold",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "137px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "156px",
+          "fontSize": "14px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "配送：御龙生鲜",
+        "style": {
+          "position": "absolute",
+          "left": "3px",
+          "top": "16px",
+          "fontSize": "16px",
+          "fontWeight": ""
+        }
+      }
+    ]
+  },
+  "860": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "left": "156px",
+          "top": "3px"
+        }
+      },
+      {
+        "text": "客户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "18px",
+          "fontSize": "22px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "93px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "96px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "7px",
+          "top": "120px",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "144px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "1px",
+          "top": "18px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "分拣号：{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "6px",
+          "top": "69px",
+          "fontSize": "20px",
+          "fontWeight": "bold"
+        }
+      }
+    ]
+  },
+  "862": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "4px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "商户：{{商户名}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "16px",
+          "fontSize": "22px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "4px",
+          "right": "6px",
+          "fontSize": "10px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "商品：{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "68px",
+          "fontWeight": "bold",
+          "fontSize": "20px",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "16px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "67px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "下单：{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "111px",
+          "fontSize": "18px",
+          "fontWeight": "bold",
+          "font-family": "Microsoft YaHei"
+        }
+      },
+      {
+        "text": "实称：{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "132px",
+          "font-family": "Microsoft YaHei",
+          "fontSize": "18px",
+          "fontWeight": "bold"
+        }
+      },
+      {
+        "text": "备注：{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "5px",
+          "top": "152px",
+          "fontSize": "16px",
+          "font-family": "Microsoft YaHei",
+          "fontWeight": "bold",
+          "textAlign": "left"
+        }
+      }
+    ]
+  },
+  "default": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "2px",
+          "fontSize": "10px"
+        }
+      },
+      {
+        "type": "qrcode",
+        "qrcode": "{{溯源码}}",
+        "style": {
+          "position": "absolute",
+          "left": "196px",
+          "top": "113px",
+          "width": "70px",
+          "height": "70px",
+          "right": ""
+        }
+      },
+      {
+        "text": "商户:{{商户名}}({{商户ID}})",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "18px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "2px",
+          "right": "6px",
+          "fontSize": "10px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "34px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "71px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "16px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "69px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "113px",
+          "fontSize": "14px",
+          "fontWeight": "",
+          "right": "78px"
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "130px",
+          "right": "78px"
+        }
+      },
+      {
+        "text": "溯源码:{{溯源码}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "166px",
+          "fontSize": "11px",
+          "right": "78px"
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "148px",
+          "right": "78px",
+          "fontSize": "14px"
+        }
+      },
+      {
+        "text": "分拣号:{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "49px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      }
+    ]
+  },
+  "default_without_food_security_code": {
+    "page": {
+      "type": "70X50"
+    },
+    "blocks": [
+      {
+        "text": "打印:{{当前时间_年月日}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "2px",
+          "fontSize": "10px"
+        }
+      },
+      {
+        "text": "商户:{{商户名}}({{商户ID}})",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "18px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "客服:{{客服电话}}",
+        "style": {
+          "position": "absolute",
+          "top": "2px",
+          "right": "6px",
+          "fontSize": "10px"
+        }
+      },
+      {
+        "text": "司机:{{司机}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "34px",
+          "fontSize": "12px"
+        }
+      },
+      {
+        "text": "{{SKU}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "71px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "16px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "type": "line",
+        "style": {
+          "position": "absolute",
+          "left": "0px",
+          "top": "69px",
+          "borderTopColor": "black",
+          "borderTopWidth": "1px",
+          "borderTopStyle": "solid",
+          "width": "100%"
+        }
+      },
+      {
+        "text": "下单:{{下单}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "113px",
+          "fontSize": "14px",
+          "fontWeight": "",
+          "right": ""
+        }
+      },
+      {
+        "text": "实称:{{实称}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "130px",
+          "right": ""
+        }
+      },
+      {
+        "text": "备注:{{备注}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "148px",
+          "right": "",
+          "fontSize": "14px"
+        }
+      },
+      {
+        "text": "分拣号:{{分拣号}}",
+        "style": {
+          "position": "absolute",
+          "left": "2px",
+          "top": "49px",
+          "fontWeight": "bold",
+          "fontSize": "18px"
+        }
+      }
+    ]
+  }
+}

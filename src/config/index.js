@@ -37,23 +37,9 @@ const blockTypeList = [
   { value: 'qrcode', text: '二维码' }
 ]
 
-const configTempList = [
-  { value: 'null', text: 'null', config: require('./null.json') },
-  { value: 'default', text: 'default', config: require('./default.json') },
-  { value: '赫张鲁赫', text: '赫张鲁赫', config: require('./hezhangluhe.json') },
-  { value: '黄马甲', text: '黄马甲', config: require('./huangmajia.json') },
-  { value: '九州', text: '九州', config: require('./jiuzhou.json') },
-  { value: '聚卿坊', text: '聚卿坊', config: require('./juqingfang.json') },
-  { value: '品中', text: '品中', config: require('./pinzhong.json') },
-  { value: '尚荣', text: '尚荣', config: require('./shangrong.json') },
-  { value: '太原鸿新', text: '太原鸿新', config: require('./taiyuanhongxin.json') },
-  { value: '万亩良田', text: '万亩良田', config: require('./wanmuliangtian.json') }
-]
-
 export {
   fontSizeList,
   borderStyleList,
   blockTypeList,
-  pageTypeMap,
-  configTempList
+  pageTypeMap
 }
