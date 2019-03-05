@@ -1,2 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 /.eslintcache
+node_modules/
+.idea
+.eslintcache
+package-lock.json
+logs
