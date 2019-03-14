@@ -22,6 +22,14 @@ body {
   }
 }
 
+// 预分拣，马来整体标签大小样式
+.gm-printer-pre-sort-malai{
+  width: calc(7cm - .2cm);
+  height: calc(5cm - .3cm);
+  overflow: hidden;
+  margin: .3cm 0 0 .2cm;
+}
+
 @page {
   margin: 0;
 }
