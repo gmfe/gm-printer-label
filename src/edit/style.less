@@ -90,6 +90,16 @@ body {
         }
       }
 
+      div[data-placeholder] {
+        &::before {
+          content: '商品码';
+          position: absolute;
+          font-style: italic;
+          left: calc(50% - 1.5em);
+          top: calc(50% - 0.5em);
+        }
+      }
+
       .gm-printer-label-block-text-edit {
         display: inline-block;
         position: absolute;

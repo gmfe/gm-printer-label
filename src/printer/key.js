@@ -19,7 +19,8 @@ function toKey (data, options = {}) {
     driver,
     phone,
     remark,
-    food_security_code
+    food_security_code,
+    package_id
   } = data
   const {
     station_name,
@@ -80,6 +81,7 @@ function toKey (data, options = {}) {
 
     '客服电话': phone,
     '溯源码': food_security_code,
+    '商品码': package_id,
 
     '当前时间_年月日': moment().format('YYYY-MM-DD')
   })
