@@ -77,7 +77,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, style},
+      config: {type, text, qrcode, style, barcode},
       data,
       className,
       ...rest
@@ -98,6 +98,17 @@ class Block extends React.Component {
           style={{width: '100%', height: '100%'}}
           data-placeholder='二维码'
         />
+      )
+    } else if (type === 'barcode') {
+      content = (
+        <div data-placeholder='商品码'>
+          <svg
+            data-packagecode={template(barcode, data)}
+            // 需要减去12才能打印出正确高度
+            data-height={parseInt(style.height) - 12}
+            id={`package${template(barcode, data)}`}
+          />
+        </div>
       )
     }
 

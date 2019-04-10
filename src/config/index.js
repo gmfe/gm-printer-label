@@ -34,7 +34,8 @@ const borderStyleList = [
 const blockTypeList = [
   { value: '', text: '文本' },
   { value: 'line', text: '线条' },
-  { value: 'qrcode', text: '二维码' }
+  { value: 'qrcode', text: '二维码' },
+  { value: 'barcode', text: '商品码' }
 ]
 
 export {

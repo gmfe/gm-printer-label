@@ -20,7 +20,6 @@ class Printer extends React.Component {
   render () {
     const {config, selected} = this.props
     const {data} = this.state
-
     return (
       <div className='gm-printer-label' style={{
         width: pageTypeMap[config.page.type].width,

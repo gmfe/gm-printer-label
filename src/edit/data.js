@@ -34,7 +34,9 @@ const data = {
   'has_weighted': true,
   'spu_id': 'C1174415',
   'driver_pinyin': '*ziying',
-  'std_unit_name': '斤'
+  'std_unit_name': '斤',
+  'food_security_code': 'a123123123',
+  'package_id': '33333333333'
 }
 
 export default data

@@ -50,6 +50,11 @@ class EditBottom extends React.Component {
             <Size style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
           </div>
         )}
+        {type === 'barcode' && (
+          <div>
+            <Size style={style} withoutWidth onChange={this.handleChangeBlock.bind(this, 'style')}/>
+          </div>
+        )}
       </React.Fragment>
     )
   }

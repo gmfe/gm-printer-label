@@ -73,6 +73,18 @@ class EditStore {
           height: '50px'
         }
       })
+    } else if (type === 'barcode') {
+      this.config.blocks.push({
+        type,
+        barcode: '{{商品码}}',
+        style: {
+          position: 'absolute',
+          left: '0px',
+          top: '0px',
+          height: '30px',
+          width: '120px'
+        }
+      })
     } else {
       window.alert('出错啦，未识别类型，此信息不应该出现')
     }
