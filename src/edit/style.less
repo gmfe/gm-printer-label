@@ -90,9 +90,10 @@ body {
         }
       }
 
-      div[data-placeholder] {
+      div[data-packagecode] {
+        outline: 1px solid red;
         &::before {
-          content: '商品码';
+          content: '条形码';
           position: absolute;
           font-style: italic;
           left: calc(50% - 1.5em);

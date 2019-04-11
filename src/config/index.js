@@ -35,7 +35,7 @@ const blockTypeList = [
   { value: '', text: '文本' },
   { value: 'line', text: '线条' },
   { value: 'qrcode', text: '二维码' },
-  { value: 'barcode', text: '商品码' }
+  { value: 'barcode', text: '条形码' }
 ]
 
 export {
