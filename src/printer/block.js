@@ -101,7 +101,10 @@ class Block extends React.Component {
       )
     } else if (type === 'barcode') {
       content = (
-        <div data-placeholder='商品码'>
+        <div
+          data-packagecode='条形码'
+          style={{width: '100%', height: '100%'}}
+        >
           <svg
             data-packagecode={template(barcode, data)}
             // 需要减去12才能打印出正确高度
