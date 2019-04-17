@@ -108,7 +108,7 @@ class Block extends React.Component {
           <svg
             data-packagecode={template(barcode, data)}
             // 需要减去12才能打印出正确高度
-            data-height={parseInt(style.height) - 12}
+            data-height={parseInt(style.height) - 14}
             id={`package${template(barcode, data)}`}
           />
         </div>
