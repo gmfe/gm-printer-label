@@ -2,36 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import editStore from './store'
 import _ from 'lodash'
-import { blockTypeList, pageTypeMap } from '../config'
+import { blockTypeList, pageTypeMap } from '../common/config'
 import { observer } from 'mobx-react/index'
-import { getStaticStorage } from 'gm_static_storage'
-import queryString from 'query-string'
+import configTempList from '../common/config_temp'
 
 @observer
 class EditTop extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      configTempList: []
-    }
-  }
-
-  componentDidMount () {
-    const { group_id } = queryString.parse(window.location.search)
-
-    getStaticStorage('/mes/label_configs.json').then(json => {
-      this.setState({
-        configTempList: json
-      })
-
-      if (group_id && json[group_id]) {
-        editStore.setConfig(json[group_id])
-        window.alert(`已载入${group_id}模板`)
-      }
-    })
-  }
-
   handleInsert = (type, e) => {
     e.target.blur()
     editStore.addConfigBlock(type)
@@ -40,7 +16,7 @@ class EditTop extends React.Component {
 
   handleInsertTemp = (e) => {
     if (e.target.value) {
-      const config = _.find(this.state.configTempList, (config, group) => group === e.target.value)
+      const config = _.find(configTempList, (config, group) => group === e.target.value)
       editStore.setConfig(config)
     }
   }
@@ -54,7 +30,6 @@ class EditTop extends React.Component {
   }
 
   render () {
-    const { configTempList } = this.state
     return (
       <div className='gm-printer-label-edit-header-top'>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -97,7 +72,6 @@ class EditTop extends React.Component {
 }
 
 EditTop.propTypes = {
-  data: PropTypes.object.isRequired,
   onSave: PropTypes.func.isRequired
 }
 

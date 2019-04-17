@@ -1,6 +1,6 @@
 import { observable, action, configure } from 'mobx'
 
-configure({enforceActions: true})
+configure({ enforceActions: 'observed' })
 
 class EditStore {
   @observable
@@ -44,6 +44,7 @@ class EditStore {
         text: '请编辑',
         style: {
           position: 'absolute',
+          fontSize: '14px',
           left: '0px',
           top: '0px'
         }

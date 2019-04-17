@@ -1,14 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { toKey } from '../printer/key'
 import _ from 'lodash'
 import { Copy } from './component'
 
 class Help extends React.Component {
   render () {
     const { data } = this.props
-
-    const newData = toKey(data)
 
     return (
       <div className='gm-printer-label-edit-help' style={{ padding: '10px', fontSize: '12px' }}>
@@ -18,7 +15,7 @@ class Help extends React.Component {
         可用字段：
         <br/>
         <div>
-          {_.map(newData, (v, k) => {
+          {_.map(data, (v, k) => {
             if (k !== '_origin') {
               return (
                 <Copy key={k} text={`{{${k}}}`}>
@@ -28,7 +25,7 @@ class Help extends React.Component {
                       &nbsp;=>&nbsp;
                       {_.template(`{{${k}}}`, {
                         interpolate: /{{([\s\S]+?)}}/g
-                      })({ ...newData })}
+                      })({ ...data })}
                     </span>
                     <button>复制</button>
                   </div>

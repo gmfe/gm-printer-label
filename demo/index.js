@@ -1,8 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import config from '../demo/config.json'
-import 'normalize.css/normalize.css'
-import { PrinterEdit } from '../src'
+import { PrinterEditShadow } from '../src'
+import testData from '../print_sku/test_data'
+import { toKey } from '../print_sku/key'
+import './index.less'
 
 class App extends React.Component {
   constructor (props) {
@@ -23,7 +25,8 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <PrinterEdit
+        <PrinterEditShadow
+          data={toKey(testData)}
           config={this.state.config}
           onSave={this.handleSave}
         />
