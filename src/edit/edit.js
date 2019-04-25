@@ -100,11 +100,15 @@ class Edit extends React.Component {
   }
 
   render () {
-    const { data } = this.props
+    const { data, initDefaultTemp, defaultTempList } = this.props
     return (
       <div className='gm-printer-label-edit'>
         <div className='gm-printer-label-edit-header'>
-          <EditTop onSave={this.handleSave}/>
+          <EditTop
+            onSave={this.handleSave}
+            initDefaultTemp={initDefaultTemp}
+            defaultTempList={defaultTempList}
+          />
           <hr/>
           <EditBottom/>
         </div>
@@ -126,7 +130,9 @@ class Edit extends React.Component {
 Edit.propTypes = {
   data: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
-  onSave: PropTypes.func
+  onSave: PropTypes.func,
+  initDefaultTemp: PropTypes.string,
+  defaultTempList: PropTypes.object
 }
 
 Edit.deaultProps = {

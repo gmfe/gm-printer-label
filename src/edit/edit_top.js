@@ -4,10 +4,16 @@ import editStore from './store'
 import _ from 'lodash'
 import { blockTypeList, pageTypeMap } from '../common/config'
 import { observer } from 'mobx-react/index'
-import configTempList from '../common/config_temp'
 
 @observer
 class EditTop extends React.Component {
+  constructor (props) {
+    super(props)
+    if (props.initDefaultTemp) {
+      this.handleInsertTemp(props.initDefaultTemp)
+    }
+  }
+
   handleInsert = (type, e) => {
     e.target.blur()
     editStore.addConfigBlock(type)
@@ -15,9 +21,10 @@ class EditTop extends React.Component {
   }
 
   handleInsertTemp = (e) => {
-    if (e.target.value) {
-      const config = _.find(configTempList, (config, group) => group === e.target.value)
-      editStore.setConfig(config)
+    let value = e && e.target ? e.target.value : e
+    if (value) {
+      const config = _.find(this.props.defaultTempList, (config, group) => group === value)
+      if (config) editStore.setConfig(config)
     }
   }
 
@@ -29,21 +36,41 @@ class EditTop extends React.Component {
     window.print()
   }
 
+  handlePageName = e => {
+    editStore.setPageName(e.target.value)
+  }
+
   render () {
+    const { defaultTempList, initDefaultTemp } = this.props
+
     return (
       <div className='gm-printer-label-edit-header-top'>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <div>
-            载入模板
-            <select style={{ width: '80px' }} onChange={this.handleInsertTemp}>
-              <option value=''>请选择</option>
-              {_.map(configTempList, (config, group) => <option key={group} value={group}>{group}</option>)}
-            </select>
-          </div>
+          {
+            defaultTempList && _.size(defaultTempList)
+              ? <div>
+              载入模板
+                <select style={{ width: '80px' }} defaultValue={initDefaultTemp} onChange={this.handleInsertTemp}>
+                  <option value=''>请选择</option>
+                  {_.map(defaultTempList, (config, group) => <option key={group} value={group}>{group}</option>)}
+                </select>
+              </div> : null
+          }
           <div>
             <button onClick={this.handlePrint}>测试打印</button>
             <button onClick={this.props.onSave}>保存</button>
           </div>
+        </div>
+        <hr/>
+        <div>
+          模板名称
+          <input
+            style={{
+              marginLeft: 5
+            }}
+            value={editStore.config.name}
+            onChange={this.handlePageName}
+          />
         </div>
         <hr/>
         <div>
@@ -72,7 +99,9 @@ class EditTop extends React.Component {
 }
 
 EditTop.propTypes = {
-  onSave: PropTypes.func.isRequired
+  onSave: PropTypes.func.isRequired,
+  initDefaultTemp: PropTypes.string,
+  defaultTempList: PropTypes.object
 }
 
 export default EditTop

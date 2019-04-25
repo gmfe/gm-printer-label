@@ -17,12 +17,18 @@ class EditStore {
 
   @action
   setConfig (config) {
-    this.config = config
+    this.selected = null
+    this.config = { ...this.config, ...config }
   }
 
   @action
   setSizePageType (type) {
     this.config.page.type = type
+  }
+
+  @action
+  setPageName (name) {
+    this.config.name = name
   }
 
   @action
