@@ -36,7 +36,8 @@ const data = {
   'driver_pinyin': '*ziying',
   'std_unit_name': '斤',
   'food_security_code': 'a123123123',
-  'package_id': '33333333333'
+  'package_id': '33333333333',
+  'outer_id': '888888'
 }
 
 export default data
