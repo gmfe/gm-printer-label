@@ -82,7 +82,7 @@ class EditStore {
           left: '0px',
           top: '0px',
           height: '30px',
-          width: '120px'
+          width: '165px'
         }
       })
     } else {
