@@ -9,7 +9,7 @@ const pageTypeMap = {
   },
   '40X30': {
     width: '40mm',
-    height: '30mm'
+    height: '28mm'
   }
 }
 
