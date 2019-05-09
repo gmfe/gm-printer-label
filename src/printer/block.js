@@ -106,6 +106,7 @@ class Block extends React.Component {
           style={{width: '100%', height: '100%'}}
         >
           <svg
+            style={{ height: '100%', width: '100%' }}
             data-packagecode={template(barcode, data)}
             // 需要减去14才能打印出正确高度
             data-height={parseInt(style.height) - 14}
