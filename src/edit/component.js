@@ -316,9 +316,9 @@ class Size extends React.Component {
       <React.Fragment>
         高 <TextPX value={style.height} onChange={this.handleChange.bind(this, 'height')}/>
         &nbsp;
-        {withoutWidth ? null : (
-          `宽${<TextPX value={style.width} onChange={this.handleChange.bind(this, 'width')}/>}`
-        )}
+        {withoutWidth ? null
+          : <React.Fragment>宽{<TextPX value={style.width} onChange={this.handleChange.bind(this, 'width')}/>}</React.Fragment>
+        }
       </React.Fragment>
     )
   }
