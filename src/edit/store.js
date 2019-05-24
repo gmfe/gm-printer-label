@@ -1,6 +1,6 @@
 import { observable, action, configure } from 'mobx'
 
-configure({enforceActions: true})
+configure({ enforceActions: 'observed' })
 
 class EditStore {
   @observable
@@ -17,12 +17,18 @@ class EditStore {
 
   @action
   setConfig (config) {
-    this.config = config
+    this.selected = null
+    this.config = { ...this.config, ...config }
   }
 
   @action
   setSizePageType (type) {
     this.config.page.type = type
+  }
+
+  @action
+  setPageName (name) {
+    this.config.name = name
   }
 
   @action
@@ -44,6 +50,7 @@ class EditStore {
         text: '请编辑',
         style: {
           position: 'absolute',
+          fontSize: '14px',
           left: '0px',
           top: '0px'
         }

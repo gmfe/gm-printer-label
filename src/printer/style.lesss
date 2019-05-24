@@ -1,9 +1,9 @@
-html,
-body {
-  font-size: 14px;
-}
-
 .gm-printer-label {
+  // 因为 shadow dom 没有 html body，估把些css迁移过来
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+
+  font-size: 14px;
   background: white;
   page-break-before: always
 }
@@ -22,6 +22,7 @@ body {
   }
 }
 
+// 保留，打印的时候有用
 @page {
   margin: 0;
 }

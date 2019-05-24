@@ -4,22 +4,12 @@ import PropTypes from 'prop-types'
 import Page from './page'
 import _ from 'lodash'
 import Block from './block'
-import { toKey } from './key'
-import { pageTypeMap } from '../config'
+import { pageTypeMap } from '../common/config'
 
 @observer
 class Printer extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      data: toKey(props.data, props.options)
-    }
-  }
-
   render () {
-    const {config, selected} = this.props
-    const {data} = this.state
+    const { config, selected, data } = this.props
     return (
       <div className='gm-printer-label' style={{
         width: pageTypeMap[config.page.type].width,
@@ -44,12 +34,7 @@ class Printer extends React.Component {
 Printer.propTypes = {
   selected: PropTypes.number,
   config: PropTypes.object.isRequired,
-  data: PropTypes.object.isRequired,
-  options: PropTypes.object // 传一些业务逻辑
-}
-
-Printer.defaultProps = {
-  options: {}
+  data: PropTypes.object.isRequired // 格式化后的数据
 }
 
 export default Printer

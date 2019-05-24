@@ -1,6 +1,6 @@
 import React from 'react'
 import { observer } from 'mobx-react'
-import { pageTypeMap } from '../config'
+import { pageTypeMap } from '../common/config'
 
 @observer
 class Page extends React.Component {

@@ -3,17 +3,12 @@ import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { toJS } from 'mobx'
 import editStore from './store'
-import { Printer, getCSS } from '../printer'
-import './style.less'
-import { getStyleWithDiff, insertCSS } from '../util'
-import { observer } from 'mobx-react/index'
+import { Printer } from '../printer'
+import { getStyleWithDiff } from '../util'
+import { observer } from 'mobx-react'
 import EditBottom from './edit_bottom'
 import EditTop from './edit_top'
 import Help from './help'
-import data from './data'
-import { Copy } from './component'
-
-insertCSS(getCSS())
 
 const STORAGE_CACHE = 'GM-PRINTER-LABEL-CACHE'
 
@@ -48,10 +43,6 @@ class Edit extends React.Component {
 
   handleSave = () => {
     this.props.onSave(toJS(editStore.config))
-  }
-
-  handleChangeConfig = (e) => {
-    editStore.setConfig(JSON.parse(e.target.value))
   }
 
   handlePrinterSelect = (e) => {
@@ -109,10 +100,15 @@ class Edit extends React.Component {
   }
 
   render () {
+    const { data, initDefaultTemp, defaultTempList } = this.props
     return (
       <div className='gm-printer-label-edit'>
         <div className='gm-printer-label-edit-header'>
-          <EditTop data={data} onSave={this.handleSave}/>
+          <EditTop
+            onSave={this.handleSave}
+            initDefaultTemp={initDefaultTemp}
+            defaultTempList={defaultTempList}
+          />
           <hr/>
           <EditBottom/>
         </div>
@@ -125,23 +121,6 @@ class Edit extends React.Component {
             onChange={this.handleChange}
           />
           <Help data={data}/>
-          <hr/>
-          <div style={{ padding: '10px' }}>
-            <Copy text={JSON.stringify(editStore.config)}>
-              <div>
-                请将以下配置代码发给观麦技术 <button>复制</button>
-              </div>
-            </Copy>
-            <textarea
-              style={{
-                display: 'block',
-                width: '500px',
-                height: '300px'
-              }}
-              value={JSON.stringify(editStore.config, null, 2)}
-              onChange={this.handleChangeConfig}
-            />
-          </div>
         </div>
       </div>
     )
@@ -149,8 +128,11 @@ class Edit extends React.Component {
 }
 
 Edit.propTypes = {
+  data: PropTypes.object.isRequired,
   config: PropTypes.object.isRequired,
-  onSave: PropTypes.func
+  onSave: PropTypes.func,
+  initDefaultTemp: PropTypes.string,
+  defaultTempList: PropTypes.object
 }
 
 Edit.deaultProps = {
