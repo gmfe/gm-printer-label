@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import editStore from './store'
 import _ from 'lodash'
 import { blockTypeList, pageTypeMap } from '../common/config'
-import { observer } from 'mobx-react/index'
+import { observer } from 'mobx-react'
 
 @observer
 class EditTop extends React.Component {

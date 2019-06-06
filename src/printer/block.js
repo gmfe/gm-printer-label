@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
-import { observer } from 'mobx-react/index'
+import { observer } from 'mobx-react'
 import { getStyleWithDiff, dispatchMsg, template } from '../util'
 
 @observer

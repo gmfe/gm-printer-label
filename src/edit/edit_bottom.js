@@ -1,5 +1,5 @@
 import React from 'react'
-import { observer } from 'mobx-react/index'
+import { observer } from 'mobx-react'
 import editStore from './store'
 import { Separator, Fonter, Position, TextAlign, Textarea, Line, Size } from './component'
 
