@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Copy } from './component'
 import editStore from './store'
+import i18next from '../../locales'
 
 class ConfigText extends React.Component {
   handleChangeConfig = (e) => {
@@ -15,7 +16,7 @@ class ConfigText extends React.Component {
         <div style={{ padding: '10px' }}>
           <Copy text={JSON.stringify(editStore.config)}>
             <div>
-              请将以下配置代码发给观麦技术 <button>复制</button>
+              {i18next.t('请将以下配置代码发给观麦技术')} <button>{i18next.t('复制')}</button>
             </div>
           </Copy>
           <textarea

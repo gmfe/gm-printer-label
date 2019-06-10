@@ -4,7 +4,7 @@
   },
   "blocks": [
     {
-      "text": "{{当前时间_年月日}}",
+      "text": "{{打印时间}}",
       "style": {
         "position": "absolute",
         "left": "7px",
@@ -62,7 +62,7 @@
       }
     },
     {
-      "text": "商品：{{SKU}}",
+      "text": "商品：{{商品名}}",
       "style": {
         "position": "absolute",
         "left": "5px",
@@ -72,7 +72,7 @@
       }
     },
     {
-      "text": "下单：{{下单}}",
+      "text": "下单：{{下单数}}",
       "style": {
         "position": "absolute",
         "left": "3px",
@@ -82,7 +82,7 @@
       }
     },
     {
-      "text": "实称：{{实称}}",
+      "text": "实称：{{实称数}}",
       "style": {
         "position": "absolute",
         "left": "148px",

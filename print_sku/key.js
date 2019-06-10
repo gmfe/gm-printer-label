@@ -1,5 +1,6 @@
 import moment from 'moment/moment'
 import Big from 'big.js'
+import i18next from '../locales'
 
 function toKey (data, options = {}) {
   const newData = {
@@ -21,7 +22,8 @@ function toKey (data, options = {}) {
     remark,
     food_security_code,
     package_id,
-    outer_id
+    outer_id,
+    page_number
   } = data
   const {
     station_name,
@@ -63,29 +65,30 @@ function toKey (data, options = {}) {
   }
 
   Object.assign(newData, {
-    'SKU': name,
-    'SKU_ID': id,
+    [i18next.t('商品名')]: name,
+    [i18next.t('商品ID')]: id,
 
-    '下单': k_xiadan,
-    '实称': k_shichen,
+    [i18next.t('下单数')]: k_xiadan,
+    [i18next.t('实称数')]: k_shichen,
 
-    '分拣号': k_sort_id,
+    [i18next.t('分拣号')]: k_sort_id,
 
-    '司机': k_driver_name,
-    '商户名': k_address_name,
-    '商户ID': k_address_id,
-    '收货人': receiver_name,
-    '路线': route_name,
+    [i18next.t('司机')]: k_driver_name,
+    [i18next.t('商户名')]: k_address_name,
+    [i18next.t('商户ID')]: k_address_id,
+    [i18next.t('收货人')]: receiver_name,
+    [i18next.t('路线')]: route_name,
 
-    '站点名': station_name,
-    '备注': remark,
+    [i18next.t('站点名')]: station_name,
+    [i18next.t('备注')]: remark,
 
-    '客服电话': phone,
-    '溯源码': food_security_code,
-    '商品码': package_id,
-    '自定义编码': outer_id,
+    [i18next.t('客服电话')]: phone,
+    [i18next.t('溯源码')]: food_security_code,
+    [i18next.t('商品验货码')]: package_id,
+    [i18next.t('自定义编码')]: outer_id,
 
-    '当前时间_年月日': moment().format('YYYY-MM-DD')
+    [i18next.t('打印时间')]: moment().format('YYYY-MM-DD'),
+    [i18next.t('页码')]: page_number
   })
 
   return newData

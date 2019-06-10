@@ -1,19 +1,50 @@
+// 层级
+@title: 20;
+@header: 20;
+@mask: 1040;
+@modal: 1050;
+@contextMenu: 80;
+
+@import "../components/index.less";
+
+* {
+  box-sizing: border-box;
+}
+
+:focus {
+    outline: none;
+}
+
 .gm-printer-label-edit {
   // 因为 shadow dom 没有 html body，估把些css迁移过来
-  line-height: 1.15;
+  line-height: 1.5;
   -webkit-text-size-adjust: 100%;
-  font-size: 14px;
+  font-size: 12px;
+  background: whitesmoke;
+  color: #333;
+  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
 
   min-height: 100vh;
+
+  .gm-printer-label-edit-title-fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: @title;
+    background-color: #fff;
+  }
 
   .gm-printer-label-edit-header {
     position: fixed;
     top: 0;
-    bottom: 0;
-    width: 280px;
-    padding: 10px;
     right: 0;
-    z-index: 99;
+    bottom: 0;
+    width: 330px;
+    padding: 10px 20px;
+    z-index: @header;
     background: white;
     box-shadow: -2px 0 3px 0 hsla(0, 0%, 39%, 0.1);
 
@@ -45,11 +76,68 @@
       border-bottom: 1px solid black;
       background: transparent;
     }
+
+    .gm-printer-label-edit-input-custom {
+      width: 190px;
+      height: 28px;
+      padding: 5px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border: 1px solid #eee;
+    }
+
+    .gm-printer-edit-select {
+      width: 190px;
+    }
+
+    .gm-printer-edit-plus-btn {
+      color: #fff;
+      background-color: #36ad3a;
+      border-color: #309a33;
+      border-radius: 4px;
+      width: 14px;
+      height: 14px;
+      line-height: 14px;
+      font-size: 12px;
+      display: inline-block;
+      text-align: center;
+      cursor: pointer;
+      white-space: nowrap;
+    }
   }
 
   .gm-printer-label-edit-content {
     position: relative;
-    padding-right: 300px;
+    // padding-right: 300px;
+    padding: 100px 300px 0 20px;
+  }
+
+  .gm-pinter-label-eidt-wrap {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  .gm-printer-label-contextmenu {
+    z-index: @contextMenu;
+    padding: 5px 0;
+    width: auto;
+    min-width: 100px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    > div {
+      padding: 5px;
+      cursor: pointer;
+
+      &.active {
+        color: #36ad3a;
+      }
+
+      &:hover {
+        color: white;
+        background: rgb(82, 146, 247);
+      }
+    }
   }
 
   .gm-printer-label-edit-tip {
@@ -59,7 +147,7 @@
 
   // 覆盖 printer
   .gm-printer-label {
-    margin: 10px auto;
+    margin: 0px auto;
 
     .gm-printer-label-page {
       overflow: visible;
@@ -143,9 +231,17 @@
       .gm-printer-label-edit-config-text {
         display: none;
       }
+
+      .gm-pinter-label-eidt-wrap {
+        padding-right: 0;
+      }
+
+      .gm-printer-label-contextmenu {
+        display: none;
+      }
     }
 
-    .gm-printer-label-edit-tip {
+    .gm-printer-label-edit-title-fixed {
       display: none;
     }
 

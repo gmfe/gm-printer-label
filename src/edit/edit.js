@@ -6,9 +6,14 @@ import editStore from './store'
 import { Printer } from '../printer'
 import { getStyleWithDiff } from '../util'
 import { observer } from 'mobx-react'
-import EditBottom from './edit_bottom'
-import EditTop from './edit_top'
-import Help from './help'
+import EditModifyFiled from './edit_modify_filed'
+import EditTitle from './edit_title'
+import EditSelect from './edit_select'
+import EditAddFiled from './edit_add_filed'
+import { Title, Gap } from './component'
+import { Flex } from '../components'
+import i18next from '../../locales'
+import ContextMenu from './context_menu'
 
 const STORAGE_CACHE = 'GM-PRINTER-LABEL-CACHE'
 
@@ -18,7 +23,8 @@ class Edit extends React.Component {
     super(props)
 
     let config = props.config
-    editStore.init(config)
+    let initDefaultTemp = props.initDefaultTemp
+    editStore.init(config, initDefaultTemp)
   }
 
   componentDidMount () {
@@ -103,24 +109,37 @@ class Edit extends React.Component {
     const { data, initDefaultTemp, defaultTempList } = this.props
     return (
       <div className='gm-printer-label-edit'>
+
+        <Flex className='gm-printer-label-edit-title-fixed'>
+          <Title title={i18next.t('模板预览')} text={<span className='gm-text-red gm-padding-left-5'>
+            {i18next.t('说明：单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置，可点击右键删除')}
+          </span>}/>
+        </Flex>
+
         <div className='gm-printer-label-edit-header'>
-          <EditTop
+          <EditTitle
             onSave={this.handleSave}
+          />
+          <Gap height='10px'/>
+          <EditSelect
             initDefaultTemp={initDefaultTemp}
             defaultTempList={defaultTempList}
           />
-          <hr/>
-          <EditBottom/>
+          <Gap height='5px'/>
+          <EditModifyFiled/>
+          <Gap height='5px'/>
+          <EditAddFiled data={data}/>
         </div>
+
         <div className='gm-printer-label-edit-content' onClick={this.handleCancel}>
-          <div className='gm-printer-label-edit-tip'>单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置</div>
-          <Printer
-            selected={editStore.selected}
-            config={editStore.config}
-            data={data}
-            onChange={this.handleChange}
-          />
-          <Help data={data}/>
+          <ContextMenu>
+            <Printer
+              selected={editStore.selected}
+              config={editStore.config}
+              data={data}
+              onChange={this.handleChange}
+            />
+          </ContextMenu>
         </div>
       </div>
     )

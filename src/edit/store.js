@@ -1,4 +1,5 @@
 import { observable, action, configure } from 'mobx'
+import i18next from '../../locales'
 
 configure({ enforceActions: 'observed' })
 
@@ -9,16 +10,24 @@ class EditStore {
   @observable
   selected = null
 
+  @observable
+  tempKey = null
+
+  @observable
+  isSelect = null
+
   @action
-  init (config) {
+  init (config, initDefaultTemp) {
     this.config = config
     this.selected = null
+    this.tempKey = initDefaultTemp || ''
   }
 
   @action
-  setConfig (config) {
+  setConfig (config, value) {
     this.selected = null
     this.config = { ...this.config, ...config }
+    this.tempKey = value
   }
 
   @action
@@ -47,7 +56,7 @@ class EditStore {
   addConfigBlock (type) {
     if (!type || type === 'text') {
       this.config.blocks.push({
-        text: '请编辑',
+        text: i18next.t('请编辑'),
         style: {
           position: 'absolute',
           fontSize: '14px',
@@ -71,7 +80,7 @@ class EditStore {
     } else if (type === 'qrcode') {
       this.config.blocks.push({
         type,
-        qrcode: '{{溯源码}}',
+        qrcode: i18next.t('{{溯源码}}'),
         style: {
           position: 'absolute',
           left: '0px',
@@ -83,7 +92,7 @@ class EditStore {
     } else if (type === 'barcode') {
       this.config.blocks.push({
         type,
-        barcode: '{{商品码}}',
+        barcode: i18next.t('{{商品验货码}}'),
         style: {
           position: 'absolute',
           left: '0px',
@@ -93,7 +102,7 @@ class EditStore {
         }
       })
     } else {
-      window.alert('出错啦，未识别类型，此信息不应该出现')
+      window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
     }
   }
 
@@ -103,6 +112,18 @@ class EditStore {
       this.config.blocks.splice(this.selected, 1)
       this.selected = null
     }
+  }
+
+  @action
+  addFieldToBlocks (value, key) {
+    this.config.blocks.push({
+      text: `${key}: ${value}`,
+      style: {
+        position: 'absolute',
+        left: '0px',
+        top: '0px'
+      }
+    })
   }
 }
 

@@ -75,6 +75,7 @@ class Block extends React.Component {
 
   render () {
     const {
+      name,
       index,
       selected,
       config: {type, text, qrcode, style, barcode},
@@ -95,6 +96,7 @@ class Block extends React.Component {
           data-qrcode={template(qrcode, data)}
           data-width={style.width}
           data-height={style.height}
+          data-name={name}
           style={{width: '100%', height: '100%'}}
           data-placeholder='二维码'
         />
@@ -103,6 +105,7 @@ class Block extends React.Component {
       content = (
         <div
           data-packagecode='条形码'
+          data-name={name}
           style={{width: '100%', height: '100%'}}
         >
           <svg
@@ -110,6 +113,7 @@ class Block extends React.Component {
             data-packagecode={template(barcode, data)}
             // 需要减去14才能打印出正确高度
             data-height={parseInt(style.height) - 14}
+            data-name={name}
             id={`package${template(barcode, data)}`}
           />
         </div>
@@ -130,6 +134,7 @@ class Block extends React.Component {
         onDragEnd={this.handleDragEnd}
         onClick={this.handleClick}
         onDoubleClick={this.handleDoubleClick}
+        data-name={name}
       >
         {content}
         {(!type || type === 'text') && active && isEdit && (

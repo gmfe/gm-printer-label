@@ -5,7 +5,7 @@
     },
     "blocks": [
       {
-        "text": "打印:{{当前时间_年月日}}",
+        "text": "打印:{{打印时间}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -53,7 +53,7 @@
         }
       },
       {
-        "text": "{{SKU}}",
+        "text": "{{商品名}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -87,7 +87,7 @@
         }
       },
       {
-        "text": "下单:{{下单}}",
+        "text": "下单:{{下单数}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -98,7 +98,7 @@
         }
       },
       {
-        "text": "实称:{{实称}}",
+        "text": "实称:{{实称数}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -134,7 +134,7 @@
     },
     "blocks": [
       {
-        "text": "打印:{{当前时间_年月日}}",
+        "text": "打印:{{打印时间}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -170,7 +170,7 @@
         }
       },
       {
-        "text": "{{SKU}}",
+        "text": "{{商品名}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -204,7 +204,7 @@
         }
       },
       {
-        "text": "下单:{{下单}}",
+        "text": "下单:{{下单数}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -215,7 +215,7 @@
         }
       },
       {
-        "text": "实称:{{实称}}",
+        "text": "实称:{{实称数}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -251,7 +251,7 @@
     },
     "blocks": [
       {
-        "text": "打印:{{当前时间_年月日}}",
+        "text": "打印:{{打印时间}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -299,7 +299,7 @@
         }
       },
       {
-        "text": "{{SKU}}",
+        "text": "{{商品名}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -333,7 +333,7 @@
         }
       },
       {
-        "text": "下单:{{下单}}",
+        "text": "下单:{{下单数}}",
         "style": {
           "position": "absolute",
           "left": "2px",
@@ -344,7 +344,7 @@
         }
       },
       {
-        "text": "实称:{{实称}}",
+        "text": "实称:{{实称数}}",
         "style": {
           "position": "absolute",
           "left": "3px",
@@ -374,7 +374,7 @@
       },
       {
         "type": "barcode",
-        "barcode": "{{商品码}}",
+        "barcode": "{{商品验货码}}",
         "style": {
           "position": "absolute",
           "left": "4px",

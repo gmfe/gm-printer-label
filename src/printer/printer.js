@@ -20,6 +20,7 @@ class Printer extends React.Component {
             <Block
               key={i}
               index={i}
+              name={i}
               selected={selected}
               config={block}
               data={data}
