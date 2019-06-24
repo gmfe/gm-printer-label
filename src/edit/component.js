@@ -5,6 +5,9 @@ import _ from 'lodash'
 import { fontSizeList, borderStyleList } from '../common/config'
 import ReactDOM from 'react-dom'
 import Clipboard from 'clipboard'
+import { SvgBill } from 'gm-svg'
+import { Flex } from '../components'
+import i18next from '../../locales'
 
 class IconAlign extends React.Component {
   render () {
@@ -252,13 +255,13 @@ class Position extends React.Component {
 
     return (
       <span>
-        上 <TextPX value={top} onChange={this.handleChange.bind(this, 'top')}/>
+        {i18next.t('上')} <TextPX value={top} onChange={this.handleChange.bind(this, 'top')}/>
         &nbsp;
-        左 <TextPX value={left} onChange={this.handleChange.bind(this, 'left')}/>
+        {i18next.t('左')} <TextPX value={left} onChange={this.handleChange.bind(this, 'left')}/>
         &nbsp;
-        下 <TextPX value={bottom} onChange={this.handleChange.bind(this, 'bottom')}/>
+        {i18next.t('下')} <TextPX value={bottom} onChange={this.handleChange.bind(this, 'bottom')}/>
         &nbsp;
-        右 <TextPX value={right} onChange={this.handleChange.bind(this, 'right')}/>
+        {i18next.t('右')} <TextPX value={right} onChange={this.handleChange.bind(this, 'right')}/>
       </span>
     )
   }
@@ -284,9 +287,9 @@ class Line extends React.Component {
 
     return (
       <span>
-        宽 <TextPX value={width} onChange={this.handleChange.bind(this, 'width')} style={{width: '35px'}}/>
+        {i18next.t('宽')} <TextPX value={width} onChange={this.handleChange.bind(this, 'width')} style={{width: '35px'}}/>
         &nbsp;
-        粗细 <TextPX value={borderTopWidth} onChange={this.handleChange.bind(this, 'borderTopWidth')}/>
+        {i18next.t('粗细')} <TextPX value={borderTopWidth} onChange={this.handleChange.bind(this, 'borderTopWidth')}/>
         &nbsp;
         <select value={borderTopStyle} onChange={e => this.handleChange('borderTopStyle', e.target.value)}>
           {_.map(borderStyleList, v => <option key={v.value} value={v.value}>{v.text}</option>)}</select>
@@ -314,10 +317,10 @@ class Size extends React.Component {
     const {style, withoutWidth} = this.props
     return (
       <React.Fragment>
-        高 <TextPX value={style.height} onChange={this.handleChange.bind(this, 'height')}/>
+        {i18next.t('高')} <TextPX value={style.height} onChange={this.handleChange.bind(this, 'height')}/>
         &nbsp;
         {withoutWidth ? null
-          : <React.Fragment>宽{<TextPX value={style.width} onChange={this.handleChange.bind(this, 'width')}/>}</React.Fragment>
+          : <React.Fragment>{i18next.t('宽')}{<TextPX value={style.width} onChange={this.handleChange.bind(this, 'width')}/>}</React.Fragment>
         }
       </React.Fragment>
     )
@@ -351,6 +354,25 @@ class Copy extends React.Component {
   }
 }
 
+const Title = ({ title, text }) => <Flex alignCenter className='gm-font-16'>
+  <SvgBill style={{ color: 'rgb(253, 82, 113)' }}/>
+  <span>{title}</span>
+  <span className='gm-font-12'>{text}</span>
+</Flex>
+
+const Gap = ({ width = '100%', height = '3px' }) => <div style={{ width, height }}/>
+
+const TipInfo = ({ text }) => <Flex alignCenter className='gm-padding-top-5 gm-text-red'>{text}</Flex>
+
+const FieldBtn = ({ name, onClick }) => (
+  <Flex alignCenter style={{ width: '50%', margin: '3px 0' }}>
+    <span className='gm-printer-label-edit-plus-btn' onClick={onClick}>
+      +
+    </span>
+    <span className='gm-padding-left-5'>{name}</span>
+  </Flex>
+)
+
 export {
   Copy,
   Text,
@@ -361,5 +383,9 @@ export {
   Fonter,
   Position,
   Line,
-  Size
+  Size,
+  Title,
+  Gap,
+  TipInfo,
+  FieldBtn
 }
