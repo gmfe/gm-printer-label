@@ -1,10 +1,11 @@
 import React from 'react'
 import { observer } from 'mobx-react'
 import editStore from './store'
-import { Separator, Fonter, Position, TextAlign, Textarea, Line, Size } from './component'
+import { Separator, Fonter, Position, TextAlign, Textarea, Line, Size, Gap, Title, TipInfo } from './component'
+import i18next from '../../locales'
 
 @observer
-class EditBottom extends React.Component {
+class EditModifyFiled extends React.Component {
   handleChangeBlock = (who, value) => {
     if (editStore.selected === null) {
       return
@@ -13,28 +14,23 @@ class EditBottom extends React.Component {
     editStore.setConfigBlockBy(who, value)
   }
 
-  handleRemove = () => {
-    editStore.removeConfig()
-  }
-
   renderBlocks () {
     const { type, text, style } = editStore.config.blocks[editStore.selected]
 
     return (
       <React.Fragment>
-        <div>
-          <button onClick={this.handleRemove}>移除</button>
-        </div>
-        <hr/>
-        <div>
-          <Position style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
-        </div>
+        <Title title={i18next.t('编辑字段')}/>
+        <Gap/>
+        <Position style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
+        <Gap/>
+
         {(!type || type === 'text') && (
           <div>
             <Fonter style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
             <Separator/>
             <TextAlign style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
-            <br/>
+            <Gap/>
+
             <Textarea
               value={text}
               placeholder='请输入填充内容'
@@ -55,6 +51,8 @@ class EditBottom extends React.Component {
             <Size style={style} withoutWidth onChange={this.handleChangeBlock.bind(this, 'style')}/>
           </div>
         )}
+
+        <TipInfo text={i18next.t('说明：请勿修改{}中的内容,避免出现数据异常')}/>
       </React.Fragment>
     )
   }
@@ -66,12 +64,12 @@ class EditBottom extends React.Component {
       content = this.renderBlocks()
     }
 
-    return <div className='gm-printer-label-edit-header-bottom'>{content}</div>
+    return <div>{content}</div>
   }
 }
 
-EditBottom.propTypes = {}
+EditModifyFiled.propTypes = {}
 
-EditBottom.deaultProps = {}
+EditModifyFiled.deaultProps = {}
 
-export default EditBottom
+export default EditModifyFiled

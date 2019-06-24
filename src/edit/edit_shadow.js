@@ -11,7 +11,8 @@ class EditShadow extends React.Component {
   componentDidMount () {
     const dom = ReactDOM.findDOMNode(this.ref.current)
     const shadowRoot = dom.attachShadow({ mode: 'open' })
-
+    // 在window下挂 shadow root
+    window.shadowRoot = shadowRoot
     ReactDOM.render(<Edit {...this.props}/>, shadowRoot)
 
     insertCSS(getCSS() + getEditCSS(), shadowRoot)
