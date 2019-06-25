@@ -126,14 +126,24 @@ class EditStore {
   @action
   // 添加字段到打印单中
   addFieldToBlocks ({ value, key }) {
-    this.config.blocks.push({
-      text: `${key}:${value}`,
-      style: {
-        position: 'absolute',
-        left: '0px',
-        top: '0px'
-      }
-    })
+    // 不一定每次打印都传页码过去，为了不出现“页码：”情况，页码前不加前缀
+    (key === i18next.t('页码'))
+      ? (this.config.blocks.push({
+        text: `${value}`,
+        style: {
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }
+      }))
+      : (this.config.blocks.push({
+        text: `${key}:${value}`,
+        style: {
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }
+      }))
   }
 }
 
