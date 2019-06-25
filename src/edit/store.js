@@ -126,14 +126,23 @@ class EditStore {
   @action
   // 添加字段到打印单中
   addFieldToBlocks ({ value, key }) {
-    this.config.blocks.push({
-      text: `${key}:${value}`,
-      style: {
-        position: 'absolute',
-        left: '0px',
-        top: '0px'
-      }
-    })
+    (key === '页码')
+      ? (this.config.blocks.push({
+        text: `${value}`,
+        style: {
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }
+      }))
+      : (this.config.blocks.push({
+        text: `${key}:${value}`,
+        style: {
+          position: 'absolute',
+          left: '0px',
+          top: '0px'
+        }
+      }))
   }
 }
 
