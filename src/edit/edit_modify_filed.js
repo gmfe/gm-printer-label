@@ -3,6 +3,7 @@ import { observer } from 'mobx-react'
 import editStore from './store'
 import { Separator, Fonter, Position, TextAlign, Textarea, Line, Size, Gap, Title, TipInfo } from './component'
 import i18next from '../../locales'
+import _ from 'lodash'
 
 @observer
 class EditModifyFiled extends React.Component {
@@ -10,9 +11,19 @@ class EditModifyFiled extends React.Component {
     if (editStore.selected === null) {
       return
     }
-
     editStore.setConfigBlockBy(who, value)
-  }
+  };
+
+  handleRotateBarcode = () => {
+    const { style } = editStore.config.blocks[editStore.selected]
+    const newStyle = _.has(style, 'transform')
+      ? _.omit(style, 'transform')
+      : {
+        ...style,
+        transform: 'rotate(90deg)'
+      }
+    this.handleChangeBlock('style', newStyle)
+  };
 
   renderBlocks () {
     const { type, text, style } = editStore.config.blocks[editStore.selected]
@@ -31,16 +42,10 @@ class EditModifyFiled extends React.Component {
             <TextAlign style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
             <Gap/>
 
-            <Textarea
-              value={text}
-              placeholder='请输入填充内容'
-              onChange={this.handleChangeBlock.bind(this, 'text')}
-            />
+            <Textarea value={text} placeholder='请输入填充内容' onChange={this.handleChangeBlock.bind(this, 'text')}/>
           </div>
         )}
-        {type === 'line' && (
-          <Line style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
-        )}
+        {type === 'line' && <Line style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>}
         {type === 'qrcode' && (
           <div>
             <Size style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
@@ -49,6 +54,9 @@ class EditModifyFiled extends React.Component {
         {type === 'barcode' && (
           <div>
             <Size style={style} withoutWidth onChange={this.handleChangeBlock.bind(this, 'style')}/>
+            <div>
+              <button onClick={this.handleRotateBarcode}>{i18next.t('旋转')}</button>
+            </div>
           </div>
         )}
 
