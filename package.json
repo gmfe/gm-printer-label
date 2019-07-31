@@ -57,7 +57,6 @@
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
     "file-loader": "^1.1.11",
-    "gm-i18n": "^1.2.2",
     "gm-svg": "^0.3.10",
     "gm-util": "^5.10.4",
     "gm_static_storage": "^1.2.0",

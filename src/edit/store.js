@@ -1,7 +1,5 @@
-import { observable, action, configure } from 'mobx'
+import { observable, action } from 'mobx'
 import i18next from '../../locales'
-
-configure({ enforceActions: 'observed' })
 
 class EditStore {
   @observable
