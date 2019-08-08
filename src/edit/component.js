@@ -373,6 +373,19 @@ const FieldBtn = ({ name, onClick }) => (
   </Flex>
 )
 
+const SubTitle = ({ text }) => (
+  <div style={{ backgroundColor: '#eee', height: '1px', margin: '10px 0 13px 0', position: 'relative' }}>
+    <span style={{
+      position: 'absolute',
+      top: '-8px',
+      left: '20px',
+      padding: '0 5px',
+      backgroundColor: '#fff',
+      color: '#848586'
+    }}>{text}</span>
+  </div>
+)
+
 export {
   Copy,
   Text,
@@ -387,5 +400,6 @@ export {
   Title,
   Gap,
   TipInfo,
-  FieldBtn
+  FieldBtn,
+  SubTitle
 }

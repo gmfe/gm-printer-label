@@ -38,6 +38,8 @@
   }
 
   .gm-printer-label-edit-header {
+    &::-webkit-scrollbar { display: none; }
+
     position: fixed;
     top: 0;
     right: 0;
@@ -45,6 +47,7 @@
     width: 330px;
     padding: 10px 20px;
     z-index: @header;
+    overflow-y: auto;
     background: white;
     box-shadow: -2px 0 3px 0 hsla(0, 0%, 39%, 0.1);
 

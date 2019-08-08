@@ -61,6 +61,28 @@ class EditModifyFiled extends React.Component {
         )}
 
         <TipInfo text={i18next.t('说明：请勿修改{}中的内容,避免出现数据异常')}/>
+        {editStore.computedIsTime && (
+          <div>
+            <TipInfo
+              text={i18next.t('注：可通过修改“{{}}”中的内容更改时间格式。')}
+            />
+            <TipInfo
+              text={i18next.t(
+                '1. 格式“1970-01-01 19:00:00”，输入“时间： {{当前时间}}”；'
+              )}
+            />
+            <TipInfo
+              text={i18next.t(
+                '2. 格式“1970-01-01”，输入“时间： {{当前时间_年月日}}”；'
+              )}
+            />
+            <TipInfo
+              text={i18next.t(
+                '3. 格式“19:00:00"，输入“时间： {{当前时间_时间}}"；'
+              )}
+            />
+          </div>
+        )}
       </React.Fragment>
     )
   }
