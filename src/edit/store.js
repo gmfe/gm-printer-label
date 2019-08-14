@@ -1,4 +1,5 @@
-import { observable, action } from 'mobx'
+import { observable, action, computed } from 'mobx'
+import _ from 'lodash'
 import i18next from '../../locales'
 
 class EditStore {
@@ -142,6 +143,17 @@ class EditStore {
           top: '0px'
         }
       }))
+  }
+
+  @computed
+  get computedIsTime () {
+    if (this.selected !== null) {
+      const block = this.config.blocks[this.selected]
+      if ((!block.type || block.type === 'text') && _.includes(block.text, '时间')) {
+        return true
+      }
+    }
+    return false
   }
 }
 
