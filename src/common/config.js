@@ -36,8 +36,8 @@ const borderStyleList = [
 const blockTypeList = [
   { value: '', text: i18next.t('文本') },
   { value: 'line', text: i18next.t('线条') },
-  { value: 'qrcode', text: i18next.t('二维码') },
-  { value: 'barcode', text: i18next.t('条形码') }
+  { value: 'qrcode', text: i18next.t('商品溯源二维码') },
+  { value: 'barcode', text: i18next.t('验货条形码') }
 ]
 
 export {

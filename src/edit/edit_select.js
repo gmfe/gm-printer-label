@@ -68,11 +68,12 @@ class EditSelect extends React.Component {
         </Flex>
         <Gap height='10px'/>
 
-        <Flex alignCenter justifyBetween>
-          <div>{i18next.t('插入')}</div>
+        <Flex alignCenter style={{ flexWrap: 'wrap' }}>
+          <div style={{ margin: '0 14px 14px 0' }}>{i18next.t('插入')}</div>
           {_.map(blockTypeList, v => (
             <button className='btn btn-default btn-sm'
               key={v.value}
+              style={{ margin: '0 14px 14px 0' }}
               onClick={this.handleInsert.bind(this, v.value)}
             >{v.text}</button>
           ))}
