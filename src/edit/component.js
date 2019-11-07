@@ -6,8 +6,9 @@ import { fontSizeList, borderStyleList } from '../common/config'
 import ReactDOM from 'react-dom'
 import Clipboard from 'clipboard'
 import { SvgBill } from 'gm-svg'
-import { Flex } from '../components'
+import { Flex, Tip } from '../components'
 import i18next from '../../locales'
+import { Request } from 'gm-util'
 
 class IconAlign extends React.Component {
   render () {
@@ -386,6 +387,78 @@ const SubTitle = ({ text }) => (
   </div>
 )
 
+class ImageUploader extends React.Component {
+  constructor () {
+    super()
+    this.input = React.createRef()
+  }
+
+  handleUpload = event => {
+    event.preventDefault()
+    // 只上传单张图片
+    const droppedFiles = event.dataTransfer
+      ? event.dataTransfer.files
+      : event.target.files
+    const file = droppedFiles[0]
+
+    if (file.size > 512 * 1024) {
+      Tip.warning(i18next.t('图片大小不能超过500Kb'))
+      return
+    }
+
+    const STATION_URL = {
+      reqUrl: '/station/image/upload',
+      imgUrl: 'http://img.guanmai.cn/station_pic'
+    }
+
+    const MANAGE_URL = {
+      reqUrl: '/gm_account/image/upload',
+      imgUrl: 'http://img.guanmai.cn/report_pic'
+    }
+
+    const { hostname } = window.location
+    const isStation = /station/g.test(hostname)
+    const url = isStation ? STATION_URL : MANAGE_URL
+
+    Request(url.reqUrl)
+      .data({
+        image_file: file
+      })
+      .post()
+      .then(json => {
+        const imgURL = `${url.imgUrl}/${json.data.img_path_id}`
+        this.props.onSuccess(imgURL)
+      })
+  }
+
+  handleClick = () => {
+    this.input.current.value = null
+    this.input.current.click()
+  }
+
+  render () {
+    return (
+      <React.Fragment>
+        <div onClick={this.handleClick} onDrop={this.handleUpload}>
+          {this.props.text}
+        </div>
+        <input
+          style={{ display: 'none' }}
+          type='file'
+          ref={this.input}
+          accept='image/*'
+          onChange={this.handleUpload}
+        />
+      </React.Fragment>
+    )
+  }
+}
+
+ImageUploader.propTypes = {
+  onSuccess: PropTypes.func.isRequired,
+  text: PropTypes.string.isRequired
+}
+
 export {
   Copy,
   Text,
@@ -401,5 +474,6 @@ export {
   Gap,
   TipInfo,
   FieldBtn,
-  SubTitle
+  SubTitle,
+  ImageUploader
 }

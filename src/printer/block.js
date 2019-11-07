@@ -77,7 +77,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, style, barcode},
+      config: {type, text, qrcode, style, barcode, url},
       data,
       className,
       ...rest
@@ -97,13 +97,13 @@ class Block extends React.Component {
           data-height={style.height}
           data-name={index}
           style={{width: '100%', height: '100%'}}
-          data-placeholder='二维码'
+          data-placeholder='商品溯源'
         />
       )
     } else if (type === 'barcode') {
       content = (
         <div
-          data-packagecode='条形码'
+          data-packagecode='验货条形码'
           data-name={index}
           style={{width: '100%', height: '100%'}}
         >
@@ -117,6 +117,8 @@ class Block extends React.Component {
           />
         </div>
       )
+    } else if (type === 'image') {
+      content = <img src={url} data-width={style.width} data-height={style.height} style={{ width: '100%', height: '100%' }} data-name={index}/>
     }
 
     const active = index === selected

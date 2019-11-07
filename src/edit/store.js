@@ -60,56 +60,77 @@ class EditStore {
   }
 
   @action
-  addConfigBlock (type) {
-    if (!type || type === 'text') {
-      this.config.blocks.push({
-        text: i18next.t('请编辑'),
-        style: {
-          position: 'absolute',
-          fontSize: '14px',
-          left: '0px',
-          top: '0px'
-        }
-      })
-    } else if (type === 'line') {
-      this.config.blocks.push({
-        type,
-        style: {
-          position: 'absolute',
-          left: '0px',
-          top: '0px',
-          borderTopColor: 'black',
-          borderTopWidth: '1px',
-          borderTopStyle: 'solid',
-          width: '100%'
-        }
-      })
-    } else if (type === 'qrcode') {
-      this.config.blocks.push({
-        type,
-        qrcode: i18next.t('{{溯源码}}'),
-        style: {
-          position: 'absolute',
-          left: '0px',
-          top: '0px',
-          width: '50px',
-          height: '50px'
-        }
-      })
-    } else if (type === 'barcode') {
-      this.config.blocks.push({
-        type,
-        barcode: i18next.t('{{商品码}}'),
-        style: {
-          position: 'absolute',
-          left: '0px',
-          top: '0px',
-          height: '30px',
-          width: '165px'
-        }
-      })
-    } else {
-      window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
+  addConfigBlock (type, url) {
+    switch (type) {
+      case '':
+      case 'text':
+        this.config.blocks.push({
+          text: i18next.t('请编辑'),
+          style: {
+            position: 'absolute',
+            fontSize: '14px',
+            left: '0px',
+            top: '0px'
+          }
+        })
+        break
+      case 'line':
+        this.config.blocks.push({
+          type,
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            borderTopColor: 'black',
+            borderTopWidth: '1px',
+            borderTopStyle: 'solid',
+            width: '100%'
+          }
+        })
+        break
+      case 'qrcode':
+        this.config.blocks.push({
+          type,
+          qrcode: i18next.t('{{溯源码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '50px',
+            height: '50px'
+          }
+        })
+        break
+      case 'barcode':
+        this.config.blocks.push({
+          type,
+          barcode: i18next.t('{{商品码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
+      case 'image':
+        this.config.blocks.push({
+          type,
+          url,
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '100px',
+            width: '100px'
+          }
+        })
+        console.log(this.config)
+        break
+      default:
+        window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
+        break
     }
   }
 
