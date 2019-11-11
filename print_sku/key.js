@@ -83,7 +83,7 @@ function toKey (data, options = {}) {
     [i18next.t('备注')]: remark,
 
     [i18next.t('客服电话')]: phone,
-    [i18next.t('溯源码')]: food_security_code,
+    [i18next.t('商品溯源码')]: food_security_code,
     [i18next.t('商品码')]: package_id,
     [i18next.t('自定义编码')]: outer_id,
 

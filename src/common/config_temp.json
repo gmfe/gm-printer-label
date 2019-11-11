@@ -15,7 +15,7 @@
       },
       {
         "type": "qrcode",
-        "qrcode": "{{溯源码}}",
+        "qrcode": "{{商品溯源二维码}}",
         "style": {
           "position": "absolute",
           "left": "196px",
@@ -261,7 +261,7 @@
       },
       {
         "type": "qrcode",
-        "qrcode": "{{溯源码}}",
+        "qrcode": "{{商品溯源二维码}}",
         "style": {
           "position": "absolute",
           "left": "204px",

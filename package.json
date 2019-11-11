@@ -1,6 +1,6 @@
 {
   "name": "gm-printer-label",
-  "version": "2.4.1beta",
+  "version": "2.4.2beta",
   "description": "",
   "main": "src/index.js",
   "scripts": {

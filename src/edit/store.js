@@ -87,7 +87,7 @@ class EditStore {
     } else if (type === 'qrcode') {
       this.config.blocks.push({
         type,
-        qrcode: i18next.t('{{溯源码}}'),
+        qrcode: i18next.t('{{商品溯源二维码}}'),
         style: {
           position: 'absolute',
           left: '0px',
