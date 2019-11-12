@@ -97,13 +97,13 @@ class Block extends React.Component {
           data-height={style.height}
           data-name={index}
           style={{width: '100%', height: '100%'}}
-          data-placeholder='二维码'
+          data-placeholder='商品溯源二维码'
         />
       )
     } else if (type === 'barcode') {
       content = (
         <div
-          data-packagecode='条形码'
+          data-packagecode='验货条形码'
           data-name={index}
           style={{width: '100%', height: '100%'}}
         >
