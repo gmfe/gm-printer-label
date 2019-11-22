@@ -46,7 +46,7 @@ class EditModifyFiled extends React.Component {
           </div>
         )}
         {type === 'line' && <Line style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>}
-        {type === 'qrcode' && (
+        {(type === 'qrcode' || type === 'image') && (
           <div>
             <Size style={style} onChange={this.handleChangeBlock.bind(this, 'style')}/>
           </div>

@@ -41,6 +41,12 @@ module.exports = {
     compress: true,
     host: '0.0.0.0',
     inline: false,
-    disableHostCheck: true
+    disableHostCheck: true,
+    proxy: {
+      '/gm_account/*': {
+        target: 'http://station.env-lyf.dev.k8s.guanmai.cn',
+        changeOrigin: true
+      }
+    }
   }
 }

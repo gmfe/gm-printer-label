@@ -4,7 +4,7 @@ import editStore from './store'
 import { observer } from 'mobx-react'
 import { pageTypeMap, blockTypeList } from '../common/config'
 import { Flex, Select, Option } from '../components'
-import { Gap } from './component'
+import { Gap, ImageUploader } from './component'
 import _ from 'lodash'
 
 import i18next from '../../locales'
@@ -35,6 +35,11 @@ class EditSelect extends React.Component {
 
   handlePageType = (e) => {
     editStore.setSizePageType(e)
+  }
+
+  handleInsertBlock = (type, link) => {
+    editStore.addConfigBlock(type, link)
+    editStore.setSelected(editStore.config.blocks.length - 1)
   }
 
   render () {
@@ -68,14 +73,25 @@ class EditSelect extends React.Component {
         </Flex>
         <Gap height='10px'/>
 
-        <Flex alignCenter justifyBetween>
-          <div>{i18next.t('插入')}</div>
-          {_.map(blockTypeList, v => (
-            <button className='btn btn-default btn-sm'
-              key={v.value}
-              onClick={this.handleInsert.bind(this, v.value)}
-            >{v.text}</button>
-          ))}
+        <Flex alignCenter style={{ flexWrap: 'wrap' }}>
+          <div style={{ margin: '0 14px 14px 0' }}>{i18next.t('插入')}</div>
+          {_.map(blockTypeList, v => {
+            return v.value === 'image' ? (
+              <button style={{ margin: '0 14px 14px 0' }} className='btn btn-default btn-sm' key={v.value}>
+                <ImageUploader
+                  onSuccess={imgURL => this.handleInsertBlock('image', imgURL)}
+                  key={v.value}
+                  text={v.text}
+                />
+              </button>
+            ) : (
+              <button className='btn btn-default btn-sm'
+                key={v.value}
+                style={{ margin: '0 14px 14px 0' }}
+                onClick={this.handleInsert.bind(this, v.value)}
+              >{v.text}</button>
+            )
+          })}
         </Flex>
       </div>
     )
