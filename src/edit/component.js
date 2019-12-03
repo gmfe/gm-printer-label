@@ -5,7 +5,6 @@ import _ from 'lodash'
 import { fontSizeList, borderStyleList } from '../common/config'
 import ReactDOM from 'react-dom'
 import Clipboard from 'clipboard'
-import { SvgBill } from 'gm-svg'
 import { Flex, Tip } from '../components'
 import i18next from '../../locales'
 import { Request } from 'gm-util'
@@ -355,8 +354,7 @@ class Copy extends React.Component {
   }
 }
 
-const Title = ({ title, text }) => <Flex alignCenter className='gm-font-16'>
-  <SvgBill style={{ color: 'rgb(253, 82, 113)' }}/>
+const Title = ({ title, text }) => <Flex alignCenter className='gm-printer-label-edit-title'>
   <span>{title}</span>
   <span className='gm-font-12'>{text}</span>
 </Flex>

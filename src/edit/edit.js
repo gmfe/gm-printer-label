@@ -107,7 +107,7 @@ class Edit extends React.Component {
       <div className='gm-printer-label-edit'>
 
         <Flex className='gm-printer-label-edit-title-fixed'>
-          <Title title={i18next.t('模板预览')} text={<span className='gm-text-red gm-padding-left-5'>
+          <Title title={i18next.t('模板预览')} text={<span className='gm-text-desc gm-padding-left-5'>
             {i18next.t('说明：单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置，可点击右键删除')}
           </span>}/>
         </Flex>
