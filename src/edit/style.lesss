@@ -28,6 +28,18 @@
 
   min-height: 100vh;
 
+  .gm-printer-label-edit-title {
+    font-size: 14px;
+
+    &::before {
+      content: ' ';
+      height: 13px;
+      width: 3px;
+      margin: 3px 5px 3px 0;
+      background: #56a3f2;
+    }
+  }
+
   .gm-printer-label-edit-title-fixed {
     position: fixed;
     top: 0;
@@ -91,8 +103,8 @@
 
     .gm-printer-label-edit-plus-btn {
       color: #fff;
-      background-color: #36ad3a;
-      border-color: #309a33;
+      background-color: #56a3f2;
+      border-color: #3e96f0;
       border-radius: 4px;
       width: 14px;
       height: 14px;
@@ -128,7 +140,7 @@
       cursor: pointer;
 
       &.active {
-        color: #36ad3a;
+        color: #56a3f2;
       }
 
       &:hover {
