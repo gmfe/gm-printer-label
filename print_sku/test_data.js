@@ -36,6 +36,7 @@ const data = {
   'driver_pinyin': '*ziying',
   'std_unit_name': '斤',
   'food_security_code': 'a123123123',
+  'order_security_code': 'PL10753370D847717743A1',
   'package_id': '33333333333',
   'outer_id': '888888',
   'page_number': '1/1'

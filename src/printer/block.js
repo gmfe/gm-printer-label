@@ -77,7 +77,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, style, barcode, diycode, url},
+      config: {type, text, qrcode, order_qrcode, style, barcode, diycode, url},
       data,
       className,
       ...rest
@@ -98,6 +98,17 @@ class Block extends React.Component {
           data-name={index}
           style={{width: '100%', height: '100%'}}
           data-placeholder='商品溯源'
+        />
+      )
+    } else if (type === 'order_qrcode') {
+      content = (
+        <div
+          data-orderQrcode={template(order_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{width: '100%', height: '100%'}}
+          data-placeholder='订单溯源'
         />
       )
     } else if (type === 'barcode') {
