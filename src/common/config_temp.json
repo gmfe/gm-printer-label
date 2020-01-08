@@ -382,6 +382,17 @@
           "width": "120px",
           "height": "25px"
         }
+      },
+      {
+        "type": "diycode",
+        "diycode": "{{自定义编码}}",
+        "style": {
+          "position": "absolute",
+          "left": "4px",
+          "top": "143px",
+          "width": "120px",
+          "height": "25px"
+        }
       }
     ]
   }

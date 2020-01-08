@@ -114,6 +114,19 @@ class EditStore {
           }
         })
         break
+      case 'diycode':
+        this.config.blocks.push({
+          type,
+          diycode: i18next.t('{{自定义编码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       case 'image':
         this.config.blocks.push({
           type,
