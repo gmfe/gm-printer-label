@@ -42,6 +42,7 @@ const blockTypeList = [
   { value: 'line', text: i18next.t('线条') },
   { value: 'qrcode', text: i18next.t('商品溯源二维码') },
   { value: 'barcode', text: i18next.t('验货条形码') },
+  { value: 'diycode', text: i18next.t('自定义编码条形码') },
   { value: 'image', text: i18next.t('图片') }
 ]
 

@@ -77,7 +77,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, style, barcode, url},
+      config: {type, text, qrcode, style, barcode, diycode, url},
       data,
       className,
       ...rest
@@ -114,6 +114,23 @@ class Block extends React.Component {
             data-height={parseInt(style.height) - 14}
             data-name={index}
             id={`package${template(barcode, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'diycode') {
+      content = (
+        <div
+          data-diycode='自定义编码条形码'
+          data-name={index}
+          style={{width: '100%', height: '100%'}}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-diycode={template(diycode, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`package${template(diycode, data)}`}
           />
         </div>
       )
