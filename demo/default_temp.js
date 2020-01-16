@@ -26,6 +26,18 @@ export default {
         }
       },
       {
+        'type': 'order_qrcode',
+        'order_qrcode': '{{订单溯源码}}',
+        'style': {
+          'position': 'absolute',
+          'left': '196px',
+          'top': '113px',
+          'width': '70px',
+          'height': '70px',
+          'right': ''
+        }
+      },
+      {
         'text': '商户:{{商户名}}({{商户ID}})',
         'style': {
           'position': 'absolute',

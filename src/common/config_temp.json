@@ -272,6 +272,18 @@
         }
       },
       {
+        "type": "order_qrcode",
+        "order_qrcode": "{{订单溯源码}}",
+        "style": {
+          "position": "absolute",
+          "left": "204px",
+          "top": "129px",
+          "width": "55px",
+          "height": "55px",
+          "right": ""
+        }
+      },
+      {
         "text": "商户:{{商户名}}({{商户ID}})",
         "style": {
           "position": "absolute",
