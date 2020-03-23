@@ -36,7 +36,8 @@ const fontSizeList = [
   '36px',
   '48px',
   '64px',
-  '72px'
+  '72px',
+  '88px'
 ]
 
 const borderStyleList = [
