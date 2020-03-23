@@ -1,6 +1,10 @@
 import i18next from '../../locales'
 
 const pageTypeMap = {
+  '100X80': {
+    width: '100mm',
+    height: '80mm'
+  },
   '80X100': {
     width: '80mm',
     height: '100mm'
@@ -28,7 +32,9 @@ const fontSizeList = [
   '22px',
   '24px',
   '26px',
-  '28px'
+  '28px',
+  '36px',
+  '48px'
 ]
 
 const borderStyleList = [
