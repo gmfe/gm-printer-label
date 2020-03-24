@@ -1,6 +1,10 @@
 import i18next from '../../locales'
 
 const pageTypeMap = {
+  '100X100': {
+    width: '100mm',
+    height: '100mm'
+  },
   '100X80': {
     width: '100mm',
     height: '80mm'
