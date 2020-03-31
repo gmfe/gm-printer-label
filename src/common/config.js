@@ -44,6 +44,7 @@ const fontSizeList = [
   '88px',
   '92px',
   '100px',
+  '150px',
   '200px'
 ]
 
