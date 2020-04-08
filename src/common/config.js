@@ -13,6 +13,10 @@ const pageTypeMap = {
     width: '80mm',
     height: '100mm'
   },
+  '75X75': {
+    width: '75mm',
+    height: '75mm'
+  },
   '70X50': {
     width: '70mm',
     height: '50mm'
@@ -41,8 +45,6 @@ const fontSizeList = [
   '48px',
   '64px',
   '72px',
-  '88px',
-  '92px',
   '100px',
   '150px',
   '200px'
