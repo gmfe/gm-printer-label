@@ -77,7 +77,7 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, order_qrcode, style, barcode, diycode, url},
+      config: {type, text, qrcode, order_qrcode, style, barcode, package_id_qrcode, diycode, url},
       data,
       className,
       ...rest
@@ -127,6 +127,17 @@ class Block extends React.Component {
             id={`package${template(barcode, data)}`}
           />
         </div>
+      )
+    } else if (type === 'package_id_qrcode') {
+      content = (
+        <div
+          data-packageqrcode={template(package_id_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{width: '100%', height: '100%'}}
+          data-placeholder='验货二维码'
+        />
       )
     } else if (type === 'diycode') {
       content = (

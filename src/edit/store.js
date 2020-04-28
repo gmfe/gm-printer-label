@@ -127,6 +127,19 @@ class EditStore {
           }
         })
         break
+      case 'package_id_qrcode':
+        this.config.blocks.push({
+          type,
+          package_id_qrcode: i18next.t('{{商品码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '50px',
+            height: '50px'
+          }
+        })
+        break
       case 'diycode':
         this.config.blocks.push({
           type,
