@@ -31,26 +31,6 @@ const pageTypeMap = {
   }
 }
 
-const fontSizeList = [
-  '12px',
-  '14px',
-  '16px',
-  '18px',
-  '20px',
-  '22px',
-  '24px',
-  '26px',
-  '28px',
-  '36px',
-  '48px',
-  '64px',
-  '72px',
-  '100px',
-  '150px',
-  '200px',
-  '300px'
-]
-
 const borderStyleList = [
   { value: 'solid', text: i18next.t('实线') },
   { value: 'dashed', text: i18next.t('虚线') },
@@ -69,7 +49,6 @@ const blockTypeList = [
 ]
 
 export {
-  fontSizeList,
   borderStyleList,
   blockTypeList,
   pageTypeMap
