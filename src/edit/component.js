@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import _ from 'lodash'
-import { fontSizeList, borderStyleList } from '../common/config'
+import { borderStyleList } from '../common/config'
 import ReactDOM from 'react-dom'
 import Clipboard from 'clipboard'
 import { Flex, Tip } from '../components'
@@ -160,9 +160,7 @@ class Fonter extends React.Component {
 
     return (
       <span className='gm-printer-label-edit-fonter'>
-        <select value={style.fontSize || '14px'} onChange={e => this.handleChange('fontSize', e.target.value)}>
-          {_.map(fontSizeList, v => <option key={v} value={v}>{v.slice(0, -2)}</option>)}
-        </select>
+        <TextPX value={style.fontSize} onChange={this.handleChange.bind(this, 'fontSize')}/>
         <Separator/>
         <span
           className={classNames('gm-printer-label-edit-btn', {
