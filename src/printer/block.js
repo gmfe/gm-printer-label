@@ -2,7 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import { getStyleWithDiff, dispatchMsg, template } from '../util'
+import {
+  getStyleWithDiff,
+  dispatchMsg,
+  template
+} from '../util'
+import TableType from './components/table_type'
 
 @observer
 class Block extends React.Component {
@@ -77,7 +82,19 @@ class Block extends React.Component {
     const {
       index,
       selected,
-      config: {type, text, qrcode, order_qrcode, style, barcode, package_id_qrcode, diycode, url},
+      config: {
+        type,
+        text,
+        qrcode,
+        order_qrcode,
+        style,
+        barcode,
+        package_id_qrcode,
+        diycode,
+        url,
+        fieldType,
+        fieldKey
+      },
       data,
       className,
       ...rest
@@ -86,7 +103,17 @@ class Block extends React.Component {
 
     let content = null
     if (!type || type === 'text') {
-      content = template(text, data)
+      if (fieldType === 'table') { // 字段类型为表格
+        content = (
+          <TableType
+            data={data[fieldKey]}
+            data-name={index}
+            style={{ width: '100%', height: '100%' }}
+          />
+        )
+      } else {
+        content = template(text, data)
+      }
     } else if (type === 'line') {
       content = null
     } else if (type === 'qrcode') {

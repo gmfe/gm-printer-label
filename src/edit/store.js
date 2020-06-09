@@ -19,8 +19,8 @@ class EditStore {
 
   @action
   init (config, initDefaultTemp) {
-    this.config = config
-    this.originConfig = config
+    this.config = this.getHandledConfig(config)
+    this.originConfig = this.getHandledConfig(config)
     this.selected = null
     this.tempKey = initDefaultTemp || ''
   }
@@ -40,6 +40,11 @@ class EditStore {
   @action
   setSizePageType (type) {
     this.config.page.type = type
+  }
+
+  @action
+  setCustomizePageSize (name, value) {
+    this.config.page[name] = value
   }
 
   @action
@@ -184,11 +189,13 @@ class EditStore {
 
   @action
   // 添加字段到打印单中
-  addFieldToBlocks ({ value, key }) {
+  addFieldToBlocks ({ value, key, fieldType }) {
     // 不一定每次打印都传页码过去，为了不出现“页码：”情况，页码前不加前缀
     (key === i18next.t('页码'))
       ? (this.config.blocks.push({
         text: `${value}`,
+        fieldType,
+        fieldKey: key,
         style: {
           position: 'absolute',
           left: '0px',
@@ -197,6 +204,8 @@ class EditStore {
       }))
       : (this.config.blocks.push({
         text: `${key}:${value}`,
+        fieldType,
+        fieldKey: key,
         style: {
           position: 'absolute',
           left: '0px',
@@ -214,6 +223,20 @@ class EditStore {
       }
     }
     return false
+  }
+
+  @action
+  getHandledConfig (config) {
+    const result = _.cloneDeep(config)
+    // 添加自定义尺寸字段
+
+    result.page = {
+      ...result.page,
+      customizeWidth: result.page.customizeWidth || 100, // 若没有则默认为100
+      customizeHeight: result.page.customizeHeight || 100
+    }
+
+    return result
   }
 }
 

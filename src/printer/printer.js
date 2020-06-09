@@ -10,12 +10,12 @@ import { pageTypeMap } from '../common/config'
 class Printer extends React.Component {
   render () {
     const { config, selected, data } = this.props
-    const { type, style } = config.page
+    const { type, style, customizeWidth, customizeHeight } = config.page
     return (
       <div className='gm-printer-label' style={{
         ...style,
-        width: pageTypeMap[type].width,
-        height: pageTypeMap[type].height
+        width: type === '-1' ? customizeWidth + 'mm' : pageTypeMap[type].width,
+        height: type === '-1' ? customizeHeight + 'mm' : pageTypeMap[type].height
       }}>
         <Page config={config.page}>
           {_.map(config.blocks, (block, i) => (
