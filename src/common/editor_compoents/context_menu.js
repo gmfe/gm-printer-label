@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react'
-import i18next from '../../locales'
-import editStore from './store'
+import i18next from '../../../locales'
 import PropTypes from 'prop-types'
+import { inject, observer } from 'mobx-react'
 
+@inject('editStore')
+@observer
 class ContextMenu extends React.Component {
   constructor (props) {
     super(props)
@@ -34,9 +36,9 @@ class ContextMenu extends React.Component {
 
   handleRemove = () => {
     const { name } = this.state
-
-    editStore.setSelected(name)
-    editStore.removeConfig()
+    const { setSelected, removeConfig } = this.props.editStore
+    setSelected(name)
+    removeConfig()
   }
 
   handleContextMenu = (e) => {
@@ -55,7 +57,7 @@ class ContextMenu extends React.Component {
   }
 
   detectContextMenuTop = () => {
-    const { popup: {top} } = this.state
+    const { popup: { top } } = this.state
     const clientHeight = window.document.body.clientHeight
     const contextMenuHeight = this.menuRef.current.clientHeight
 
@@ -76,19 +78,23 @@ class ContextMenu extends React.Component {
       </div>
     )
   }
+
   render () {
     const { children } = this.props
     const { popup, name } = this.state
     return (
-      <div onClick={this.handleCancel} className='gm-pinter-label-eidt-wrap' onContextMenu={this.handleContextMenu}>
+      <div onClick={this.handleCancel} className='gm-pinter-label-eidt-wrap'
+        onContextMenu={this.handleContextMenu}>
         {children}
         {name && (
           <Menu
             detectContextMenuTop={this.detectContextMenuTop}>
             {
-              <div ref={this.menuRef} className='gm-printer-label-contextmenu' style={{
-                position: 'fixed',
-                ...popup}}>
+              <div ref={this.menuRef} className='gm-printer-label-contextmenu'
+                style={{
+                  position: 'fixed',
+                  ...popup
+                }}>
                 {this.renderBlocks()}
               </div>
             }

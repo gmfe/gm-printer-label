@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import _ from 'lodash'
-import { borderStyleList } from '../common/config'
+import { borderStyleList } from '../config'
 import ReactDOM from 'react-dom'
 import Clipboard from 'clipboard'
-import { Flex, Tip } from '../components'
-import i18next from '../../locales'
+import { Flex, Tip } from '../../components'
+import i18next from '../../../locales'
 import { Request } from 'gm-util'
 
 class IconAlign extends React.Component {
@@ -163,7 +163,7 @@ class Fonter extends React.Component {
         <TextPX value={style.fontSize} onChange={this.handleChange.bind(this, 'fontSize')}/>
         <Separator/>
         <span
-          className={classNames('gm-printer-label-edit-btn', {
+          className={classNames('gm-printer-label-editor_compoents-btn', {
             active: style.fontWeight === 'bold'
           })}
           style={{fontWeight: 'bold'}}
@@ -172,14 +172,14 @@ class Fonter extends React.Component {
           B
         </span>
         <span
-          className={classNames('gm-printer-label-edit-btn', {active: style.fontStyle === 'italic'})}
+          className={classNames('gm-printer-label-editor_compoents-btn', {active: style.fontStyle === 'italic'})}
           style={{fontStyle: 'italic'}}
           onClick={() => this.handleChange('fontStyle', style.fontStyle === 'italic' ? '' : 'italic')}
         >
           I
         </span>
         <span
-          className={classNames('gm-printer-label-edit-btn', {active: style.textDecoration === 'underline'})}
+          className={classNames('gm-printer-label-editor_compoents-btn', {active: style.textDecoration === 'underline'})}
           style={{textDecoration: 'underline'}}
           onClick={() => this.handleChange('textDecoration', style.textDecoration === 'underline' ? '' : 'underline')}
         >
@@ -211,19 +211,19 @@ class TextAlign extends React.Component {
     return (
       <span className='gm-printer-label-edit-text-align'>
         <span
-          className={classNames('gm-printer-label-edit-btn', {
+          className={classNames('gm-printer-label-editor_compoents-btn', {
             active: textAlign === 'left'
           })}
           onClick={() => this.handleChange('left')}
         ><IconAlign textAlign='left'/></span>
         <span
-          className={classNames('gm-printer-label-edit-btn', {
+          className={classNames('gm-printer-label-editor_compoents-btn', {
             active: textAlign === 'center'
           })}
           onClick={() => this.handleChange('center')}
         ><IconAlign textAlign='center'/></span>
         <span
-          className={classNames('gm-printer-label-edit-btn', {
+          className={classNames('gm-printer-label-editor_compoents-btn', {
             active: textAlign === 'right'
           })}
           onClick={() => this.handleChange('right')}

@@ -1,6 +1,6 @@
-import { observable, action, computed } from 'mobx'
+import { action, computed, observable } from 'mobx'
 import _ from 'lodash'
-import i18next from '../../locales'
+import i18next from '../../../locales'
 
 class EditStore {
   @observable
@@ -10,11 +10,11 @@ class EditStore {
   selected = null
 
   @observable
-  // 载入模板下拉框选中的值
+    // 载入模板下拉框选中的值
   tempKey = null
 
   @observable
-  // 初始模板
+    // 初始模板
   originConfig = null
 
   @action
@@ -218,7 +218,8 @@ class EditStore {
   get computedIsTime () {
     if (this.selected !== null) {
       const block = this.config.blocks[this.selected]
-      if ((!block.type || block.type === 'text') && _.includes(block.text, '时间')) {
+      if ((!block.type || block.type === 'text') &&
+        _.includes(block.text, '时间')) {
         return true
       }
     }
@@ -240,6 +241,4 @@ class EditStore {
   }
 }
 
-const editStore = new EditStore()
-
-export default editStore
+export default EditStore
