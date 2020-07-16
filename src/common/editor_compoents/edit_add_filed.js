@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react'
-import { observer } from 'mobx-react'
-import i18next from '../../locales'
-import { Title, Gap, FieldBtn, SubTitle } from './component'
-import { Flex } from '../components'
-import editStore from './store'
+import { inject, observer } from 'mobx-react'
+import i18next from '../../../locales'
+import { FieldBtn, Gap, SubTitle, Title } from './component'
+import { Flex } from '../../components'
 import _ from 'lodash'
 
 class FieldList extends React.Component {
@@ -18,7 +17,9 @@ class FieldList extends React.Component {
             <Fragment key={groupName}>
               <SubTitle text={groupName}/>
               <Flex wrap>
-                {_.map(arr, o => <FieldBtn key={o.key} name={o.key} onClick={handleAddField.bind(this, o)}/>)}
+                {_.map(arr, o => <FieldBtn key={o.key} name={o.key}
+                  onClick={handleAddField.bind(this,
+                    o)}/>)}
               </Flex>
             </Fragment>
           )
@@ -28,9 +29,12 @@ class FieldList extends React.Component {
   }
 }
 
+@inject('editStore')
 @observer
 class EditAddFiled extends React.Component {
   handleAddFiled = (o) => {
+    const { editStore } = this.props
+
     editStore.addFieldToBlocks(o)
     editStore.setSelected(editStore.config.blocks.length - 1)
   }

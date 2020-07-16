@@ -1,14 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import editStore from './store'
-import { observer } from 'mobx-react'
-import { pageTypeMap, blockTypeList } from '../common/config'
-import { Flex, Select, Option, InputNumber } from '../components'
+import { inject, observer } from 'mobx-react'
+import { pageTypeMap } from '../config'
+import { Flex, InputNumber, Option, Select } from '../../components'
 import { Gap, ImageUploader } from './component'
 import _ from 'lodash'
 
-import i18next from '../../locales'
+import i18next from '../../../locales'
 
+@inject('editStore')
 @observer
 class EditSelect extends React.Component {
   constructor (props) {
@@ -20,11 +20,15 @@ class EditSelect extends React.Component {
 
   handleInsert = (type, e) => {
     e.target.blur()
+    const { editStore } = this.props
+
     editStore.addConfigBlock(type)
     editStore.setSelected(editStore.config.blocks.length - 1)
   }
 
   handleInsertTemp = (value) => {
+    const { editStore } = this.props
+
     const config = _.find(
       this.props.defaultTempList,
       (config, group) => group === value
@@ -33,24 +37,32 @@ class EditSelect extends React.Component {
   }
 
   handlePageName = (e) => {
+    const { editStore } = this.props
+
     editStore.setPageName(e.target.value)
   }
 
   handlePageType = (e) => {
+    const { editStore } = this.props
+
     editStore.setSizePageType(e)
   }
 
   handleInsertBlock = (type, link) => {
+    const { editStore } = this.props
+
     editStore.addConfigBlock(type, link)
     editStore.setSelected(editStore.config.blocks.length - 1)
   }
 
   handleChangeCustomizeSize = (name, value) => {
+    const { editStore } = this.props
+
     editStore.setCustomizePageSize(name, value)
   }
 
   render () {
-    const { defaultTempList } = this.props
+    const { defaultTempList, editStore, insertBlocksConfig } = this.props
     const {
       tempKey,
       config: { name, page }
@@ -113,7 +125,8 @@ class EditSelect extends React.Component {
                 value={
                   page.customizeWidth
                 }
-                onChange={this.handleChangeCustomizeSize.bind(this, 'customizeWidth')}
+                onChange={this.handleChangeCustomizeSize.bind(this,
+                  'customizeWidth')}
               />
             </Flex>
             <Flex alignCenter className='gm-padding-top-5'>
@@ -123,7 +136,8 @@ class EditSelect extends React.Component {
                 value={
                   page.customizeHeight
                 }
-                onChange={this.handleChangeCustomizeSize.bind(this, 'customizeHeight')}
+                onChange={this.handleChangeCustomizeSize.bind(this,
+                  'customizeHeight')}
               />
             </Flex>
           </Flex>
@@ -133,7 +147,7 @@ class EditSelect extends React.Component {
 
         <Flex alignCenter style={{ flexWrap: 'wrap' }}>
           <div style={{ margin: '0 14px 14px 0' }}>{i18next.t('插入')}</div>
-          {_.map(blockTypeList, (v) => {
+          {_.map(insertBlocksConfig, (v) => {
             return v.value === 'image' ? (
               <button
                 style={{ margin: '0 14px 14px 0' }}
@@ -166,8 +180,10 @@ class EditSelect extends React.Component {
 }
 
 EditSelect.propTypes = {
+  editStore: PropTypes.object,
   initDefaultTemp: PropTypes.string,
-  defaultTempList: PropTypes.object
+  defaultTempList: PropTypes.object,
+  insertBlocksConfig: PropTypes.array.isRequired
 }
 
 export default EditSelect

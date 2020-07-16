@@ -4,7 +4,8 @@ const path = require('path')
 module.exports = {
   mode: 'development',
   entry: {
-    demo: './demo/index.js'
+    label: './demo/label/index.js',
+    pre_sorting: './demo/pre_sorting/index.js',
   },
   output: {
     path: path.resolve('build'),

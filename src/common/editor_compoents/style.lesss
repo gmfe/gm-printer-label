@@ -5,7 +5,7 @@
 @modal: 1050;
 @contextMenu: 80;
 
-@import "../components/index.less";
+@import "../../components/index.less";
 
 * {
   box-sizing: border-box;

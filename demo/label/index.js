@@ -1,12 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import config from '../demo/config.json'
+import config from './config.json'
 import defaultTempList from './default_temp.js'
-import { PrinterEditShadow } from '../src'
-import testData from '../print_sku/test_data'
+import { PrinterEditShadow } from '../../src'
 import addFields from './add_fields'
-import { toKey } from '../print_sku/key'
+import insertBlocksConfig from './insert_blocks_config'
 import './index.less'
+
+import testData from './mock/test_data'
+import { toKey } from './mock/key'
 
 class App extends React.Component {
   constructor (props) {
@@ -15,13 +17,13 @@ class App extends React.Component {
     this.state = {
       config,
       defaultTempList,
-      initDefaultTemp: 'default_without_food_security_code'
+      initDefaultTemp: 'default_without_food_security_code',
     }
   }
 
   handleSave = (config) => {
     this.setState({
-      config
+      config,
     })
     console.log(JSON.stringify(config))
   }
@@ -36,6 +38,7 @@ class App extends React.Component {
           defaultTempList={this.state.defaultTempList}
           initDefaultTemp={this.state.initDefaultTemp}
           addFields={addFields}
+          insertBlocksConfig={insertBlocksConfig}
         />
       </div>
     )
