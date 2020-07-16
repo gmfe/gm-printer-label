@@ -17,7 +17,7 @@ class EditStore {
     // 初始模板
   originConfig = null
 
-  @action
+  @action.bound
   init (config, initDefaultTemp) {
     this.config = this.getHandledConfig(config)
     this.originConfig = this.getHandledConfig(config)
@@ -25,46 +25,46 @@ class EditStore {
     this.tempKey = initDefaultTemp || ''
   }
 
-  @action
+  @action.bound
   setConfig (config, value) {
     this.selected = null
     this.config = { ...this.config, ...config }
     this.tempKey = value
   }
 
-  @action
+  @action.bound
   setConfigName (name) {
     this.config.name = name
   }
 
-  @action
+  @action.bound
   setSizePageType (type) {
     this.config.page.type = type
   }
 
-  @action
+  @action.bound
   setCustomizePageSize (name, value) {
     this.config.page[name] = value
   }
 
-  @action
+  @action.bound
   setPageName (name) {
     this.config.name = name
   }
 
-  @action
+  @action.bound
   setSelected (selected = null) {
     this.selected = selected
   }
 
-  @action
+  @action.bound
   setConfigBlockBy (who, value) {
     if (this.selected !== null) {
       this.config.blocks[this.selected][who] = value
     }
   }
 
-  @action
+  @action.bound
   addConfigBlock (type, url) {
     switch (type) {
       case '':
@@ -178,8 +178,8 @@ class EditStore {
     }
   }
 
-  @action
   // 删除所选字段
+  @action.bound
   removeConfig () {
     if (this.selected !== null) {
       this.config.blocks.splice(this.selected, 1)
@@ -187,8 +187,8 @@ class EditStore {
     }
   }
 
-  @action
   // 添加字段到打印单中
+  @action.bound
   addFieldToBlocks ({ value, key, fieldType }) {
     // 不一定每次打印都传页码过去，为了不出现“页码：”情况，页码前不加前缀
     (key === i18next.t('页码'))
@@ -226,7 +226,7 @@ class EditStore {
     return false
   }
 
-  @action
+  @action.bound
   getHandledConfig (config) {
     const result = _.cloneDeep(config)
     // 添加自定义尺寸字段
