@@ -132,6 +132,19 @@ class EditStore {
           }
         })
         break
+      case 'in_stock_barcode':
+        this.config.blocks.push({
+          type,
+          in_stock_barcode: i18next.t('{{入库条码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       case 'package_id_qrcode':
         this.config.blocks.push({
           type,
@@ -170,7 +183,6 @@ class EditStore {
             width: '100px'
           }
         })
-        console.log(this.config)
         break
       default:
         window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))

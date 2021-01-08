@@ -85,6 +85,16 @@ class EditModifyFiled extends React.Component {
             </div>
           </div>
         )}
+        {type === 'in_stock_barcode' && (
+          <div>
+            <Size style={style} withoutWidth
+              onChange={this.handleChangeBlock.bind(this, 'style')}/>
+            <div>
+              <button onClick={this.handleRotateBarcode}>{i18next.t(
+                '旋转')}</button>
+            </div>
+          </div>
+        )}
         {type === 'diycode' && (
           <div>
             <Size style={style} withoutWidth
