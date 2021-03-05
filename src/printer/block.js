@@ -89,6 +89,7 @@ class Block extends React.Component {
         order_qrcode,
         style,
         barcode,
+        in_stock_barcode,
         package_id_qrcode,
         diycode,
         url,
@@ -152,6 +153,23 @@ class Block extends React.Component {
             data-height={parseInt(style.height) - 14}
             data-name={index}
             id={`package${template(barcode, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'in_stock_barcode') {
+      content = (
+        <div
+          data-instockcode='入库条码'
+          data-name={index}
+          style={{width: '100%', height: '100%'}}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-instockcode={template(in_stock_barcode, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`instock${template(in_stock_barcode, data)}`}
           />
         </div>
       )

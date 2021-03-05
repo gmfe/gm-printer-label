@@ -228,6 +228,18 @@
         }
       }
 
+      div[data-instockcode] {
+        outline: 1px solid red;
+
+        &::before {
+          content: '入库条码';
+          position: absolute;
+          font-style: italic;
+          left: calc(50% - 1.5em);
+          top: calc(50% - 0.5em);
+        }
+      }
+
       div[data-diycode] {
         outline: 1px solid red;
 
