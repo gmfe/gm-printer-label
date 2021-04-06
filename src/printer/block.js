@@ -178,12 +178,6 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'production_barcode') {
-      console.log(
-        'template',
-        production_barcode,
-        data,
-        template(production_barcode, data)
-      )
       content = (
         <div
           data-productionbarcode='商品条码'
