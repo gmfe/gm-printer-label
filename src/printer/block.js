@@ -2,11 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import {
-  getStyleWithDiff,
-  dispatchMsg,
-  template
-} from '../util'
+import { getStyleWithDiff, dispatchMsg, template } from '../util'
 import TableType from './components/table_type'
 
 @observer
@@ -20,23 +16,25 @@ class Block extends React.Component {
     }
   }
 
-  handleDragStart = ({clientX, clientY}) => {
-    const {index} = this.props
+  handleDragStart = ({ clientX, clientY }) => {
+    const { index } = this.props
 
     this.setState({
       clientX,
       clientY
     })
 
-    window.document.dispatchEvent(new window.CustomEvent('gm-printer-label-select', {
-      detail: {
-        selected: index
-      }
-    }))
-  }
+    window.document.dispatchEvent(
+      new window.CustomEvent('gm-printer-label-select', {
+        detail: {
+          selected: index
+        }
+      })
+    )
+  };
 
-  handleDragEnd = ({clientX, clientY}) => {
-    const {config} = this.props
+  handleDragEnd = ({ clientX, clientY }) => {
+    const { config } = this.props
     const diffX = clientX - this.state.clientX
     const diffY = clientY - this.state.clientY
 
@@ -45,38 +43,43 @@ class Block extends React.Component {
     dispatchMsg('gm-printer-label-block-style-set', {
       style
     })
-  }
+  };
 
   handleClick = () => {
-    const {index} = this.props
+    const { index } = this.props
 
     dispatchMsg('gm-printer-label-select', {
       selected: index
     })
-  }
+  };
 
   handleDoubleClick = () => {
-    const {config: {type}} = this.props
+    const {
+      config: { type }
+    } = this.props
     if (!type || type === 'text') {
-      this.setState({
-        isEdit: true
-      }, () => {
-        this.refEdit.focus()
-      })
+      this.setState(
+        {
+          isEdit: true
+        },
+        () => {
+          this.refEdit.focus()
+        }
+      )
     }
-  }
+  };
 
   handleEditBlur = () => {
     this.setState({
       isEdit: false
     })
-  }
+  };
 
   handleText = (e) => {
     dispatchMsg('gm-printer-label-block-text-set', {
       text: e.target.value
     })
-  }
+  };
 
   render () {
     const {
@@ -94,17 +97,18 @@ class Block extends React.Component {
         diycode,
         url,
         fieldType,
-        fieldKey
+        fieldKey,
+        production_barcode
       },
       data,
       className,
       ...rest
     } = this.props
-    const {isEdit} = this.state
-
+    const { isEdit } = this.state
     let content = null
     if (!type || type === 'text') {
-      if (fieldType === 'table') { // 字段类型为表格
+      if (fieldType === 'table') {
+        // 字段类型为表格
         content = (
           <TableType
             data={data[fieldKey]}
@@ -124,7 +128,7 @@ class Block extends React.Component {
           data-width={style.width}
           data-height={style.height}
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
           data-placeholder='商品溯源'
         />
       )
@@ -135,7 +139,7 @@ class Block extends React.Component {
           data-width={style.width}
           data-height={style.height}
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
           data-placeholder='订单溯源'
         />
       )
@@ -144,7 +148,7 @@ class Block extends React.Component {
         <div
           data-packagecode='验货条形码'
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
         >
           <svg
             style={{ height: '100%', width: '100%' }}
@@ -161,7 +165,7 @@ class Block extends React.Component {
         <div
           data-instockcode='入库条码'
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
         >
           <svg
             style={{ height: '100%', width: '100%' }}
@@ -173,6 +177,23 @@ class Block extends React.Component {
           />
         </div>
       )
+    } else if (type === 'production_barcode') {
+      content = (
+        <div
+          data-productionbarcode='商品条码'
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-productionbarcode={template(production_barcode, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`production${template(production_barcode, data)}`}
+          />
+        </div>
+      )
     } else if (type === 'package_id_qrcode') {
       content = (
         <div
@@ -180,7 +201,7 @@ class Block extends React.Component {
           data-width={style.width}
           data-height={style.height}
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
           data-placeholder='验货二维码'
         />
       )
@@ -189,7 +210,7 @@ class Block extends React.Component {
         <div
           data-diycode='自定义编码条形码'
           data-name={index}
-          style={{width: '100%', height: '100%'}}
+          style={{ width: '100%', height: '100%' }}
         >
           <svg
             style={{ height: '100%', width: '100%' }}
@@ -202,18 +223,30 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'image') {
-      content = <img src={url} data-width={style.width} data-height={style.height} style={{ width: '100%', height: '100%' }} data-name={index}/>
+      content = (
+        <img
+          src={url}
+          data-width={style.width}
+          data-height={style.height}
+          style={{ width: '100%', height: '100%' }}
+          data-name={index}
+        />
+      )
     }
 
     const active = index === selected
-
     return (
       <div
         {...rest}
         style={style}
-        className={classNames('gm-printer-label-block', `gm-printer-label-block-type-${type}`, className, {
-          active
-        })}
+        className={classNames(
+          'gm-printer-label-block',
+          `gm-printer-label-block-type-${type}`,
+          className,
+          {
+            active
+          }
+        )}
         draggable
         onDragStart={this.handleDragStart}
         onDragEnd={this.handleDragEnd}
@@ -224,8 +257,9 @@ class Block extends React.Component {
         {content}
         {(!type || type === 'text') && active && isEdit && (
           <textarea
-            ref={ref => (this.refEdit = ref)}
-            className='gm-printer-label-block-text-edit' value={text}
+            ref={(ref) => (this.refEdit = ref)}
+            className='gm-printer-label-block-text-edit'
+            value={text}
             onChange={this.handleText}
             onBlur={this.handleEditBlur}
           />

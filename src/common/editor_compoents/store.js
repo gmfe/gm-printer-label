@@ -4,18 +4,18 @@ import i18next from '../../../locales'
 
 class EditStore {
   @observable
-  config = null
+  config = null;
 
   @observable
-  selected = null
+  selected = null;
 
   @observable
-    // 载入模板下拉框选中的值
-  tempKey = null
+  // 载入模板下拉框选中的值
+  tempKey = null;
 
   @observable
-    // 初始模板
-  originConfig = null
+  // 初始模板
+  originConfig = null;
 
   @action.bound
   init (config, initDefaultTemp) {
@@ -184,6 +184,19 @@ class EditStore {
           }
         })
         break
+      case 'production_barcode':
+        this.config.blocks.push({
+          type,
+          production_barcode: i18next.t('{{商品条码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       default:
         window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
         break
@@ -203,8 +216,8 @@ class EditStore {
   @action.bound
   addFieldToBlocks ({ value, key, fieldType }) {
     // 不一定每次打印都传页码过去，为了不出现“页码：”情况，页码前不加前缀
-    (key === i18next.t('页码'))
-      ? (this.config.blocks.push({
+    key === i18next.t('页码')
+      ? this.config.blocks.push({
         text: `${value}`,
         fieldType,
         fieldKey: key,
@@ -213,8 +226,8 @@ class EditStore {
           left: '0px',
           top: '0px'
         }
-      }))
-      : (this.config.blocks.push({
+      })
+      : this.config.blocks.push({
         text: `${key}:${value}`,
         fieldType,
         fieldKey: key,
@@ -223,15 +236,17 @@ class EditStore {
           left: '0px',
           top: '0px'
         }
-      }))
+      })
   }
 
   @computed
   get computedIsTime () {
     if (this.selected !== null) {
       const block = this.config.blocks[this.selected]
-      if ((!block.type || block.type === 'text') &&
-        _.includes(block.text, '时间')) {
+      if (
+        (!block.type || block.type === 'text') &&
+        _.includes(block.text, '时间')
+      ) {
         return true
       }
     }
