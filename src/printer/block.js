@@ -222,6 +222,17 @@ class Block extends React.Component {
           />
         </div>
       )
+    } else if (type === 'diyqrcode') {
+      content = (
+        <div
+          data-diyqrcode={template(text, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='自定义二维码'
+        />
+      )
     } else if (type === 'image') {
       content = (
         <img

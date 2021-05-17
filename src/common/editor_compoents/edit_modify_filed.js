@@ -75,6 +75,15 @@ class EditModifyFiled extends React.Component {
               onChange={this.handleChangeBlock.bind(this, 'style')}/>
           </div>
         )}
+        {type === 'diyqrcode' && (
+          <div>
+            <Size style={style}
+              onChange={this.handleChangeBlock.bind(this, 'style')}/>
+            <Textarea value={text} placeholder='请输入填充内容'
+              onChange={this.handleChangeBlock.bind(this, 'text')}/>
+          </div>
+        )
+        }
         {type === 'barcode' && (
           <div>
             <Size style={style} withoutWidth
@@ -105,7 +114,6 @@ class EditModifyFiled extends React.Component {
             </div>
           </div>
         )}
-
         <TipInfo text={i18next.t('说明：请勿修改{}中的内容,避免出现数据异常')}/>
         {editStore.computedIsTime && (
           <div>
