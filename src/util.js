@@ -1,7 +1,7 @@
 import _ from 'lodash'
 
 function pxAdd (origin, add) {
-  return parseFloat(origin, 10) + add + 'px'
+  return parseFloat(origin, 10) + add < 0 ? '0px' : parseFloat(origin, 10) + add + 'px'
 }
 
 function getStyleWithDiff (style, diffX, diffY) {
