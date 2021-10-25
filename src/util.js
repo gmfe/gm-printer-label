@@ -39,13 +39,16 @@ function dispatchMsg (event, data) {
     detail: data
   }))
 }
-
+function substring (target, start = 0, end) {
+  return target.substring(start, end)
+}
 function template (text, data) {
   try {
     return _.template(text, {
       interpolate: /{{([\s\S]+?)}}/g
     })({
-      ...data
+      ...data,
+      substring: substring // 添加一个截取字符串函数
     })
   } catch (err) {
     console.warn(err)
