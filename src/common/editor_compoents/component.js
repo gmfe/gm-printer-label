@@ -401,7 +401,12 @@ class ImageUploader extends React.Component {
       Tip.warning(i18next.t('图片大小不能超过500Kb'))
       return
     }
-
+    if (this.props.uploadQiniuImage) {
+      this.props.uploadQiniuImage(file).then((json) => {
+        this.props.onSuccess(json.data.url)
+      })
+      return
+    }
     const STATION_URL = {
       reqUrl: '/station/image/upload',
       imgUrl: 'http://img.guanmai.cn/station_pic'
@@ -452,7 +457,8 @@ class ImageUploader extends React.Component {
 
 ImageUploader.propTypes = {
   onSuccess: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired
+  text: PropTypes.string.isRequired,
+  uploadTengXunFile: PropTypes.func
 }
 
 export {

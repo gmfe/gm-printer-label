@@ -62,7 +62,7 @@ class EditSelect extends React.Component {
   }
 
   render () {
-    const { defaultTempList, editStore, insertBlocksConfig } = this.props
+    const { defaultTempList, editStore, insertBlocksConfig, uploadQiniuImage } = this.props
     const {
       tempKey,
       config: { name, page }
@@ -160,6 +160,7 @@ class EditSelect extends React.Component {
                   }
                   key={v.value}
                   text={v.text}
+                  uploadQiniuImage={uploadQiniuImage}
                 />
               </button>
             ) : (
