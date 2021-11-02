@@ -22,7 +22,7 @@ class Edit extends React.Component {
   }
 
   render () {
-    const { data, initDefaultTemp, defaultTempList, addFields, onSave, editStore, insertBlocksConfig } = this.props
+    const { data, initDefaultTemp, defaultTempList, addFields, onSave, editStore, insertBlocksConfig, uploadQiniuImage } = this.props
     return (
       <div className='gm-printer-label-edit'>
 
@@ -43,6 +43,7 @@ class Edit extends React.Component {
             insertBlocksConfig={insertBlocksConfig}
             initDefaultTemp={initDefaultTemp}
             defaultTempList={defaultTempList}
+            uploadQiniuImage={uploadQiniuImage}
           />
           <Gap height='5px'/>
           <EditModifyFiled/>
