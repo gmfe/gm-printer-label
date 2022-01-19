@@ -35,9 +35,11 @@ function insertCSS (cssString, target) {
 }
 
 function dispatchMsg (event, data) {
-  window.document.dispatchEvent(new window.CustomEvent(event, {
-    detail: data
-  }))
+  window.document.dispatchEvent(
+    new window.CustomEvent(event, {
+      detail: data
+    })
+  )
 }
 function substring (target, start = 0, end) {
   return target.substring(start, end)
@@ -56,10 +58,30 @@ function template (text, data) {
   }
 }
 
+let timer
+
+function afterImgAndSvgLoaded (callback, $printer) {
+  const $imgList = $printer.querySelectorAll('img')
+  const $svgList = $printer.querySelectorAll('svg')
+
+  clearTimeout(timer)
+
+  const everyThingIsOk =
+    _.every($imgList, (img) => img.complete) &&
+    _.every($svgList, (svg) => svg.children.length)
+  if (everyThingIsOk) {
+    callback()
+  } else {
+    timer = setTimeout(afterImgAndSvgLoaded.bind(this, callback, $printer), 300)
+  }
+}
+const miniAppLink = 'https://miniapp.guanmai.cn/traceability/?id='
 export {
   pxAdd,
   getStyleWithDiff,
   insertCSS,
   dispatchMsg,
-  template
+  template,
+  afterImgAndSvgLoaded,
+  miniAppLink
 }

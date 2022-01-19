@@ -2,8 +2,10 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import { getStyleWithDiff, dispatchMsg, template } from '../util'
+import { getStyleWithDiff, dispatchMsg, template, miniAppLink } from '../util'
 import TableType from './components/table_type'
+import BarCode from './barcode'
+import QrCode from './qrcode'
 
 @observer
 class Block extends React.Component {
@@ -31,7 +33,7 @@ class Block extends React.Component {
         }
       })
     )
-  };
+  }
 
   handleDragEnd = ({ clientX, clientY }) => {
     const { config } = this.props
@@ -43,7 +45,7 @@ class Block extends React.Component {
     dispatchMsg('gm-printer-label-block-style-set', {
       style
     })
-  };
+  }
 
   handleClick = () => {
     const { index } = this.props
@@ -51,7 +53,7 @@ class Block extends React.Component {
     dispatchMsg('gm-printer-label-select', {
       selected: index
     })
-  };
+  }
 
   handleDoubleClick = () => {
     const {
@@ -67,19 +69,19 @@ class Block extends React.Component {
         }
       )
     }
-  };
+  }
 
   handleEditBlur = () => {
     this.setState({
       isEdit: false
     })
-  };
+  }
 
   handleText = (e) => {
     dispatchMsg('gm-printer-label-block-text-set', {
       text: e.target.value
     })
-  };
+  }
 
   render () {
     const {
@@ -102,6 +104,7 @@ class Block extends React.Component {
       },
       data,
       className,
+      isStation,
       ...rest
     } = this.props
     const { isEdit } = this.state
@@ -122,7 +125,12 @@ class Block extends React.Component {
     } else if (type === 'line') {
       content = null
     } else if (type === 'qrcode') {
-      content = (
+      content = isStation ? (
+        <QrCode
+          value={miniAppLink + template(qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
         <div
           data-qrcode={template(qrcode, data)}
           data-width={style.width}
@@ -133,7 +141,12 @@ class Block extends React.Component {
         />
       )
     } else if (type === 'order_qrcode') {
-      content = (
+      content = isStation ? (
+        <QrCode
+          value={miniAppLink + template(order_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
         <div
           data-orderQrcode={template(order_qrcode, data)}
           data-width={style.width}
@@ -144,7 +157,21 @@ class Block extends React.Component {
         />
       )
     } else if (type === 'barcode') {
-      content = (
+      content = isStation ? (
+        <>
+          <BarCode
+            value={template(barcode, data)}
+            textMargin={0}
+            margin={0}
+            height={parseInt(style.height) - 14}
+            width={2}
+            displayValue={false}
+            dataName={barcode}
+            background='transparent'
+          />
+          <div style={{ marginLeft: '50px' }}>{template(barcode, data)}</div>
+        </>
+      ) : (
         <div
           data-packagecode='验货条形码'
           data-name={index}
@@ -161,7 +188,18 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'in_stock_barcode') {
-      content = (
+      content = isStation ? (
+        <BarCode
+          value={template(in_stock_barcode, data)}
+          textMargin={0}
+          margin={0}
+          height={parseInt(style.height) - 14}
+          width={2}
+          displayValue={false}
+          dataName={in_stock_barcode}
+          background='transparent'
+        />
+      ) : (
         <div
           data-instockcode='入库条码'
           data-name={index}
@@ -178,7 +216,18 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'production_barcode') {
-      content = (
+      content = isStation ? (
+        <BarCode
+          value={template(production_barcode, data)}
+          textMargin={0}
+          margin={0}
+          height={parseInt(style.height) - 14}
+          width={2}
+          displayValue={false}
+          dataName={production_barcode}
+          background='transparent'
+        />
+      ) : (
         <div
           data-productionbarcode='商品条码'
           data-name={index}
@@ -195,7 +244,12 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'package_id_qrcode') {
-      content = (
+      content = isStation ? (
+        <QrCode
+          value={template(package_id_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
         <div
           data-packageqrcode={template(package_id_qrcode, data)}
           data-width={style.width}
@@ -206,7 +260,21 @@ class Block extends React.Component {
         />
       )
     } else if (type === 'diycode') {
-      content = (
+      content = isStation ? (
+        <>
+          <BarCode
+            value={template(diycode, data)}
+            textMargin={0}
+            margin={0}
+            height={35}
+            width={2}
+            displayValue={false}
+            dataName={'diycode'}
+            background='transparent'
+          />
+          <div style={{ marginLeft: '50px' }}>{template(diycode, data)}</div>
+        </>
+      ) : (
         <div
           data-diycode='自定义编码条形码'
           data-name={index}
@@ -223,7 +291,9 @@ class Block extends React.Component {
         </div>
       )
     } else if (type === 'diyqrcode') {
-      content = (
+      content = isStation ? (
+        <QrCode value={template(text, data)} size={parseInt(style.height)}/>
+      ) : (
         <div
           data-diyqrcode={template(text, data)}
           data-width={style.width}
@@ -284,7 +354,8 @@ Block.propTypes = {
   index: PropTypes.number.isRequired,
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
-  selected: PropTypes.number
+  selected: PropTypes.number,
+  isStation: PropTypes.bool
 }
 
 export default Block
