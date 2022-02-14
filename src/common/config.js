@@ -32,6 +32,31 @@ const pageTypeMap = {
   '40X30': {
     width: '40mm',
     height: '28mm'
+  },
+  // 箱签
+  A4: {
+    width: '210mm',
+    height: '297mm'
+  },
+  A5: {
+    width: '148mm',
+    height: '210mm'
+  },
+  'A4/2': {
+    width: '210mm',
+    height: '140mm'
+  },
+  'A4/3': {
+    width: '210mm',
+    height: '93mm'
+  },
+  '241x280': {
+    width: '241mm',
+    height: '280mm'
+  },
+  '241x140': {
+    width: '241mm',
+    height: '140mm'
   }
 }
 
@@ -41,7 +66,4 @@ const borderStyleList = [
   { value: 'dotted', text: i18next.t('圆点') }
 ]
 
-export {
-  borderStyleList,
-  pageTypeMap
-}
+export { borderStyleList, pageTypeMap }
