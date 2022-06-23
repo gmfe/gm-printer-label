@@ -106,6 +106,19 @@ class EditStore {
           }
         })
         break
+      case 'merchandise_trace_qrcode':
+        this.config.blocks.push({
+          type,
+          merchandise_trace_qrcode: i18next.t('{{商品溯源二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '100px',
+            height: '100px'
+          }
+        })
+        break
       case 'order_qrcode':
         this.config.blocks.push({
           type,
