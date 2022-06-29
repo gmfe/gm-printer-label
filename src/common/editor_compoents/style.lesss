@@ -202,6 +202,8 @@
         }
       }
 
+     
+
       &.gm-printer-label-block-type-diyqrcode {
         div[data-diyqrcode] {
           outline: 1px solid red;
@@ -259,6 +261,18 @@
 
         &::before {
           content: '商品条码';
+          position: absolute;
+          font-style: italic;
+          left: calc(50% - 1.5em);
+          top: calc(50% - 0.5em);
+        }
+      }
+      
+      div[data-traceqrcode] {
+        outline: 1px solid red;
+
+        &::before {
+          content: '商品溯源二维码';
           position: absolute;
           font-style: italic;
           left: calc(50% - 1.5em);

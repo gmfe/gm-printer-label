@@ -38,6 +38,18 @@ export default {
         }
       },
       {
+        'type': 'merchandise_trace_qrcode',
+        'merchandise_trace_qrcode': '{{商品溯源二维码}}',
+        'style': {
+          'position': 'absolute',
+          'left': '196px',
+          'top': '113px',
+          'width': '70px',
+          'height': '70px',
+          'right': ''
+        }
+      },
+      {
         'text': '商户:{{商户名}}({{商户ID}})',
         'style': {
           'position': 'absolute',

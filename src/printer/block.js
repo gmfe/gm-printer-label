@@ -100,7 +100,8 @@ class Block extends React.Component {
         url,
         fieldType,
         fieldKey,
-        production_barcode
+        production_barcode,
+        merchandise_trace_qrcode
       },
       data,
       className,
@@ -154,6 +155,22 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='订单溯源'
+        />
+      )
+    } else if (type === 'merchandise_trace_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={miniAppLink + template(merchandise_trace_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-traceqrcode={template(merchandise_trace_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='商品溯源二维码'
         />
       )
     } else if (type === 'barcode') {
