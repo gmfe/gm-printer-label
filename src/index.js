@@ -1,3 +1,5 @@
+export { DiyTimeType } from './common/config'
+
 export * from './printer'
 export { setLocale } from '../locales'
 

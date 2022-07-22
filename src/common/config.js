@@ -41,7 +41,37 @@ const borderStyleList = [
   { value: 'dotted', text: i18next.t('圆点') }
 ]
 
-export {
-  borderStyleList,
-  pageTypeMap
-}
+const DiyTimeType = [
+  {
+    type: '',
+    text: '格式“2022-01-01 19:00:00”，输入“单据日期：{{单据日期}}”；',
+    format: 'YYYY-MM-DD HH:mm:ss'
+  },
+  {
+    type: '时分',
+    text: '格式“2022-01-01 19:00”，输入“单据日期：{{单据日期_时分}}”；',
+    format: 'YYYY-MM-DD HH:mm'
+  },
+  {
+    type: '日期',
+    text: '格式“2022-01-01”，输入“单据日期：{{单据日期_日期}}”；',
+    format: 'YYYY-MM-DD'
+  },
+  {
+    type: '无年份',
+    text: '格式“01-01 19:00:00”，输入“单据日期：{{单据日期_无年份}}”；',
+    format: 'MM-DD HH:mm:ss'
+  },
+  {
+    type: '日期_无年份',
+    text: '格式“01-01”，输入“单据日期：{{单据日期_日期_无年份}}"；',
+    format: 'MM-DD'
+  },
+  {
+    type: '时间',
+    text: '格式“19:00:00"，输入“单据日期：{{单据日期_时间}}"；',
+    format: 'HH:mm:ss'
+  }
+]
+
+export { DiyTimeType, borderStyleList, pageTypeMap }
