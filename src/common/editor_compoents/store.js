@@ -4,18 +4,18 @@ import i18next from '../../../locales'
 
 class EditStore {
   @observable
-  config = null;
+  config = null
 
   @observable
-  selected = null;
+  selected = null
 
   @observable
   // 载入模板下拉框选中的值
-  tempKey = null;
+  tempKey = null
 
   @observable
   // 初始模板
-  originConfig = null;
+  originConfig = null
 
   @action.bound
   init (config, initDefaultTemp) {
@@ -277,7 +277,7 @@ class EditStore {
       const block = this.config.blocks[this.selected]
       if (
         (!block.type || block.type === 'text') &&
-        _.includes(block.text, '时间')
+        (_.includes(block.text, '时间') || _.includes(block.text, '日期'))
       ) {
         return true
       }
