@@ -110,6 +110,7 @@ class Block extends React.Component {
     } = this.props
     const { isEdit } = this.state
     let content = null
+
     if (!type || type === 'text') {
       if (fieldType === 'table') {
         // 字段类型为表格
@@ -121,7 +122,14 @@ class Block extends React.Component {
           />
         )
       } else {
-        content = template(text, data)
+        /** 渲染一个html */
+        const value = text.split(':')?.[1]
+        const isHtml = value && value.indexOf('_html') !== -1
+        content = isHtml ? (
+          <div dangerouslySetInnerHTML={{ __html: template(value, data) }}/>
+        ) : (
+          template(text, data)
+        )
       }
     } else if (type === 'line') {
       content = null
@@ -331,8 +339,8 @@ class Block extends React.Component {
         />
       )
     }
-
     const active = index === selected
+
     return (
       <div
         {...rest}
