@@ -1,4 +1,4 @@
-export { DiyTimeType } from './common/config'
+export { DiyTimeType, pageTypeMap } from './common/config'
 
 export * from './printer'
 export { setLocale } from '../locales'

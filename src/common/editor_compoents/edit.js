@@ -21,48 +21,62 @@ class Edit extends React.Component {
     }
   }
 
-  render () {
-    const { data, initDefaultTemp, defaultTempList, addFields, onSave, editStore, insertBlocksConfig, uploadQiniuImage } = this.props
+  render() {
+    const {
+      data,
+      initDefaultTemp,
+      defaultTempList,
+      addFields,
+      onSave,
+      editStore,
+      insertBlocksConfig,
+      uploadQiniuImage,
+      doublePageType,
+    } = this.props
     return (
       <div className='gm-printer-label-edit'>
-
         <Flex className='gm-printer-label-edit-title-fixed'>
-          <Title title={i18next.t('模板预览')}
-            text={<span className='gm-text-desc gm-padding-left-5'>
-              {i18next.t('说明：单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置，可点击右键删除')}
-            </span>}/>
+          <Title
+            title={i18next.t('模板预览')}
+            text={
+              <span className='gm-text-desc gm-padding-left-5'>
+                {i18next.t(
+                  '说明：单击选中内容，双击编辑，可拖动以摆放位置，可方向键细调位置，可点击右键删除'
+                )}
+              </span>
+            }
+          />
         </Flex>
 
         <div className='gm-printer-label-edit-header'>
-          <EditTitle
-            onSave={onSave}
-            initDefaultTemp={initDefaultTemp}
-          />
-          <Gap height='10px'/>
+          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp} />
+          <Gap height='10px' />
           <EditSelect
             insertBlocksConfig={insertBlocksConfig}
             initDefaultTemp={initDefaultTemp}
             defaultTempList={defaultTempList}
             uploadQiniuImage={uploadQiniuImage}
           />
-          <Gap height='5px'/>
-          <EditModifyFiled/>
-          <Gap height='5px'/>
-          <EditAddFiled data={addFields}/>
+          <Gap height='5px' />
+          <EditModifyFiled />
+          <Gap height='5px' />
+          <EditAddFiled data={addFields} />
 
           {/* 挂载shadow down中的Dialog组件 */}
-          <div id='gm-printer-label-modal'/>
-
+          <div id='gm-printer-label-modal' />
         </div>
 
-        <div className='gm-printer-label-edit-content'
-          onClick={this.handleCancel}>
+        <div
+          className='gm-printer-label-edit-content'
+          onClick={this.handleCancel}
+        >
           <ContextMenu>
             <Printer
               selected={editStore.selected}
               config={editStore.config}
               data={data}
               onChange={this.handleChange}
+              doublePageType={doublePageType}
             />
           </ContextMenu>
         </div>
@@ -79,11 +93,13 @@ Edit.propTypes = {
   initDefaultTemp: PropTypes.string,
   defaultTempList: PropTypes.object,
   addFields: PropTypes.object.isRequired,
-  insertBlocksConfig: PropTypes.array.isRequired
+  insertBlocksConfig: PropTypes.array.isRequired,
+  /** 放大编辑窗口 */
+  doublePageType: PropTypes.bool,
 }
 
 Edit.deaultProps = {
-  onSave: _.noop
+  onSave: _.noop,
 }
 
 export default Edit

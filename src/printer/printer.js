@@ -16,20 +16,33 @@ class Printer extends React.Component {
   }
 
   render () {
-    const { config, selected, data, isStation } = this.props
+    const { config, selected, data, isStation, doublePageType } = this.props
     const { type, style, customizeWidth, customizeHeight } = config.page
+    const ratio = doublePageType ? 2 : 1
+
+    const width =
+      (type === '-1'
+        ? customizeWidth
+        : +pageTypeMap[type].width.split('mm')[0]) *
+        ratio +
+      'mm'
+    const height =
+      (type === '-1'
+        ? customizeHeight
+        : +pageTypeMap[type].height.split('mm')[0]) *
+        ratio +
+      'mm'
+
     return (
       <div
         className='gm-printer-label'
         style={{
           ...style,
-          width:
-            type === '-1' ? customizeWidth + 'mm' : pageTypeMap[type].width,
-          height:
-            type === '-1' ? customizeHeight + 'mm' : pageTypeMap[type].height
+          width,
+          height
         }}
       >
-        <Page config={config.page}>
+        <Page pageStyle={{ width, height }}>
           {_.map(config.blocks, (block, i) => (
             <Block
               key={i}
@@ -51,7 +64,9 @@ Printer.propTypes = {
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired, // 格式化后的数据
   onReady: PropTypes.func,
-  isStation: PropTypes.bool
+  isStation: PropTypes.bool,
+  /** 放大编辑窗口 */
+  doublePageType: PropTypes.bool
 }
 
 export default Printer
