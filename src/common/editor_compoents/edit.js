@@ -21,7 +21,7 @@ class Edit extends React.Component {
     }
   }
 
-  render() {
+  render () {
     const {
       data,
       initDefaultTemp,
@@ -31,7 +31,7 @@ class Edit extends React.Component {
       editStore,
       insertBlocksConfig,
       uploadQiniuImage,
-      doublePageType,
+      showDoublePage
     } = this.props
     return (
       <div className='gm-printer-label-edit'>
@@ -49,21 +49,22 @@ class Edit extends React.Component {
         </Flex>
 
         <div className='gm-printer-label-edit-header'>
-          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp} />
-          <Gap height='10px' />
+          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp}/>
+          <Gap height='10px'/>
           <EditSelect
             insertBlocksConfig={insertBlocksConfig}
             initDefaultTemp={initDefaultTemp}
             defaultTempList={defaultTempList}
             uploadQiniuImage={uploadQiniuImage}
+            showDoublePage={showDoublePage}
           />
-          <Gap height='5px' />
-          <EditModifyFiled />
-          <Gap height='5px' />
-          <EditAddFiled data={addFields} />
+          <Gap height='5px'/>
+          <EditModifyFiled/>
+          <Gap height='5px'/>
+          <EditAddFiled data={addFields}/>
 
           {/* 挂载shadow down中的Dialog组件 */}
-          <div id='gm-printer-label-modal' />
+          <div id='gm-printer-label-modal'/>
         </div>
 
         <div
@@ -76,7 +77,6 @@ class Edit extends React.Component {
               config={editStore.config}
               data={data}
               onChange={this.handleChange}
-              doublePageType={doublePageType}
             />
           </ContextMenu>
         </div>
@@ -94,12 +94,11 @@ Edit.propTypes = {
   defaultTempList: PropTypes.object,
   addFields: PropTypes.object.isRequired,
   insertBlocksConfig: PropTypes.array.isRequired,
-  /** 放大编辑窗口 */
-  doublePageType: PropTypes.bool,
+  showDoublePage: PropTypes.bool
 }
 
 Edit.deaultProps = {
-  onSave: _.noop,
+  onSave: _.noop
 }
 
 export default Edit
