@@ -31,7 +31,8 @@ class Edit extends React.Component {
       editStore,
       insertBlocksConfig,
       uploadQiniuImage,
-      showDoublePage
+      showDoublePage,
+      doublePageType
     } = this.props
     return (
       <div className='gm-printer-label-edit'>
@@ -77,6 +78,7 @@ class Edit extends React.Component {
               config={editStore.config}
               data={data}
               onChange={this.handleChange}
+              doublePageType={doublePageType}
             />
           </ContextMenu>
         </div>

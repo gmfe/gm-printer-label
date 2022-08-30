@@ -303,6 +303,9 @@
         font-size: initial;
       }
     }
+    .gm-printer-resize-active {
+      cursor: col-resize !important;
+    }
   }
 }
 

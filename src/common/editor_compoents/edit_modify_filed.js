@@ -85,6 +85,7 @@ class EditModifyFiled extends React.Component {
           type === 'order_qrcode' ||
           type === 'package_id_qrcode' ||
           type === 'image' ||
+          type === 'rack_barcode' ||
           type === 'merchandise_trace_qrcode') && (
           <div>
             <Size

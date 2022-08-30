@@ -6,9 +6,12 @@ import { getStyleWithDiff, dispatchMsg, template, miniAppLink } from '../util'
 import TableType from './components/table_type'
 import BarCode from './barcode'
 import QrCode from './qrcode'
+import _ from 'lodash'
 
 @observer
 class Block extends React.Component {
+  dragBlock = React.createRef(null)
+  handleChangeDebounce = null
   constructor (props) {
     super(props)
     this.state = {
@@ -83,6 +86,32 @@ class Block extends React.Component {
     })
   }
 
+  /** TODO: 鼠标移动事件 */
+  handleMouseMove = (e) => {
+    e.persist()
+    if (!this.handleChangeDebounce) {
+      this.handleChangeDebounce = _.debounce(this.handleChange, 200)
+    }
+    this.handleChangeDebounce(e)
+  }
+
+  /** TODO: 拖拉设置条形码宽高 */
+  handleChange = (e) => {
+    const ref = this.dragBlock.current
+    const rect = ref.getBoundingClientRect()
+    const diffX_r = Math.abs(e.nativeEvent.clientX - rect.right)
+    const isActive = ref.classList.contains('gm-printer-resize-active')
+    console.log('diffX_r', diffX_r, ref.classList)
+    if (diffX_r < 20 && !isActive) {
+      ref.classList.add('gm-printer-resize-active')
+      return
+    }
+
+    if (isActive) {
+      ref.classList.remove('gm-printer-resize-active')
+    }
+  }
+
   render () {
     const {
       index,
@@ -101,7 +130,8 @@ class Block extends React.Component {
         fieldType,
         fieldKey,
         production_barcode,
-        merchandise_trace_qrcode
+        merchandise_trace_qrcode,
+        rack_barcode
       },
       data,
       className,
@@ -338,6 +368,23 @@ class Block extends React.Component {
           data-name={index}
         />
       )
+    } else if (type === 'rack_barcode') {
+      /** 浏览器端的货位标签打印 */
+      content = (
+        <BarCode
+          value={template(rack_barcode, data)}
+          textAlign='center'
+          textMargin={0}
+          margin={0}
+          height={parseInt(style.height)}
+          width={2}
+          svgWidth={style.width}
+          font={rack_barcode}
+          displayValue
+          dataName={rack_barcode}
+          background='transparent'
+        />
+      )
     }
     const active = index === selected
 
@@ -354,10 +401,13 @@ class Block extends React.Component {
           }
         )}
         draggable
+        ref={this.dragBlock}
         onDragStart={this.handleDragStart}
         onDragEnd={this.handleDragEnd}
         onClick={this.handleClick}
         onDoubleClick={this.handleDoubleClick}
+        /** TODO: 拖拉设置条形码宽高 */
+        // onMouseMove={this.handleMouseMove}
         data-name={index}
       >
         {content}

@@ -224,6 +224,19 @@ class EditStore {
           }
         })
         break
+      case 'rack_barcode':
+        this.config.blocks.push({
+          type,
+          rack_barcode: i18next.t('{{货位条形码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       default:
         window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
         break
