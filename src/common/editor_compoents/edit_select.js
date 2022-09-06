@@ -57,12 +57,17 @@ class EditSelect extends React.Component {
 
   handleChangeCustomizeSize = (name, value) => {
     const { editStore } = this.props
-
     editStore.setCustomizePageSize(name, value)
   }
 
   render () {
-    const { defaultTempList, editStore, insertBlocksConfig, uploadQiniuImage } = this.props
+    const {
+      defaultTempList,
+      editStore,
+      insertBlocksConfig,
+      uploadQiniuImage,
+      showDoublePage
+    } = this.props
     const {
       tempKey,
       config: { name, page }
@@ -113,7 +118,9 @@ class EditSelect extends React.Component {
               </Option>
             ))}
             {/* 格式不同，单独处理 */}
-            <Option key='-1' value='-1'>{i18next.t('自定义尺寸')}</Option>
+            <Option key='-1' value='-1'>
+              {i18next.t('自定义尺寸')}
+            </Option>
           </Select>
         </Flex>
         {page.type === '-1' && (
@@ -122,27 +129,41 @@ class EditSelect extends React.Component {
               <div>{i18next.t('宽度')}：</div>
               <InputNumber
                 className='gm-printer-label-edit-input-custom'
-                value={
-                  page.customizeWidth
-                }
-                onChange={this.handleChangeCustomizeSize.bind(this,
-                  'customizeWidth')}
+                value={page.customizeWidth}
+                onChange={this.handleChangeCustomizeSize.bind(
+                  this,
+                  'customizeWidth'
+                )}
               />
             </Flex>
             <Flex alignCenter className='gm-padding-top-5'>
               <div>{i18next.t('高度')}：</div>
               <InputNumber
                 className='gm-printer-label-edit-input-custom'
-                value={
-                  page.customizeHeight
-                }
-                onChange={this.handleChangeCustomizeSize.bind(this,
-                  'customizeHeight')}
+                value={page.customizeHeight}
+                onChange={this.handleChangeCustomizeSize.bind(
+                  this,
+                  'customizeHeight'
+                )}
               />
             </Flex>
           </Flex>
         )}
-
+        {showDoublePage && (
+          <Flex alignCenter className='gm-padding-top-5'>
+            <div>{i18next.t('预览区域放大展示')}：</div>
+            <input
+              type='checkbox'
+              checked={page.doublePage === true}
+              onChange={(v) =>
+                this.handleChangeCustomizeSize.bind(
+                  this,
+                  'doublePage'
+                )(v.target.checked)
+              }
+            />
+          </Flex>
+        )}
         <Gap height='10px'/>
 
         <Flex alignCenter style={{ flexWrap: 'wrap' }}>
@@ -184,7 +205,8 @@ EditSelect.propTypes = {
   editStore: PropTypes.object,
   initDefaultTemp: PropTypes.string,
   defaultTempList: PropTypes.object,
-  insertBlocksConfig: PropTypes.array.isRequired
+  insertBlocksConfig: PropTypes.array.isRequired,
+  showDoublePage: PropTypes.bool
 }
 
 export default EditSelect

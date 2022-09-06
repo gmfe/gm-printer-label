@@ -3,7 +3,8 @@
   "page": {
     "type": "70X50",
     "customizeWidth": 100,
-    "customizeHeight": 100
+    "customizeHeight": 100,
+    "doublePage": false
   },
   "blocks": [
     {

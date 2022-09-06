@@ -289,11 +289,11 @@ class EditStore {
   getHandledConfig (config) {
     const result = _.cloneDeep(config)
     // 添加自定义尺寸字段
-
     result.page = {
       ...result.page,
       customizeWidth: result.page.customizeWidth || 100, // 若没有则默认为100
-      customizeHeight: result.page.customizeHeight || 100
+      customizeHeight: result.page.customizeHeight || 100,
+      doublePage: result.page.doublePage || false
     }
 
     return result
