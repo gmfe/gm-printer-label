@@ -373,14 +373,14 @@ class Block extends React.Component {
       content = (
         <BarCode
           value={template(rack_barcode, data)}
-          textAlign='center'
+          // textAlign='center'
           textMargin={0}
           margin={0}
           height={parseInt(style.height)}
           width={2}
           // svgWidth={style.width}
           // font={rack_barcode}
-          displayValue
+          displayValue={false}
           dataName={rack_barcode}
           background='transparent'
         />
