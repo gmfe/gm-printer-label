@@ -379,7 +379,7 @@ class Block extends React.Component {
           height={parseInt(style.height)}
           width={2}
           svgWidth={style.width}
-          font={rack_barcode}
+          // font={rack_barcode}
           displayValue
           dataName={rack_barcode}
           background='transparent'
