@@ -131,9 +131,11 @@ class Block extends React.Component {
         fieldKey,
         production_barcode,
         merchandise_trace_qrcode,
-        rack_barcode
+        rack_barcode,
+        delivery_qrcode
       },
       data,
+      config,
       className,
       isStation,
       ...rest
@@ -356,6 +358,19 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='自定义二维码'
+        />
+      )
+    } else if (type === 'delivery_qrcode') {
+      content = isStation ? (
+        <QrCode value={template(delivery_qrcode, data)} size={parseInt(style.height)}/>
+      ) : (
+        <div
+          data-deliveryqrcode={template(delivery_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='配送单二维码'
         />
       )
     } else if (type === 'image') {

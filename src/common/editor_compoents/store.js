@@ -237,6 +237,20 @@ class EditStore {
           }
         })
         break
+      case 'delivery_qrcode':
+
+        this.config.blocks.push({
+          type,
+          delivery_qrcode: i18next.t('{{配送单二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '80px',
+            width: '80px'
+          }
+        })
+        break
       default:
         window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
         break

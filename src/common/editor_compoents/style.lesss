@@ -218,6 +218,20 @@
         }
       }
 
+      &.gm-printer-label-block-type-delivery_qrcode {
+        div[data-deliveryqrcode] {
+          outline: 1px solid red;
+
+          &::before {
+            content: attr(data-placeholder);
+            position: absolute;
+            font-style: italic;
+            left: calc(50% - 1.5em);
+            top: calc(50% - 0.5em);
+          }
+        }
+      }
+
       &.gm-printer-label-block-type-package_id_qrcode {
         div[data-packageQrcode] {
           outline: 1px solid red;
