@@ -32,6 +32,7 @@ class Printer extends React.Component {
         : +pageTypeMap[type].height.split('mm')[0]) *
         ratio +
       'mm'
+
     return (
       <div
         className='gm-printer-label'
@@ -50,6 +51,7 @@ class Printer extends React.Component {
               config={block}
               data={data}
               isStation={isStation}
+              doublePage={doublePage}
             />
           ))}
         </Page>

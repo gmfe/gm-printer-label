@@ -86,7 +86,6 @@ class EditModifyFiled extends React.Component {
           type === 'package_id_qrcode' ||
           type === 'image' ||
           type === 'rack_barcode' ||
-          type === 'production_barcode' ||
           type === 'delivery_qrcode' ||
           type === 'merchandise_trace_qrcode') && (
           <div>
@@ -95,6 +94,13 @@ class EditModifyFiled extends React.Component {
               onChange={this.handleChangeBlock.bind(this, 'style')}
             />
           </div>
+        )}
+        {type === 'production_barcode' && (
+          <Size
+            withoutWidth
+            style={style}
+            onChange={this.handleChangeBlock.bind(this, 'style')}
+          />
         )}
         {type === 'diyqrcode' && (
           <div>
