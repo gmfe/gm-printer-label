@@ -138,6 +138,7 @@ class Block extends React.Component {
       config,
       className,
       isStation,
+      doublePage,
       ...rest
     } = this.props
     const { isEdit } = this.state
@@ -294,6 +295,7 @@ class Block extends React.Component {
             style={{ height: '100%', width: '100%' }}
             data-productionbarcode={template(production_barcode, data)}
             // 需要减去14才能打印出正确高度
+            data-doublepage={doublePage}
             data-height={parseInt(style.height) - 14}
             data-name={index}
             id={`production${template(production_barcode, data)}`}
@@ -362,7 +364,10 @@ class Block extends React.Component {
       )
     } else if (type === 'delivery_qrcode') {
       content = isStation ? (
-        <QrCode value={template(delivery_qrcode, data)} size={parseInt(style.height)}/>
+        <QrCode
+          value={template(delivery_qrcode, data)}
+          size={parseInt(style.height)}
+        />
       ) : (
         <div
           data-deliveryqrcode={template(delivery_qrcode, data)}
@@ -445,7 +450,8 @@ Block.propTypes = {
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
   selected: PropTypes.number,
-  isStation: PropTypes.bool
+  isStation: PropTypes.bool,
+  doublePage: PropTypes.bool
 }
 
 export default Block
