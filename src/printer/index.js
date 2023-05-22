@@ -7,9 +7,9 @@ import ReactDOM from 'react-dom'
 import BatchPrinter from './batch_printer'
 
 // eslint-disable-next-line
-import normalizeCSS from './normalize.csss'
+import normalizeCSS from '!!raw-loader!less-loader!./normalize.css'
 // eslint-disable-next-line
-import printerCSS from './style.lesss'
+import printerCSS from '!!raw-loader!less-loader!./style.less'
 import { afterImgAndSvgLoaded } from '../util'
 
 function getHtml (props) {

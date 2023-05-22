@@ -45,6 +45,7 @@ class Printer extends React.Component {
         <Page pageStyle={{ width, height }}>
           {_.map(config.blocks, (block, i) => (
             <Block
+              type={this.props.type}
               key={i}
               index={i}
               selected={selected}

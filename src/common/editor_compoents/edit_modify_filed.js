@@ -102,6 +102,13 @@ class EditModifyFiled extends React.Component {
             onChange={this.handleChangeBlock.bind(this, 'style')}
           />
         )}
+        {type === 'new_production_barcode' && (
+          <Size
+            withoutWidth
+            style={style}
+            onChange={this.handleChangeBlock.bind(this, 'style')}
+          />
+        )}
         {type === 'diyqrcode' && (
           <div>
             <Size

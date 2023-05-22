@@ -274,11 +274,29 @@
         outline: 1px solid red;
 
         &::before {
+          content: attr(data-title);
+          position: absolute;
+          font-style: italic;
+          left: 0;
+          right: 0;
+          top: calc(50% - 0.5em);
+          bottom: 0;
+          text-align: center;
+        }
+      }
+
+      div[data-newproductionbarcode] {
+        outline: 1px solid red;
+
+        &::before {
           content: '商品条码';
           position: absolute;
           font-style: italic;
-          left: calc(50% - 1.5em);
+          left: 0;
+          right: 0;
           top: calc(50% - 0.5em);
+          bottom: 0;
+          text-align: center;
         }
       }
       
@@ -289,8 +307,11 @@
           content: '商品溯源二维码';
           position: absolute;
           font-style: italic;
-          left: calc(50% - 1.5em);
+          left: 0;
+          right: 0;
           top: calc(50% - 0.5em);
+          bottom: 0;
+          text-align: center;
         }
       }
 

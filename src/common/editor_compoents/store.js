@@ -224,6 +224,19 @@ class EditStore {
           }
         })
         break
+      case 'new_production_barcode':
+        this.config.blocks.push({
+          type,
+          new_production_barcode: i18next.t('{{新商品条码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       case 'rack_barcode':
         this.config.blocks.push({
           type,
@@ -238,7 +251,6 @@ class EditStore {
         })
         break
       case 'delivery_qrcode':
-
         this.config.blocks.push({
           type,
           delivery_qrcode: i18next.t('{{配送单二维码}}'),

@@ -130,6 +130,7 @@ class Block extends React.Component {
         fieldType,
         fieldKey,
         production_barcode,
+        new_production_barcode,
         merchandise_trace_qrcode,
         rack_barcode,
         delivery_qrcode
@@ -287,8 +288,10 @@ class Block extends React.Component {
         />
       ) : (
         <div
-          data-productionbarcode='商品条码'
+          data-productionbarcode={template(production_barcode, data)}
           data-name={index}
+          // 内标里叫做"PDA出入库条码"
+          data-title={this.props.type === 'inner_label' ? 'PDA出入库条码' : '商品条码'}
           style={{ width: '100%', height: '100%' }}
         >
           <svg
@@ -299,6 +302,42 @@ class Block extends React.Component {
             data-height={parseInt(style.height) - 14}
             data-name={index}
             id={`production${template(production_barcode, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'new_production_barcode') {
+      // 判断是否是69码
+      const reg = /^69[0-9]{11}$/
+      const is69 = reg.test(template(new_production_barcode, data))
+      content = isStation ? (
+        <BarCode
+          data-newproductionbarcode={template(new_production_barcode, data)}
+          value={template(new_production_barcode, data)}
+          textMargin={0}
+          margin={0}
+          height={parseInt(style.height) - 14}
+          width={2}
+          displayValue={is69}
+          format={is69 ? 'EAN13' : undefined}
+          dataName={new_production_barcode}
+          background='transparent'
+        />
+      ) : (
+        <div
+          data-newproductionbarcode={template(new_production_barcode, data)}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-newproductionbarcode={template(new_production_barcode, data)}
+            // 需要减去14才能打印出正确高度
+            data-doublepage={doublePage}
+            data-height={parseInt(style.height) - 14}
+            data-format={is69 ? 'EAN13' : undefined}
+            displayValue={is69}
+            data-name={index}
+            id={`newproduction${template(new_production_barcode, data)}`}
           />
         </div>
       )
