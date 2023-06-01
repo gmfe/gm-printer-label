@@ -291,7 +291,7 @@ class Block extends React.Component {
           data-productionbarcode={template(production_barcode, data)}
           data-name={index}
           // 内标里叫做"PDA出入库条码"
-          data-title={this.props.type === 'inner_label' ? 'PDA出入库条码' : '商品条码'}
+          data-title={'PDA出入库条码'}
           style={{ width: '100%', height: '100%' }}
         >
           <svg

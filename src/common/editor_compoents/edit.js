@@ -23,8 +23,6 @@ class Edit extends React.Component {
 
   render () {
     const {
-      // 用来区分内标和分拣
-      type,
       data,
       initDefaultTemp,
       defaultTempList,
@@ -76,7 +74,6 @@ class Edit extends React.Component {
         >
           <ContextMenu>
             <Printer
-              type={type}
               selected={editStore.selected}
               config={editStore.config}
               data={data}
