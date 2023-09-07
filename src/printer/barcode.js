@@ -18,7 +18,8 @@ class BarCode extends React.Component {
 
   render () {
     // 可设置条形码的宽高
-    const { dataName, height = '', svgWidth } = this.props
+    const { dataName, value, height = '', svgWidth } = this.props
+    if (!value) return null
     return <svg
       data-name={dataName}
       ref={this.barcode}
