@@ -119,6 +119,19 @@ class EditStore {
           }
         })
         break
+      case 'verification_qrcode':
+        this.config.blocks.push({
+          type,
+          verification_qrcode: i18next.t('{{验收二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '50px',
+            height: '50px'
+          }
+        })
+        break
       case 'order_qrcode':
         this.config.blocks.push({
           type,
