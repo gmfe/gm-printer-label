@@ -132,6 +132,7 @@ class Block extends React.Component {
         production_barcode,
         new_production_barcode,
         merchandise_trace_qrcode,
+        verification_qrcode,
         rack_barcode,
         delivery_qrcode
       },
@@ -213,6 +214,22 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='商品溯源二维码'
+        />
+      )
+    } else if (type === 'verification_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={miniAppLink + template(verification_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-verificationqrcode={template(verification_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='验收二维码'
         />
       )
     } else if (type === 'barcode') {
