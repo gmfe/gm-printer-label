@@ -87,7 +87,9 @@ class EditModifyFiled extends React.Component {
           type === 'image' ||
           type === 'rack_barcode' ||
           type === 'delivery_qrcode' ||
-          type === 'merchandise_trace_qrcode') && (
+          type === 'merchandise_trace_qrcode' ||
+          type === 'verification_qrcode'
+        ) && (
           <div>
             <Size
               style={style}
@@ -96,6 +98,13 @@ class EditModifyFiled extends React.Component {
           </div>
         )}
         {type === 'production_barcode' && (
+          <Size
+            withoutWidth
+            style={style}
+            onChange={this.handleChangeBlock.bind(this, 'style')}
+          />
+        )}
+        {type === 'new_production_barcode' && (
           <Size
             withoutWidth
             style={style}

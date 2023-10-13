@@ -119,6 +119,19 @@ class EditStore {
           }
         })
         break
+      case 'verification_qrcode':
+        this.config.blocks.push({
+          type,
+          verification_qrcode: i18next.t('{{验收二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '50px',
+            height: '50px'
+          }
+        })
+        break
       case 'order_qrcode':
         this.config.blocks.push({
           type,
@@ -224,6 +237,19 @@ class EditStore {
           }
         })
         break
+      case 'new_production_barcode':
+        this.config.blocks.push({
+          type,
+          new_production_barcode: i18next.t('{{新商品条码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px'
+          }
+        })
+        break
       case 'rack_barcode':
         this.config.blocks.push({
           type,
@@ -238,7 +264,6 @@ class EditStore {
         })
         break
       case 'delivery_qrcode':
-
         this.config.blocks.push({
           type,
           delivery_qrcode: i18next.t('{{配送单二维码}}'),
