@@ -298,7 +298,7 @@ class Block extends React.Component {
           textMargin={0}
           margin={0}
           height={parseInt(style.height) - 14}
-          width={2}
+          width={doublePage ? 2.4 : 1.2}
           displayValue={false}
           dataName={production_barcode}
           background='transparent'
@@ -333,7 +333,7 @@ class Block extends React.Component {
           textMargin={0}
           margin={0}
           height={parseInt(style.height) - 14}
-          width={2}
+          width={doublePage ? 2.4 : 1.2}
           displayValue={is69}
           format={is69 ? 'EAN13' : undefined}
           dataName={new_production_barcode}
