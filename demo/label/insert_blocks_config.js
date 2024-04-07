@@ -9,7 +9,9 @@ const insertBlocksConfig = [
   { value: 'package_id_qrcode', text: i18next.t('验货二维码') },
   { value: 'image', text: i18next.t('图片') },
   { value: 'diycode', text: i18next.t('自定义编码条形码') },
-  { value: 'diyqrcode', text: i18next.t('自定义二维码') }
+  { value: 'diyqrcode', text: i18next.t('自定义二维码') },
+  // 包含订单ID的验货二维码
+  { value: 'package_order_qrcode', text: i18next.t('验货二维码') }
 ]
 
 export default insertBlocksConfig
