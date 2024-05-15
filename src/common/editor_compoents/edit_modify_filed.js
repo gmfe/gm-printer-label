@@ -10,7 +10,7 @@ import {
   TextAlign,
   Textarea,
   TipInfo,
-  Title
+  Title,
 } from './component'
 import i18next from '../../../locales'
 import _ from 'lodash'
@@ -34,26 +34,26 @@ class EditModifyFiled extends React.Component {
     const newStyle = _.has(style, 'transform')
       ? _.omit(style, 'transform')
       : {
-        ...style,
-        transform: 'rotate(90deg)'
-      }
+          ...style,
+          transform: 'rotate(90deg)',
+        }
     this.handleChangeBlock('style', newStyle)
   }
 
-  renderBlocks () {
+  renderBlocks() {
     const { editStore } = this.props
 
     const { type, text, style } = editStore.config.blocks[editStore.selected]
 
     return (
       <React.Fragment>
-        <Title title={i18next.t('编辑字段')}/>
-        <Gap/>
+        <Title title={i18next.t('编辑字段')} />
+        <Gap />
         <Position
           style={style}
           onChange={this.handleChangeBlock.bind(this, 'style')}
         />
-        <Gap/>
+        <Gap />
 
         {(!type || type === 'text') && (
           <div>
@@ -61,12 +61,12 @@ class EditModifyFiled extends React.Component {
               style={style}
               onChange={this.handleChangeBlock.bind(this, 'style')}
             />
-            <Separator/>
+            <Separator />
             <TextAlign
               style={style}
               onChange={this.handleChangeBlock.bind(this, 'style')}
             />
-            <Gap/>
+            <Gap />
 
             <Textarea
               value={text}
@@ -86,11 +86,11 @@ class EditModifyFiled extends React.Component {
           type === 'package_id_qrcode' ||
           type === 'image' ||
           type === 'rack_barcode' ||
+          type === 'customer_barcode' ||
           type === 'delivery_qrcode' ||
           type === 'merchandise_trace_qrcode' ||
           type === 'verification_qrcode' ||
-          type === 'package_order_qrcode'
-        ) && (
+          type === 'package_order_qrcode') && (
           <div>
             <Size
               style={style}
@@ -176,7 +176,7 @@ class EditModifyFiled extends React.Component {
               text={i18next.t('注：可通过修改“{{}}”中的内容更改时间格式。')}
             />
             {_.map(DiyTimeType, (v, k) => (
-              <TipInfo text={`${k + 1}。${v.text}`}/>
+              <TipInfo text={`${k + 1}。${v.text}`} />
             ))}
           </div>
         )}
@@ -184,7 +184,7 @@ class EditModifyFiled extends React.Component {
     )
   }
 
-  render () {
+  render() {
     let content = null
     const { editStore } = this.props
 

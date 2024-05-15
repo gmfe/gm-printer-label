@@ -134,6 +134,7 @@ class Block extends React.Component {
         merchandise_trace_qrcode,
         verification_qrcode,
         rack_barcode,
+        customer_barcode,
         delivery_qrcode,
         package_order_qrcode
       },
@@ -459,6 +460,19 @@ class Block extends React.Component {
           // font={rack_barcode}
           displayValue={false}
           dataName={rack_barcode}
+          background='transparent'
+        />
+      )
+    } else if (type === 'customer_barcode') {
+      content = (
+        <BarCode
+          value={template(customer_barcode, data)}
+          textMargin={0}
+          margin={0}
+          height={parseInt(style.height) - 14}
+          width={doublePage ? 2.4 : 1.2}
+          displayValue={false}
+          dataName={customer_barcode}
           background='transparent'
         />
       )
