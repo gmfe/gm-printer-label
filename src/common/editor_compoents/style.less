@@ -5,14 +5,14 @@
 @modal: 1050;
 @contextMenu: 80;
 
-@import "../../components/index.less";
+@import '../../components/index.less';
 
 * {
   box-sizing: border-box;
 }
 
 :focus {
-    outline: none;
+  outline: none;
 }
 
 .gm-printer-label-edit {
@@ -22,7 +22,9 @@
   font-size: 12px;
   background: whitesmoke;
   color: #333;
-  font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", FontAwesome, sans-serif;
+  font-family: 'Segoe UI', 'Lucida Grande', Helvetica, Arial, 'Microsoft YaHei',
+    FreeSans, Arimo, 'Droid Sans', 'wenquanyi micro hei', 'Hiragino Sans GB',
+    'Hiragino Sans GB W3', FontAwesome, sans-serif;
   -webkit-font-smoothing: antialiased;
   margin: 0;
 
@@ -50,7 +52,9 @@
   }
 
   .gm-printer-label-edit-header {
-    &::-webkit-scrollbar { display: none; }
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     position: fixed;
     top: 0;
@@ -162,7 +166,8 @@
     .gm-printer-label-page {
       overflow: visible;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-      background-image: linear-gradient(whitesmoke 1px, transparent 0), linear-gradient(90deg, whitesmoke 1px, transparent 0);
+      background-image: linear-gradient(whitesmoke 1px, transparent 0),
+        linear-gradient(90deg, whitesmoke 1px, transparent 0);
       background-size: 5px 5px, 5px 5px;
     }
 
@@ -201,8 +206,6 @@
           }
         }
       }
-
-     
 
       &.gm-printer-label-block-type-diyqrcode {
         div[data-diyqrcode] {
@@ -326,7 +329,7 @@
           text-align: center;
         }
       }
-      
+
       div[data-traceqrcode] {
         outline: 1px solid red;
 
@@ -367,6 +370,31 @@
     }
     .gm-printer-resize-active {
       cursor: col-resize !important;
+    }
+  }
+}
+
+.custom-label-printer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &.gm-printer-label-edit {
+    background: #fff;
+    min-height: auto !important;
+    .gm-printer-label-edit-title-fixed {
+      position: absolute !important;
+      top: 0;
+    }
+    .gm-printer-label-edit-header {
+      position: absolute;
+      top: 0;
+    }
+
+    .gm-printer-label-edit-content {
+      height: 100%;
+      background-color: #fff;
+      overflow: auto;
     }
   }
 }

@@ -8,35 +8,44 @@ module.exports = {
     pre_sorting: './demo/pre_sorting/index.js',
   },
   output: {
-    path: path.resolve('build'),
+    path: path.resolve('lib'),
     publicPath: '/',
-    filename: '[name].js'
+    libraryTarget: 'commonjs',
+    filename: '[name].js',
+  },
+  externals: {
+    react: 'react',
+    'react-dom': 'react-dom',
+    mobx: 'mobx',
+    'mobx-react': 'mobx-react',
+    lodash: 'lodash',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      use: 'babel-loader'
-    }, {
-      test: /\.(css|less)$/,
-      use: [
-        'style-loader',
-        'css-loader',
-        'postcss-loader',
-        'less-loader'
-      ]
-    }, {
-      test: /(fontawesome-webfont|glyphicons-halflings-regular|iconfont)\.(woff|woff2|ttf|eot|svg)($|\?)/,
-      use: [{
-        loader: 'url-loader',
-        options: {
-          limit: 1024,
-          name: 'font/[name].[ext]'
-        }
-      }]
-    }]
+    rules: [
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+      },
+      {
+        test: /\.(css|less)$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'less-loader'],
+      },
+      {
+        test: /(fontawesome-webfont|glyphicons-halflings-regular|iconfont)\.(woff|woff2|ttf|eot|svg)($|\?)/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 1024,
+              name: 'font/[name].[ext]',
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
-    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/)
+    new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh-cn/),
   ],
   devServer: {
     compress: true,
@@ -46,8 +55,8 @@ module.exports = {
     proxy: {
       '/gm_account/*': {
         target: 'http://station.env-lyf.dev.k8s.guanmai.cn',
-        changeOrigin: true
-      }
-    }
-  }
+        changeOrigin: true,
+      },
+    },
+  },
 }

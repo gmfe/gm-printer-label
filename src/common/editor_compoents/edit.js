@@ -1,3 +1,4 @@
+/* eslint-disable space-before-function-paren */
 import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
@@ -11,6 +12,7 @@ import { Gap, Title } from './component'
 import { Flex } from '../../components'
 import i18next from '../../../locales'
 import ContextMenu from './context_menu'
+import classNames from 'classnames'
 
 @inject('editStore')
 @observer
@@ -21,7 +23,7 @@ class Edit extends React.Component {
     }
   }
 
-  render () {
+  render() {
     const {
       data,
       initDefaultTemp,
@@ -32,10 +34,11 @@ class Edit extends React.Component {
       insertBlocksConfig,
       uploadQiniuImage,
       showDoublePage,
-      doublePageType
+      doublePageType,
+      className,
     } = this.props
     return (
-      <div className='gm-printer-label-edit'>
+      <div className={classNames(className, 'gm-printer-label-edit')}>
         <Flex className='gm-printer-label-edit-title-fixed'>
           <Title
             title={i18next.t('模板预览')}
@@ -50,8 +53,8 @@ class Edit extends React.Component {
         </Flex>
 
         <div className='gm-printer-label-edit-header'>
-          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp}/>
-          <Gap height='10px'/>
+          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp} />
+          <Gap height='10px' />
           <EditSelect
             insertBlocksConfig={insertBlocksConfig}
             initDefaultTemp={initDefaultTemp}
@@ -59,13 +62,13 @@ class Edit extends React.Component {
             uploadQiniuImage={uploadQiniuImage}
             showDoublePage={showDoublePage}
           />
-          <Gap height='5px'/>
-          <EditModifyFiled/>
-          <Gap height='5px'/>
-          <EditAddFiled data={addFields}/>
+          <Gap height='5px' />
+          <EditModifyFiled />
+          <Gap height='5px' />
+          <EditAddFiled data={addFields} />
 
           {/* 挂载shadow down中的Dialog组件 */}
-          <div id='gm-printer-label-modal'/>
+          <div id='gm-printer-label-modal' />
         </div>
 
         <div
@@ -96,11 +99,12 @@ Edit.propTypes = {
   defaultTempList: PropTypes.object,
   addFields: PropTypes.object.isRequired,
   insertBlocksConfig: PropTypes.array.isRequired,
-  showDoublePage: PropTypes.bool
+  showDoublePage: PropTypes.bool,
+  className: PropTypes.string,
 }
 
 Edit.deaultProps = {
-  onSave: _.noop
+  onSave: _.noop,
 }
 
 export default Edit
