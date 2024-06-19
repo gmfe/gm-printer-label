@@ -6783,7 +6783,7 @@ q@^1.1.2:
 
 qr.js@0.0.0:
   version "0.0.0"
-  resolved "https://registry.npm.taobao.org/qr.js/download/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+  resolved "https://registry.npmmirror.com/qr.js/download/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
   integrity sha1-ys6GOG9ZoNuAUPqQ2baw6IoeNk8=
 
 qrcode.react@^0.9.2:
