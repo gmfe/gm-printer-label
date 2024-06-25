@@ -6,14 +6,17 @@ import {
   DropDown,
   DropDownItem,
   DropDownItems,
-  Flex
+  Flex,
 } from '../../components'
 import { Title } from './component'
 import i18next from '../../../locales'
 import { toJS } from 'mobx'
+import { doBatchPrint } from '../../printer'
 
 const DialogChildren = observer((props) => {
-  const { config: { name } } = props.editStore
+  const {
+    config: { name },
+  } = props.editStore
 
   const handleConfigName = (e) => {
     props.editStore.setConfigName(e.target.value)
@@ -22,8 +25,12 @@ const DialogChildren = observer((props) => {
   return (
     <Flex alignCenter>
       <div>{i18next.t('模板名称')}：</div>
-      <input className='gm-printer-label-edit-input-custom' type='text'
-        value={name} onChange={handleConfigName}/>
+      <input
+        className='gm-printer-label-edit-input-custom'
+        type='text'
+        value={name}
+        onChange={handleConfigName}
+      />
     </Flex>
   )
 })
@@ -32,7 +39,19 @@ const DialogChildren = observer((props) => {
 @observer
 class EditTitle extends React.Component {
   handlePrint = () => {
-    window.print()
+    const { mockData, editStore } = this.props
+    console.log(mockData, 'mockData')
+    doBatchPrint(
+      [
+        {
+          config: toJS(editStore.config),
+          data: mockData,
+        },
+      ],
+      true,
+      { isPrint: true, isTipZoom: false }
+    )
+    // window.print()
   }
 
   handleReset = () => {
@@ -45,7 +64,7 @@ class EditTitle extends React.Component {
     // 重置模板配置，但是保留原来模板名字
     const config = {
       ...newConfig,
-      name: editStore.config.name
+      name: editStore.config.name,
     }
 
     editStore.init(config, initDefaultTemp)
@@ -56,11 +75,11 @@ class EditTitle extends React.Component {
 
     Dialog.render({
       title: i18next.t('另存为'),
-      children: <DialogChildren editStore={editStore}/>,
+      children: <DialogChildren editStore={editStore} />,
       onOK: async () => {
         // 传true参数 用来区分“另存为”是新建模板，不是编辑模板
         this.props.onSave(toJS(editStore.config), true)
-      }
+      },
     })
   }
 
@@ -70,30 +89,41 @@ class EditTitle extends React.Component {
     onSave(toJS(editStore.config))
   }
 
-  render () {
+  render() {
     return (
       <div className='gm-printer-label-edit-header-top'>
         <Flex justifyBetween>
-          <Title title={i18next.t('基本信息')}/>
+          <Title title={i18next.t('基本信息')} />
           <div>
-            <button className='btn btn-default btn-sm'
-              onClick={this.handlePrint}>{i18next.t('测试打印')}
-            </button>
-            <div className='gm-gap-10'/>
-            <button className='btn btn-default btn-sm'
-              onClick={this.handleReset}>{i18next.t('重置')}
-            </button>
-            <div className='gm-gap-10'/>
-            <DropDown
-              popup={(
-                <DropDownItems>
-                  <DropDownItem onClick={this.handleSaveAs}>{i18next.t(
-                    '另存为')}</DropDownItem>
-                </DropDownItems>
-              )}
+            <button
+              className='btn btn-default btn-sm'
+              onClick={this.handlePrint}
             >
-              <button className='btn btn-primary btn-sm'
-                onClick={this.handleSave}>{i18next.t('保存')}</button>
+              {i18next.t('测试打印')}
+            </button>
+            <div className='gm-gap-10' />
+            <button
+              className='btn btn-default btn-sm'
+              onClick={this.handleReset}
+            >
+              {i18next.t('重置')}
+            </button>
+            <div className='gm-gap-10' />
+            <DropDown
+              popup={
+                <DropDownItems>
+                  <DropDownItem onClick={this.handleSaveAs}>
+                    {i18next.t('另存为')}
+                  </DropDownItem>
+                </DropDownItems>
+              }
+            >
+              <button
+                className='btn btn-primary btn-sm'
+                onClick={this.handleSave}
+              >
+                {i18next.t('保存')}
+              </button>
             </DropDown>
           </div>
         </Flex>
@@ -104,7 +134,7 @@ class EditTitle extends React.Component {
 
 EditTitle.propTypes = {
   editStore: PropTypes.object,
-  onSave: PropTypes.func.isRequired
+  onSave: PropTypes.func.isRequired,
 }
 
 export default EditTitle

@@ -12,21 +12,21 @@ import normalizeCSS from '!!raw-loader!less-loader!./normalize.css'
 import printerCSS from '!!raw-loader!less-loader!./style.less'
 import { afterImgAndSvgLoaded } from '../util'
 
-function getHtml (props) {
-  return ReactDOMServer.renderToString(<Printer {...props}/>)
+function getHtml(props) {
+  return ReactDOMServer.renderToString(<Printer {...props} />)
 }
 
-function getBatchHtml (propsArr) {
+function getBatchHtml(propsArr) {
   return ReactDOMServer.renderToString(
     <React.Fragment>
       {_.map(propsArr, (props) => (
-        <Printer {...props}/>
+        <Printer {...props} />
       ))}
     </React.Fragment>
   )
 }
 
-function getCSS () {
+function getCSS() {
   return normalizeCSS.toString() + printerCSS.toString()
 }
 
@@ -37,7 +37,7 @@ let $printer = window.document.getElementById(printerId)
  * @param {boolean} isTest 是否test
  * @param {boolean} isTipZoom zoom的时候是否提示
  */
-function init ({ isTest, isTipZoom = true } = {}) {
+function init({ isTest, isTipZoom = true } = {}) {
   isTipZoom &&
     isZoom() &&
     window.alert(
@@ -51,7 +51,7 @@ function init ({ isTest, isTipZoom = true } = {}) {
     $printer.style.width = '100%' // 使移动端可滚动
     if (isTest) {
       // 模板编辑[测试打印],隐藏起来
-      // $printer.style.left = '-2000px'
+      $printer.style.left = '-20000px'
     } else {
       $printer.style.left = '0px'
       $printer.style.height = '100vh'
@@ -77,7 +77,7 @@ function init ({ isTest, isTipZoom = true } = {}) {
   }
 }
 
-function doBatchPrint (
+function doBatchPrint(
   list,
   isTest,
   extraCofnig = { isPrint: true, isTipZoom: true },
@@ -88,7 +88,7 @@ function doBatchPrint (
   return toDoPrintBatch(list, extraCofnig.isPrint, isStation)
 }
 
-function toDoPrintBatch (list, isPrint = true, isStation = false) {
+function toDoPrintBatch(list, isPrint = true, isStation = false) {
   return new window.Promise((resolve) => {
     const $app = $printer.contentWindow.document.getElementById('appContainer')
 
