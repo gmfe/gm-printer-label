@@ -135,6 +135,7 @@ class Block extends React.Component {
         verification_qrcode,
         rack_barcode,
         customer_barcode,
+        customized_qrcode,
         delivery_qrcode,
         package_order_qrcode
       },
@@ -490,6 +491,22 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='验货二维码'
+        />
+      )
+    } else if (type === 'customized_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={template(customized_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-customizedqrcode={template(customized_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='客户信息二维码'
         />
       )
     }
