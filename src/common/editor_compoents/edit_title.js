@@ -24,7 +24,7 @@ const DialogChildren = observer((props) => {
 
   return (
     <Flex alignCenter>
-      <div>{i18next.t('模板名称')}：</div>
+      <div>{i18next.t('模板名称')}{i18next.t('：')}</div>
       <input
         className='gm-printer-label-edit-input-custom'
         type='text'
@@ -75,7 +75,7 @@ class EditTitle extends React.Component {
 
     Dialog.render({
       title: i18next.t('另存为'),
-      children: <DialogChildren editStore={editStore} />,
+      children: <DialogChildren editStore={editStore}/>,
       onOK: async () => {
         // 传true参数 用来区分“另存为”是新建模板，不是编辑模板
         this.props.onSave(toJS(editStore.config), true)
@@ -89,11 +89,11 @@ class EditTitle extends React.Component {
     onSave(toJS(editStore.config))
   }
 
-  render() {
+  render () {
     return (
       <div className='gm-printer-label-edit-header-top'>
         <Flex justifyBetween>
-          <Title title={i18next.t('基本信息')} />
+          <Title title={i18next.t('基本信息')}/>
           <div>
             <button
               className='btn btn-default btn-sm'
@@ -101,14 +101,14 @@ class EditTitle extends React.Component {
             >
               {i18next.t('测试打印')}
             </button>
-            <div className='gm-gap-10' />
+            <div className='gm-gap-10'/>
             <button
               className='btn btn-default btn-sm'
               onClick={this.handleReset}
             >
               {i18next.t('重置')}
             </button>
-            <div className='gm-gap-10' />
+            <div className='gm-gap-10'/>
             <DropDown
               popup={
                 <DropDownItems>

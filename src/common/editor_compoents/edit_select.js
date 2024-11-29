@@ -66,11 +66,11 @@ class EditSelect extends React.Component {
       editStore,
       insertBlocksConfig,
       uploadQiniuImage,
-      showDoublePage
+      showDoublePage,
     } = this.props
     const {
       tempKey,
-      config: { name, page }
+      config: { name, page },
     } = editStore
 
     return (
@@ -78,7 +78,8 @@ class EditSelect extends React.Component {
         <div>
           {defaultTempList && _.size(defaultTempList) ? (
             <div>
-              {i18next.t('载入模板：')}
+              {i18next.t('载入模板')}
+              {i18next.t('：')}
               <Select
                 style={{ width: '190px' }}
                 value={tempKey}
@@ -96,7 +97,7 @@ class EditSelect extends React.Component {
         </div>
 
         <Flex alignCenter className='gm-padding-top-5'>
-          <div>{i18next.t('模板名称')}：</div>
+          <div>{i18next.t('模板名称')}{i18next.t('：')}</div>
           <input
             className='gm-printer-label-edit-input-custom'
             type='text'
@@ -105,7 +106,7 @@ class EditSelect extends React.Component {
           />
         </Flex>
         <Flex alignCenter className='gm-padding-top-5'>
-          <div>{i18next.t('标签尺寸')}：</div>
+          <div>{i18next.t('标签尺寸')}{i18next.t('：')}</div>
           <Select
             style={{ width: '190px' }}
             className='gm-printer-label-edit-select'
@@ -126,7 +127,7 @@ class EditSelect extends React.Component {
         {page.type === '-1' && (
           <Flex column>
             <Flex alignCenter className='gm-padding-top-5'>
-              <div>{i18next.t('宽度')}：</div>
+              <div>{i18next.t('宽度')}{i18next.t('：')}</div>
               <InputNumber
                 className='gm-printer-label-edit-input-custom'
                 value={page.customizeWidth}
@@ -137,7 +138,7 @@ class EditSelect extends React.Component {
               />
             </Flex>
             <Flex alignCenter className='gm-padding-top-5'>
-              <div>{i18next.t('高度')}：</div>
+              <div>{i18next.t('高度')}{i18next.t('：')}</div>
               <InputNumber
                 className='gm-printer-label-edit-input-custom'
                 value={page.customizeHeight}
@@ -151,7 +152,7 @@ class EditSelect extends React.Component {
         )}
         {showDoublePage && (
           <Flex alignCenter className='gm-padding-top-5'>
-            <div>{i18next.t('预览区域放大展示')}：</div>
+            <div>{i18next.t('预览区域放大展示')}{i18next.t('：')}</div>
             <input
               type='checkbox'
               checked={page.doublePage === true}
@@ -206,7 +207,7 @@ EditSelect.propTypes = {
   initDefaultTemp: PropTypes.string,
   defaultTempList: PropTypes.object,
   insertBlocksConfig: PropTypes.array.isRequired,
-  showDoublePage: PropTypes.bool
+  showDoublePage: PropTypes.bool,
 }
 
 export default EditSelect
