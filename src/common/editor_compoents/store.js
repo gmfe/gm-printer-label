@@ -271,8 +271,8 @@ class EditStore {
             position: 'absolute',
             left: '0px',
             top: '0px',
-            height: '30px',
-            width: '165px',
+            height: '60px',
+            width: '180px',
           },
         })
         break

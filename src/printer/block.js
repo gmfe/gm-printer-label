@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import { getStyleWithDiff, dispatchMsg, template, miniAppLink } from '../util'
+import { getStyleWithDiff, dispatchMsg, template, miniAppLink, toUnderscore } from '../util'
 import TableType from './components/table_type'
 import BarCode from './barcode'
 import QrCode from './qrcode'
@@ -470,8 +470,9 @@ class Block extends React.Component {
           value={template(customer_barcode, data)}
           textMargin={0}
           margin={0}
-          height={parseInt(style.height) - 14}
+          height={parseInt(style.height)}
           width={doublePage ? 2.4 : 1.2}
+          svgWidth={style.width}
           displayValue={false}
           dataName={customer_barcode}
           background='transparent'
