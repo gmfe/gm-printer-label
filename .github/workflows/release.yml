@@ -19,8 +19,9 @@ jobs:
       - name: Set node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
           registry-url: 'https://registry.npmjs.org'
+
 
       - name: ChangeLog
         run: npx changelogithub@0.12
@@ -35,6 +36,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
 
       - name: Release
         run: |
