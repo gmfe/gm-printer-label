@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import { getStyleWithDiff, dispatchMsg, template, miniAppLink } from '../util'
+import { getStyleWithDiff, dispatchMsg, template, miniAppLink, toUnderscore } from '../util'
 import TableType from './components/table_type'
 import BarCode from './barcode'
 import QrCode from './qrcode'
@@ -135,6 +135,7 @@ class Block extends React.Component {
         verification_qrcode,
         rack_barcode,
         customer_barcode,
+        customized_qrcode,
         delivery_qrcode,
         package_order_qrcode
       },
@@ -469,8 +470,9 @@ class Block extends React.Component {
           value={template(customer_barcode, data)}
           textMargin={0}
           margin={0}
-          height={parseInt(style.height) - 14}
+          height={parseInt(style.height)}
           width={doublePage ? 2.4 : 1.2}
+          svgWidth={style.width}
           displayValue={false}
           dataName={customer_barcode}
           background='transparent'
@@ -490,6 +492,22 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='验货二维码'
+        />
+      )
+    } else if (type === 'customized_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={template(customized_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-customizedqrcode={template(customized_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='客户信息二维码'
         />
       )
     }

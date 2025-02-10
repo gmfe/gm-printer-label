@@ -276,6 +276,18 @@
         }
       }
 
+      &.gm-printer-label-block-type-customized_qrcode {
+        div[data-customizedqrcode] {
+          outline: 1px solid red;
+
+          &::before {
+            content: attr(data-placeholder);
+            position: absolute;
+            font-style: italic;
+          }
+        }
+      }
+
       div[data-packagecode] {
         outline: 1px solid red;
 
