@@ -53,8 +53,8 @@ class Edit extends React.Component {
         </Flex>
 
         <div className='gm-printer-label-edit-header'>
-          <EditTitle onSave={onSave} initDefaultTemp={initDefaultTemp} />
-          <Gap height='10px' />
+          <EditTitle onSave={onSave} mockData={data} initDefaultTemp={initDefaultTemp}/>
+          <Gap height='10px'/>
           <EditSelect
             insertBlocksConfig={insertBlocksConfig}
             initDefaultTemp={initDefaultTemp}
@@ -62,13 +62,13 @@ class Edit extends React.Component {
             uploadQiniuImage={uploadQiniuImage}
             showDoublePage={showDoublePage}
           />
-          <Gap height='5px' />
-          <EditModifyFiled />
-          <Gap height='5px' />
-          <EditAddFiled data={addFields} />
+          <Gap height='5px'/>
+          <EditModifyFiled/>
+          <Gap height='5px'/>
+          <EditAddFiled data={addFields}/>
 
           {/* 挂载shadow down中的Dialog组件 */}
-          <div id='gm-printer-label-modal' />
+          <div id='gm-printer-label-modal'/>
         </div>
 
         <div

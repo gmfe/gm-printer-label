@@ -467,6 +467,7 @@ class Block extends React.Component {
     } else if (type === 'customer_barcode') {
       content = (
         <BarCode
+          needResize
           value={template(customer_barcode, data)}
           textMargin={0}
           margin={0}

@@ -16,6 +16,18 @@ class BarCode extends React.Component {
     })
   }
 
+  // 改变尺寸之后重新生成
+  componentDidUpdate (prevProps) {
+    const { value, height, svgWidth } = this.props
+    if (!prevProps.needResize) return
+    if (prevProps.height !== height || prevProps.svgWidth !== svgWidth) {
+      jsBarcode(this.barcode.current, value, {
+        ...this.props,
+        height: height + 'px',
+      })
+    }
+  }
+
   render () {
     // 可设置条形码的宽高
     const { dataName, value, height = '', svgWidth } = this.props
@@ -23,6 +35,8 @@ class BarCode extends React.Component {
     return <svg
       data-name={dataName}
       ref={this.barcode}
+      width={svgWidth}
+      height={height}
       style={{
         width: svgWidth, height: height + 'px'
       }}
@@ -32,7 +46,8 @@ class BarCode extends React.Component {
 
 BarCode.propTypes = {
   value: PropTypes.string,
-  dataName: PropTypes.string
+  dataName: PropTypes.string,
+  needResize: PropTypes.bool
 }
 
 export default BarCode
