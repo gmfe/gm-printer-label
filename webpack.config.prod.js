@@ -1,8 +1,11 @@
 const webpack = require('webpack')
 const path = require('path')
 
+// 是否是watch模式，调试专用
+const isWatch = process.env.WATCH === 'true'
+
 module.exports = {
-  mode: 'production',
+  mode: isWatch ? 'development' : 'production',
   entry: './src/index.js',
   output: {
     path: path.resolve('lib'),
@@ -10,7 +13,7 @@ module.exports = {
     libraryTarget: 'commonjs',
     filename: '[name].js',
   },
-  externals: {
+  externals: isWatch ? {} : {
     react: 'react',
     'react-dom': 'react-dom',
     mobx: 'mobx',

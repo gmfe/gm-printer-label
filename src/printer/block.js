@@ -468,12 +468,13 @@ class Block extends React.Component {
       content = (
         <BarCode
           needResize
+          needAutoWidth
           value={template(customer_barcode, data)}
           textMargin={0}
           margin={0}
           height={parseInt(style.height)}
           width={doublePage ? 2.4 : 1.2}
-          svgWidth={style.width}
+          svgWidth={style.width || '180px'}
           displayValue={false}
           dataName={customer_barcode}
           background='transparent'

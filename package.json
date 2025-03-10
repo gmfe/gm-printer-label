@@ -6,6 +6,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "webpack-dev-server",
+    "start:watch": "cross-env WATCH=true yarn build --watch",
     "build": "webpack --progress --colors --config ./webpack.config.prod.js",
     "publish-latest": "npm publish --force-publish --registry https://registry.npmjs.org/",
     "publish-beta": "npm publish --force-publish --dist-tag beta --preid beta --registry https://registry.npmjs.org/",
@@ -55,6 +56,7 @@
     "big.js": "^5.1.2",
     "classnames": "^2.2.5",
     "clipboard": "^2.0.6",
+    "cross-env": "^7.0.3",
     "css-loader": "^0.28.11",
     "eslint": "^5.0.1",
     "eslint-config-standard": "^11.0.0",
