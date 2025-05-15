@@ -68,7 +68,7 @@ class Block extends React.Component {
           isEdit: true
         },
         () => {
-          this.refEdit.focus()
+          this.refEdit?.focus?.()
         }
       )
     }

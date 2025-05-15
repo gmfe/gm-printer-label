@@ -66,8 +66,7 @@ class InputNumberV2 extends React.Component {
     if (this.__isUnmount) {
       return
     }
-
-    this.refInput.current.focus()
+    this.refInput?.current?.focus()
   }
 
   componentWillUnmount () {
