@@ -1,10 +1,10 @@
 import _ from 'lodash'
 
-function pxAdd (origin, add) {
+function pxAdd(origin, add) {
   return parseFloat(origin, 10) + add + 'px'
 }
 
-function getStyleWithDiff (style, diffX, diffY) {
+function getStyleWithDiff(style, diffX, diffY) {
   const newStyle = Object.assign({}, style)
 
   if (!style.left && style.right) {
@@ -22,7 +22,7 @@ function getStyleWithDiff (style, diffX, diffY) {
   return newStyle
 }
 
-function insertCSS (cssString, target) {
+function insertCSS(cssString, target) {
   const style = window.document.createElement('style')
   style.type = 'text/css'
   style.appendChild(document.createTextNode(cssString))
@@ -34,23 +34,23 @@ function insertCSS (cssString, target) {
   }
 }
 
-function dispatchMsg (event, data) {
+function dispatchMsg(event, data) {
   window.document.dispatchEvent(
     new window.CustomEvent(event, {
-      detail: data
+      detail: data,
     })
   )
 }
-function substring (target, start = 0, end) {
+function substring(target, start = 0, end) {
   return target.substring(start, end)
 }
-function template (text, data) {
+function template(text, data) {
   try {
     return _.template(text, {
-      interpolate: /{{([\s\S]+?)}}/g
+      interpolate: /{{([\s\S]+?)}}/g,
     })({
       ...data,
-      substring: substring // 添加一个截取字符串函数
+      substring: substring, // 添加一个截取字符串函数
     })
   } catch (err) {
     console.warn(err)
@@ -60,7 +60,7 @@ function template (text, data) {
 
 let timer
 
-function afterImgAndSvgLoaded (callback, $printer) {
+function afterImgAndSvgLoaded(callback, $printer) {
   const $imgList = $printer.querySelectorAll('img')
   const $svgList = $printer.querySelectorAll('svg')
 
@@ -83,5 +83,5 @@ export {
   dispatchMsg,
   template,
   afterImgAndSvgLoaded,
-  miniAppLink
+  miniAppLink,
 }
