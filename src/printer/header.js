@@ -15,7 +15,7 @@ import QrCode from './qrcode'
 import _ from 'lodash'
 
 @observer
-class Block extends React.Component {
+class Header extends React.Component {
   dragBlock = React.createRef(null)
   handleChangeDebounce = null
   constructor(props) {
@@ -167,6 +167,7 @@ class Block extends React.Component {
           />
         )
       } else {
+        console.log('w jinalile', index)
         /** 渲染一个html */
         const value = text.split(':')?.[1]
         const isHtml = value && value.indexOf('_html') !== -1
@@ -561,7 +562,7 @@ class Block extends React.Component {
   }
 }
 
-Block.propTypes = {
+Header.propTypes = {
   index: PropTypes.number.isRequired,
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
@@ -570,4 +571,4 @@ Block.propTypes = {
   doublePage: PropTypes.bool,
 }
 
-export default Block
+export default Header

@@ -4,21 +4,26 @@ import PropTypes from 'prop-types'
 import Page from './page'
 import _ from 'lodash'
 import Block from './block'
+import Header from './header'
 import { pageTypeMap } from '../common/config'
 
 @observer
 class Printer extends React.Component {
-  componentDidMount () {
+  componentDidMount() {
     // Printer 不是立马就呈现出最终样式，有个过程。这个过程需要时间，什么 ready，不太清楚，估借 setState 来获取过程结束时刻
     this.setState({}, () => {
       this.props.onReady && this.props.onReady()
     })
   }
 
-  render () {
-    const { config, selected, data, isStation } = this.props
+  render() {
+    const { config, selected, data, isStation, isLongType, parentIndex } =
+      this.props
     const { type, style, customizeWidth, customizeHeight, doublePage } =
       config.page
+
+    console.log(config, data, 'config')
+
     const ratio = doublePage ? 2 : 1
     const width =
       (type === '-1'
@@ -26,25 +31,45 @@ class Printer extends React.Component {
         : +pageTypeMap[type].width.split('mm')[0]) *
         ratio +
       'mm'
-    const height =
-      (type === '-1'
-        ? customizeHeight
-        : +pageTypeMap[type].height.split('mm')[0]) *
-        ratio +
-      'mm'
-
+    const height = isLongType
+      ? 'auto'
+      : (type === '-1'
+          ? customizeHeight
+          : +pageTypeMap[type].height.split('mm')[0]) *
+          ratio +
+        'mm'
     return (
       <div
-        className='gm-printer-label'
+        className={` ${
+          isLongType ? 'gm-printer-label_long' : 'gm-printer-label'
+        }`}
         style={{
           ...style,
           width,
-          height
+          height,
         }}
       >
         <Page pageStyle={{ width, height }}>
+          <div>
+            {parentIndex === 0 &&
+              isLongType &&
+              config.header &&
+              config.header.map((header, i) => (
+                <Header
+                  key={i}
+                  index={i}
+                  selected={selected}
+                  config={header}
+                  data={data}
+                  isStation={isStation}
+                  isLongType={isLongType}
+                  doublePage={doublePage}
+                />
+              ))}
+          </div>
           {_.map(config.blocks, (block, i) => (
             <Block
+              isLongType={isLongType}
               key={i}
               index={i}
               selected={selected}
@@ -65,7 +90,7 @@ Printer.propTypes = {
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired, // 格式化后的数据
   onReady: PropTypes.func,
-  isStation: PropTypes.bool
+  isStation: PropTypes.bool,
 }
 
 export default Printer
