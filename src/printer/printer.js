@@ -22,8 +22,6 @@ class Printer extends React.Component {
     const { type, style, customizeWidth, customizeHeight, doublePage } =
       config.page
 
-    console.log(config, data, 'config')
-
     const ratio = doublePage ? 2 : 1
     const width =
       (type === '-1'

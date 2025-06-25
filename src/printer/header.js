@@ -167,7 +167,6 @@ class Header extends React.Component {
           />
         )
       } else {
-        console.log('w jinalile', index)
         /** 渲染一个html */
         const value = text.split(':')?.[1]
         const isHtml = value && value.indexOf('_html') !== -1

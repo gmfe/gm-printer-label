@@ -38,7 +38,6 @@ let $printer = window.document.getElementById(printerId)
  * @param {boolean} isTipZoom zoom的时候是否提示
  */
 function init({ isTest, isTipZoom = true } = {}) {
-  console.log(123123)
   isTipZoom &&
     isZoom() &&
     window.alert(
