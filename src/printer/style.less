@@ -5,7 +5,16 @@
 
   font-size: 14px;
   background: white;
-  page-break-before: always
+  page-break-before: always;
+}
+.gm-printer-label_long {
+  // 因为 shadow dom 没有 html body，估把些css迁移过来
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
+
+  font-size: 14px;
+  background: white;
+  // page-break-before: always;
 }
 
 .gm-printer-label-page {
@@ -20,6 +29,19 @@
   .gm-printer-label-block-text-edit {
     display: none;
   }
+}
+
+.gm-printer-label-padding {
+  padding: 5px !important;
+  box-sizing: border-box !important;
+}
+.gm-printer-label-long-block {
+  display: inline-block !important;
+  vertical-align: top;
+  position: relative;
+  width: 50%;
+  word-wrap: break-word; /* 旧属性，兼容性更好 */
+  overflow-wrap: break-word; /* 新标准属性 */
 }
 
 // 保留，打印的时候有用

@@ -15,7 +15,7 @@ import QrCode from './qrcode'
 import _ from 'lodash'
 
 @observer
-class Block extends React.Component {
+class Header extends React.Component {
   dragBlock = React.createRef(null)
   handleChangeDebounce = null
   constructor(props) {
@@ -561,7 +561,7 @@ class Block extends React.Component {
   }
 }
 
-Block.propTypes = {
+Header.propTypes = {
   index: PropTypes.number.isRequired,
   config: PropTypes.object.isRequired,
   data: PropTypes.object.isRequired,
@@ -570,4 +570,4 @@ Block.propTypes = {
   doublePage: PropTypes.bool,
 }
 
-export default Block
+export default Header

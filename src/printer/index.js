@@ -12,21 +12,21 @@ import normalizeCSS from '!!raw-loader!less-loader!./normalize.css'
 import printerCSS from '!!raw-loader!less-loader!./style.less'
 import { afterImgAndSvgLoaded } from '../util'
 
-function getHtml (props) {
-  return ReactDOMServer.renderToString(<Printer {...props}/>)
+function getHtml(props) {
+  return ReactDOMServer.renderToString(<Printer {...props} />)
 }
 
-function getBatchHtml (propsArr) {
+function getBatchHtml(propsArr) {
   return ReactDOMServer.renderToString(
     <React.Fragment>
       {_.map(propsArr, (props) => (
-        <Printer {...props}/>
+        <Printer {...props} />
       ))}
     </React.Fragment>
   )
 }
 
-function getCSS () {
+function getCSS() {
   return normalizeCSS.toString() + printerCSS.toString()
 }
 
@@ -37,8 +37,7 @@ let $printer = window.document.getElementById(printerId)
  * @param {boolean} isTest 是否test
  * @param {boolean} isTipZoom zoom的时候是否提示
  */
-function init ({ isTest, isTipZoom = true } = {}) {
-  console.log(123123)
+function init({ isTest, isTipZoom = true } = {}) {
   isTipZoom &&
     isZoom() &&
     window.alert(
@@ -78,18 +77,24 @@ function init ({ isTest, isTipZoom = true } = {}) {
   }
 }
 
-function doBatchPrint (
+function doBatchPrint(
   list,
   isTest,
   extraCofnig = { isPrint: true, isTipZoom: true },
-  isStation = false
+  isStation = false,
+  isLongType = false
 ) {
   init({ isTest, isTipZoom: extraCofnig.isTipZoom })
 
-  return toDoPrintBatch(list, extraCofnig.isPrint, isStation)
+  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType)
 }
 
-function toDoPrintBatch (list, isPrint = true, isStation = false) {
+function toDoPrintBatch(
+  list,
+  isPrint = true,
+  isStation = false,
+  isLongType = false
+) {
   return new window.Promise((resolve) => {
     const $app = $printer.contentWindow.document.getElementById('appContainer')
 
@@ -98,6 +103,7 @@ function toDoPrintBatch (list, isPrint = true, isStation = false) {
       <BatchPrinter
         list={list}
         isStation={isStation}
+        isLongType={isLongType}
         onReady={() => {
           afterImgAndSvgLoaded(() => {
             isPrint && $printer.contentWindow.print()
