@@ -7,7 +7,6 @@ import {
   dispatchMsg,
   template,
   miniAppLink,
-  toUnderscore,
 } from '../util'
 import TableType from './components/table_type'
 import BarCode from './barcode'
@@ -246,12 +245,15 @@ class Block extends React.Component {
       content = isStation ? (
         <>
           <BarCode
+            needResize
+            needAutoWidth
             value={template(barcode, data)}
             textMargin={0}
             margin={0}
             height={parseInt(style.height) - 14}
             width={2}
             displayValue={false}
+            svgWidth={style.width || '165px'}
             dataName={barcode}
             background='transparent'
           />
