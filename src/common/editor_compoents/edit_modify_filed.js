@@ -87,7 +87,6 @@ class EditModifyFiled extends React.Component {
           type === 'image' ||
           type === 'rack_barcode' ||
           type === 'customer_barcode' ||
-          type === 'barcode' ||
           type === 'delivery_qrcode' ||
           type === 'merchandise_trace_qrcode' ||
           type === 'verification_qrcode' ||
@@ -132,7 +131,6 @@ class EditModifyFiled extends React.Component {
           <div>
             <Size
               style={style}
-              withoutWidth
               onChange={this.handleChangeBlock.bind(this, 'style')}
             />
             <div>

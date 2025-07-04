@@ -247,6 +247,7 @@ class Block extends React.Component {
           <BarCode
             needResize
             needAutoWidth
+            type={type}
             value={template(barcode, data)}
             textMargin={0}
             margin={0}
