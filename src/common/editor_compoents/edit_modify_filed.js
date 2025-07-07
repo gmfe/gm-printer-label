@@ -131,7 +131,6 @@ class EditModifyFiled extends React.Component {
           <div>
             <Size
               style={style}
-              withoutWidth
               onChange={this.handleChangeBlock.bind(this, 'style')}
             />
             <div>

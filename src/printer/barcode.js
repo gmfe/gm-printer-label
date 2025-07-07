@@ -2,7 +2,7 @@ import React from 'react'
 import jsBarcode from 'jsbarcode'
 import PropTypes from 'prop-types'
 
-function freshBarCode (data, barCodeType = 'CODE128', width) {
+function freshBarCode (data, barCodeType = 'CODE128', width, type) {
   try {
     const codeLength = data.length
     let numBars
@@ -13,12 +13,15 @@ function freshBarCode (data, barCodeType = 'CODE128', width) {
       case 'CODE128A':
       case 'CODE128B':
       case 'CODE128C':
-        numBars = codeLength * 7.45
+        if (type === 'barcode') {
+          numBars = codeLength * 7.45 * 2
+        } else {
+          numBars = codeLength *  7.45
+        }
         break
       default:
         numBars = codeLength * 7
     }
-    console.log(data, barCodeType, width, numBars, codeLength)
     const barWidth = width / numBars
     return barWidth || 1.2
   } catch (e) {
@@ -30,14 +33,14 @@ class BarCode extends React.Component {
   barcode = React.createRef()
 
   componentDidMount () {
-    const {value, needAutoWidth, ...rest} = this.props
+    const {value, needAutoWidth, type, ...rest} = this.props
     if (!value) return
     /** jsBarCode的具体options前往：
      * https://blog.csdn.net/shencailing/article/details/122101956
      */
     let width = rest.width
     if (needAutoWidth) {
-      width = freshBarCode(value, 'CODE128', Number(rest.svgWidth.replace('px', '')))
+      width = freshBarCode(value, 'CODE128', Number(rest.svgWidth.replace('px', '')), type)
     }
     jsBarcode(this.barcode.current, value, {
       format: 'CODE128',
@@ -50,12 +53,12 @@ class BarCode extends React.Component {
 
   // 改变尺寸之后重新生成
   componentDidUpdate (prevProps) {
-    const {value, height, svgWidth, needAutoWidth} = this.props
+    const {value, height, svgWidth, needAutoWidth, type} = this.props
     if (!prevProps.needResize) return
     if (prevProps.height !== height || prevProps.svgWidth !== svgWidth) {
       let width = this.props.width
       if (needAutoWidth) {
-        width = freshBarCode(value, 'CODE128', Number(svgWidth.replace('px', '')) || 70)
+        width = freshBarCode(value, 'CODE128', Number(svgWidth.replace('px', '')) || 70, type)
       }
 
       jsBarcode(this.barcode.current, value, {
