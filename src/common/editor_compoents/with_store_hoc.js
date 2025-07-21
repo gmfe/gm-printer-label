@@ -47,9 +47,10 @@ const withStore = store => WrapComponent =>
     }
 
     handleKeyDown = (e) => {
-      if (e.target !== window.document.body) {
-        return
-      }
+      // console.log(e)
+      // if (e.target !== window.document.body) {
+      //   return
+      // }
       const { editStore } = this
       if (e.code.startsWith('Arrow') && editStore.selected !== null) {
         e.preventDefault()
