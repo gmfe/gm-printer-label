@@ -1,4 +1,5 @@
 import _ from 'lodash'
+import moment from 'moment/moment'
 
 function pxAdd(origin, add) {
   return parseFloat(origin, 10) + add + 'px'
@@ -51,6 +52,8 @@ function template(text, data) {
     })({
       ...data,
       substring: substring, // 添加一个截取字符串函数
+      addDay: (date, day, format = 'MM月DD日') => moment(date).add(day, 'day').format(format),
+      formatDate: (date, format) => moment(date).format(format),
     })
   } catch (err) {
     console.warn(err)
