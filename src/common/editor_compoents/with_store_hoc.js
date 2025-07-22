@@ -47,10 +47,9 @@ const withStore = store => WrapComponent =>
     }
 
     handleKeyDown = (e) => {
-      // console.log(e)
-      // if (e.target !== window.document.body) {
-      //   return
-      // }
+      if (e.target !== window.document.body && !e.target.className.includes('ant-tabs-tabpane')) {
+        return
+      }
       const { editStore } = this
       if (e.code.startsWith('Arrow') && editStore.selected !== null) {
         e.preventDefault()
