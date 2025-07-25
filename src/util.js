@@ -1,5 +1,5 @@
 import _ from 'lodash'
-
+import Big from 'big.js'
 function pxAdd(origin, add) {
   return parseFloat(origin, 10) + add + 'px'
 }
@@ -44,6 +44,39 @@ function dispatchMsg(event, data) {
 function substring(target, start = 0, end) {
   return target.substring(start, end)
 }
+
+
+const price = (n, f = 2) => {
+  /** 有些价格会有...,传给Big会报错，那么替换掉 */
+  if (typeof n === 'string') {
+    n = n.replace(/\.+$/, '')
+  }
+  // 自定义函数支持多栏
+  if (n === undefined || n === '') return ''
+  return Big(n || 0).toFixed(f)
+}
+const diyRandom = (a, b, c = 2) => {
+  return (a + Math.random() * (b - a)).toFixed(c)
+}
+const parseFloatFun = a => {
+  // 自定义函数支持多栏
+  if (a === '' || a === undefined) return ''
+  return parseFloat(+a)
+}
+
+/**
+ *
+ * @param num 处理小数点末尾零
+ * @returns
+ */
+function removeTrailingZeros(str) {
+  const toString = String(str)
+  return toString.replace(/(\d+(?:\.\d+)?)0*([^\d]*)/g, (match, number, unit) => {
+      // 使用parseFloat自动处理，然后转回字符串
+      return parseFloat(number) + (unit || '');
+  });
+}
+
 function template(text, data) {
   try {
     return _.template(text, {
@@ -51,6 +84,10 @@ function template(text, data) {
     })({
       ...data,
       substring: substring, // 添加一个截取字符串函数
+      price: price,
+      diyRandom: diyRandom, // 提供一个计算随机数的函数
+      parseFloatFun: parseFloatFun,
+      removeTrailingZeros: removeTrailingZeros,
     })
   } catch (err) {
     console.warn(err)
