@@ -52,7 +52,7 @@ function template(text, data) {
     })({
       ...data,
       substring: substring, // 添加一个截取字符串函数
-      addDay: (date, day, format = 'MM月DD日') => moment(date).add(day, 'day').format(format),
+      addDay: (date, day, format = 'YYYY-MM-DD') => moment(date).add(day, 'day').format(format),
       formatDate: (date, format) => moment(date).format(format),
     })
   } catch (err) {
