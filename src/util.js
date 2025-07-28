@@ -90,7 +90,7 @@ function template(text, data) {
       diyRandom: diyRandom, // 提供一个计算随机数的函数
       parseFloatFun: parseFloatFun,
       removeTrailingZeros: removeTrailingZeros,
-      addDay: (date, day, format = 'MM月DD日') => moment(date).add(day, 'day').format(format),
+      addDay: (date, day, format = 'YYYY-MM-DD') => moment(date).add(day, 'day').format(format),
       formatDate: (date, format) => moment(date).format(format),
     })
   } catch (err) {
