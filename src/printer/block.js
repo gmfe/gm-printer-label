@@ -143,6 +143,8 @@ class Block extends React.Component {
         customized_qrcode,
         delivery_qrcode,
         package_order_qrcode,
+        package_barcode,
+        split_package_qrcode,
       },
       data,
       config,
@@ -520,6 +522,57 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='客户信息二维码'
+        />
+      )
+    } else if (type === 'package_barcode') {
+      content = isStation ? (
+        <>
+          <BarCode
+            needResize
+            needAutoWidth
+            type={type}
+            value={template(package_barcode, data)}
+            textMargin={0}
+            margin={0}
+            height={parseInt(style.height) - 14}
+            width={2}
+            displayValue={false}
+            svgWidth={style.width || '165px'}
+            dataName={package_barcode}
+            background='transparent'
+          />
+          <div style={{ marginLeft: '50px' }}>{template(package_barcode, data)}</div>
+        </>
+      ) : (
+        <div
+          data-packagecode='分包条形码'
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-packagecode={template(package_barcode, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`package${template(package_barcode, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'split_package_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={template(split_package_qrcode, data)}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-packageorderqrcode={template(split_package_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='分包二维码'
         />
       )
     }

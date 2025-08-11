@@ -91,7 +91,9 @@ class EditModifyFiled extends React.Component {
           type === 'merchandise_trace_qrcode' ||
           type === 'verification_qrcode' ||
           type === 'package_order_qrcode' ||
-          type === 'customized_qrcode'
+          type === 'customized_qrcode' ||
+          type === 'package_barcode' ||
+          type === 'split_package_qrcode'
         ) && (
           <div>
             <Size
