@@ -177,8 +177,9 @@ class EditModifyFiled extends React.Component {
               text={i18next.t('注：可通过修改“{{}}”中的内容更改时间格式。')}
             />
             {_.map(DiyTimeType, (v, k) => (
-              <TipInfo text={`${k + 1}。${v.text}`}/>
+              <TipInfo text={`${k + 1}、${v.text}`}/>
             ))}
+            <TipInfo text={`${DiyTimeType.length + + 1}、指定日期后7天，输入“单据日期：{{addDay(单据日期, 7)}}”；`}/>
           </div>
         )}
       </React.Fragment>

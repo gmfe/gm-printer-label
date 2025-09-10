@@ -47,7 +47,7 @@ const withStore = store => WrapComponent =>
     }
 
     handleKeyDown = (e) => {
-      if (e.target !== window.document.body) {
+      if (e.target !== window.document.body && !e.target.className.includes('ant-tabs-tabpane')) {
         return
       }
       const { editStore } = this
