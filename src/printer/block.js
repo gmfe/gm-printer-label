@@ -152,10 +152,18 @@ class Block extends React.Component {
       isStation,
       doublePage,
       isLongType,
+      prefixUrl,
       ...rest
     } = this.props
     const { isEdit } = this.state
     let content = null
+    /** 如果prefixUrl === null 那就没有前缀链接 */
+    let linkUrl = ''
+    if (typeof prefixUrl === 'undefined') {
+      linkUrl = miniAppLink
+    } else if (prefixUrl) {
+      linkUrl = prefixUrl
+    }
 
     if (!type || type === 'text') {
       if (fieldType === 'table') {
@@ -182,7 +190,7 @@ class Block extends React.Component {
     } else if (type === 'qrcode') {
       content = isStation ? (
         <QrCode
-          value={miniAppLink + template(qrcode, data)}
+          value={linkUrl + template(qrcode, data)}
           size={parseInt(style.height)}
         />
       ) : (
@@ -198,7 +206,7 @@ class Block extends React.Component {
     } else if (type === 'order_qrcode') {
       content = isStation ? (
         <QrCode
-          value={miniAppLink + template(order_qrcode, data)}
+          value={linkUrl + template(order_qrcode, data)}
           size={parseInt(style.height)}
         />
       ) : (
@@ -212,9 +220,10 @@ class Block extends React.Component {
         />
       )
     } else if (type === 'merchandise_trace_qrcode') {
+      console.log(linkUrl, linkUrl+ template(merchandise_trace_qrcode, data))
       content = isStation ? (
         <QrCode
-          value={miniAppLink + template(merchandise_trace_qrcode, data)}
+          value={linkUrl + template(merchandise_trace_qrcode, data)}
           size={parseInt(style.height)}
         />
       ) : (
@@ -230,7 +239,7 @@ class Block extends React.Component {
     } else if (type === 'verification_qrcode') {
       content = isStation ? (
         <QrCode
-          value={miniAppLink + template(verification_qrcode, data)}
+          value={linkUrl + template(verification_qrcode, data)}
           size={parseInt(style.height)}
         />
       ) : (

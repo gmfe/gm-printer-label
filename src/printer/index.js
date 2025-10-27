@@ -86,14 +86,17 @@ function doBatchPrint(
 ) {
   init({ isTest, isTipZoom: extraCofnig.isTipZoom })
 
-  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType)
+  const prefixUrl = extraCofnig.prefixUrl
+
+  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType, prefixUrl)
 }
 
 function toDoPrintBatch(
   list,
   isPrint = true,
   isStation = false,
-  isLongType = false
+  isLongType = false,
+  prefixUrl
 ) {
   return new window.Promise((resolve) => {
     const $app = $printer.contentWindow.document.getElementById('appContainer')
@@ -104,6 +107,7 @@ function toDoPrintBatch(
         list={list}
         isStation={isStation}
         isLongType={isLongType}
+        prefixUrl={prefixUrl}
         onReady={() => {
           afterImgAndSvgLoaded(() => {
             isPrint && $printer.contentWindow.print()

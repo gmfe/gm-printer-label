@@ -17,7 +17,7 @@ class Printer extends React.Component {
   }
 
   render() {
-    const { config, selected, data, isStation, isLongType, parentIndex } =
+    const { config, selected, data, isStation, isLongType, parentIndex, prefixUrl } =
       this.props
     const { type, style, customizeWidth, customizeHeight, doublePage } =
       config.page
@@ -62,6 +62,7 @@ class Printer extends React.Component {
                   isStation={isStation}
                   isLongType={isLongType}
                   doublePage={doublePage}
+                  prefixUrl={prefixUrl}
                 />
               ))}
           </div>
@@ -75,6 +76,8 @@ class Printer extends React.Component {
               data={data}
               isStation={isStation}
               doublePage={doublePage}
+              prefixUrl={prefixUrl}
+
             />
           ))}
         </Page>
