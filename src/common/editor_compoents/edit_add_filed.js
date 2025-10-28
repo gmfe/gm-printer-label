@@ -17,7 +17,7 @@ class FieldList extends React.Component {
             <Fragment key={groupName}>
               <SubTitle text={groupName}/>
               <Flex wrap>
-                {_.map(arr, o => <FieldBtn key={o.key} name={o.key}
+                {_.map(arr, o => <FieldBtn key={o.key} name={o.key} extra={o.extra}
                   onClick={handleAddField.bind(this,
                     o)}/>)}
               </Flex>

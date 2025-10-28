@@ -361,12 +361,13 @@ const Gap = ({ width = '100%', height = '3px' }) => <div style={{ width, height 
 
 const TipInfo = ({ text }) => <Flex alignCenter className='gm-padding-top-5 gm-text-red'>{text}</Flex>
 
-const FieldBtn = ({ name, onClick }) => (
+const FieldBtn = ({ name, onClick, extra }) => (
   <Flex alignCenter style={{ width: '50%', margin: '3px 0' }}>
     <span className='gm-printer-label-edit-plus-btn' onClick={onClick}>
       +
     </span>
     <span className='gm-padding-left-5'>{name}</span>
+    {extra}
   </Flex>
 )
 
