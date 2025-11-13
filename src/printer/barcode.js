@@ -39,6 +39,7 @@ class BarCode extends React.Component {
      * https://blog.csdn.net/shencailing/article/details/122101956
      */
     let width = rest.width
+    console.log(needAutoWidth)
     if (needAutoWidth) {
       width = freshBarCode(value, 'CODE128', Number(rest.svgWidth.replace('px', '')), type)
     }
