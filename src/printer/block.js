@@ -472,6 +472,8 @@ class Block extends React.Component {
       /** 浏览器端的货位标签打印 */
       content = (
         <BarCode
+          needResize
+          needAutoWidth
           value={template(rack_barcode, data)}
           // textAlign='center'
           textMargin={0}
