@@ -88,7 +88,7 @@ function doBatchPrint(
 
   const prefixUrl = extraCofnig.prefixUrl
 
-  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType, prefixUrl)
+  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType, prefixUrl, isTest)
 }
 
 function toDoPrintBatch(
@@ -96,7 +96,8 @@ function toDoPrintBatch(
   isPrint = true,
   isStation = false,
   isLongType = false,
-  prefixUrl
+  prefixUrl,
+  isTest = false
 ) {
   return new window.Promise((resolve) => {
     const $app = $printer.contentWindow.document.getElementById('appContainer')
@@ -112,7 +113,7 @@ function toDoPrintBatch(
           afterImgAndSvgLoaded(() => {
             isPrint && $printer.contentWindow.print()
             resolve()
-          }, $app)
+          }, $app, isTest)
         }}
       />,
       $app

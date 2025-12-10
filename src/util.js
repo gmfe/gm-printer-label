@@ -101,7 +101,7 @@ function template(text, data) {
 
 let timer
 
-function afterImgAndSvgLoaded(callback, $printer) {
+function afterImgAndSvgLoaded(callback, $printer, isTest = false) {
   const $imgList = $printer.querySelectorAll('img')
   const $svgList = $printer.querySelectorAll('svg')
 
@@ -109,7 +109,7 @@ function afterImgAndSvgLoaded(callback, $printer) {
 
   const everyThingIsOk =
     _.every($imgList, (img) => img.complete) &&
-    _.every($svgList, (svg) => svg.children.length)
+    (_.every($svgList, (svg) => svg.children.length) || isTest) // 模版测试打印时svg没有children
   if (everyThingIsOk) {
     callback()
   } else {
