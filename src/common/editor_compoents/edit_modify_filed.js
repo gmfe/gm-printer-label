@@ -40,7 +40,7 @@ class EditModifyFiled extends React.Component {
     this.handleChangeBlock('style', newStyle)
   }
 
-  renderBlocks () {
+  renderBlocks() {
     const { editStore } = this.props
 
     const { type, text, style } = editStore.config.blocks[editStore.selected]
@@ -93,8 +93,8 @@ class EditModifyFiled extends React.Component {
           type === 'package_order_qrcode' ||
           type === 'customized_qrcode' ||
           type === 'package_barcode' ||
-          type === 'split_package_qrcode'
-        ) && (
+          type === 'split_package_qrcode' ||
+          type === 'sku_security_qrcode') && (
           <div>
             <Size
               style={style}
@@ -181,14 +181,18 @@ class EditModifyFiled extends React.Component {
             {_.map(DiyTimeType, (v, k) => (
               <TipInfo text={`${k + 1}、${v.text}`}/>
             ))}
-            <TipInfo text={`${DiyTimeType.length + + 1}、指定日期后7天，输入“单据日期：{{addDay(单据日期, 7)}}”；`}/>
+            <TipInfo
+              text={`${
+                DiyTimeType.length + +1
+              }、指定日期后7天，输入“单据日期：{{addDay(单据日期, 7)}}”；`}
+            />
           </div>
         )}
       </React.Fragment>
     )
   }
 
-  render () {
+  render() {
     let content = null
     const { editStore } = this.props
 

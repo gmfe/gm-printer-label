@@ -6,6 +6,7 @@ module.exports = {
     'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'never' }],
     'no-template-curly-in-string': ['warn'],
     camelcase: 0,
-    'space-before-function-paren': off,
+    'space-before-function-paren': 'off',
+    'no-unused-expressions': ['error', { allowShortCircuit: true, allowTernary: true }],
   },
 }
