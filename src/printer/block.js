@@ -2,12 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { observer } from 'mobx-react'
-import {
-  getStyleWithDiff,
-  dispatchMsg,
-  template,
-  miniAppLink,
-} from '../util'
+import { getStyleWithDiff, dispatchMsg, template, miniAppLink } from '../util'
 import TableType from './components/table_type'
 import BarCode from './barcode'
 import QrCode from './qrcode'
@@ -145,6 +140,7 @@ class Block extends React.Component {
         package_order_qrcode,
         package_barcode,
         split_package_qrcode,
+        sku_security_qrcode,
       },
       data,
       config,
@@ -180,7 +176,7 @@ class Block extends React.Component {
         const value = text.split(':')?.[1]
         const isHtml = value && value.indexOf('_html') !== -1
         content = isHtml ? (
-          <div dangerouslySetInnerHTML={{ __html: template(value, data) }} />
+          <div dangerouslySetInnerHTML={{ __html: template(value, data) }}/>
         ) : (
           template(text, data)
         )
@@ -220,7 +216,6 @@ class Block extends React.Component {
         />
       )
     } else if (type === 'merchandise_trace_qrcode') {
-      console.log(linkUrl, linkUrl+ template(merchandise_trace_qrcode, data))
       content = isStation ? (
         <QrCode
           value={linkUrl + template(merchandise_trace_qrcode, data)}
@@ -431,7 +426,7 @@ class Block extends React.Component {
       )
     } else if (type === 'diyqrcode') {
       content = isStation ? (
-        <QrCode value={template(text, data)} size={parseInt(style.height)} />
+        <QrCode value={template(text, data)} size={parseInt(style.height)}/>
       ) : (
         <div
           data-diyqrcode={template(text, data)}
@@ -456,6 +451,22 @@ class Block extends React.Component {
           data-name={index}
           style={{ width: '100%', height: '100%' }}
           data-placeholder='配送单二维码'
+        />
+      )
+    } else if (type === 'sku_security_qrcode') {
+      content = isStation ? (
+        <QrCode
+          value={`${linkUrl}${template(sku_security_qrcode, data)}`}
+          size={parseInt(style.height)}
+        />
+      ) : (
+        <div
+          data-skusecuritycode={template(sku_security_qrcode, data)}
+          data-width={style.width}
+          data-height={style.height}
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+          data-placeholder='单品溯源二维码'
         />
       )
     } else if (type === 'image') {
@@ -552,7 +563,9 @@ class Block extends React.Component {
             dataName={package_barcode}
             background='transparent'
           />
-          <div style={{ marginLeft: '50px' }}>{template(package_barcode, data)}</div>
+          <div style={{ marginLeft: '50px' }}>
+            {template(package_barcode, data)}
+          </div>
         </>
       ) : (
         <div

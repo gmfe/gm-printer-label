@@ -18,7 +18,7 @@ class EditStore {
   originConfig = null
 
   @action.bound
-  init (config, initDefaultTemp) {
+  init(config, initDefaultTemp) {
     this.config = this.getHandledConfig(config)
     this.originConfig = this.getHandledConfig(config)
     this.selected = null
@@ -26,46 +26,46 @@ class EditStore {
   }
 
   @action.bound
-  setConfig (config, value) {
+  setConfig(config, value) {
     this.selected = null
     this.config = { ...this.config, ...config }
     this.tempKey = value
   }
 
   @action.bound
-  setConfigName (name) {
+  setConfigName(name) {
     this.config.name = name
   }
 
   @action.bound
-  setSizePageType (type) {
+  setSizePageType(type) {
     this.config.page.type = type
   }
 
   @action.bound
-  setCustomizePageSize (name, value) {
+  setCustomizePageSize(name, value) {
     this.config.page[name] = value
   }
 
   @action.bound
-  setPageName (name) {
+  setPageName(name) {
     this.config.name = name
   }
 
   @action.bound
-  setSelected (selected = null) {
+  setSelected(selected = null) {
     this.selected = selected
   }
 
   @action.bound
-  setConfigBlockBy (who, value) {
+  setConfigBlockBy(who, value) {
     if (this.selected !== null) {
       this.config.blocks[this.selected][who] = value
     }
   }
 
   @action.bound
-  addConfigBlock (type, url) {
+  addConfigBlock(type, url) {
     switch (type) {
       case '':
       case 'text':
@@ -314,6 +314,7 @@ class EditStore {
             height: '50px',
           },
         })
+        break
       case 'package_barcode':
         this.config.blocks.push({
           type,
@@ -340,6 +341,19 @@ class EditStore {
           },
         })
         break
+      case 'sku_security_qrcode':
+        this.config.blocks.push({
+          type,
+          sku_security_qrcode: i18next.t('{{单品溯源二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '60px',
+            height: '60px',
+          },
+        })
+        break
       default:
         window.alert(i18next.t('出错啦，未识别类型，此信息不应该出现'))
         break
@@ -348,7 +362,7 @@ class EditStore {
 
   // 删除所选字段
   @action.bound
-  removeConfig () {
+  removeConfig() {
     if (this.selected !== null) {
       this.config.blocks.splice(this.selected, 1)
       this.selected = null
@@ -357,7 +371,7 @@ class EditStore {
 
   // 添加字段到打印单中 两种 ：1-添加到打印的模板中 2-添加到自定义二维码中
   @action.bound
-  addFieldToBlocks ({ value, key, fieldType }) {
+  addFieldToBlocks({ value, key, fieldType }) {
     // 不一定每次打印都传页码过去，为了不出现“页码：”情况，页码前不加前缀
     if (!this.config.blocks[this.selected]?.diyqrcode) {
       key === i18next.t('页码')
@@ -388,7 +402,7 @@ class EditStore {
   }
 
   @computed
-  get computedIsTime () {
+  get computedIsTime() {
     if (this.selected !== null) {
       const block = this.config.blocks[this.selected]
       if (
@@ -402,7 +416,7 @@ class EditStore {
   }
 
   @action.bound
-  getHandledConfig (config) {
+  getHandledConfig(config) {
     const result = _.cloneDeep(config)
     // 添加自定义尺寸字段
     result.page = {
