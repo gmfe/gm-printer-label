@@ -105,7 +105,6 @@ function afterImgAndSvgLoaded(callback, $printer, isTest = false) {
   const $svgList = $printer.querySelectorAll('svg')
 
   clearTimeout(timer)
-
   const everyThingIsOk =
     _.every($imgList, (img) => img.complete) &&
     (_.every($svgList, (svg) => svg.children.length) || isTest) // 模版测试打印时svg没有children
