@@ -13,14 +13,14 @@ import printerCSS from '!!raw-loader!less-loader!./style.less'
 import { afterImgAndSvgLoaded } from '../util'
 
 function getHtml(props) {
-  return ReactDOMServer.renderToString(<Printer {...props} />)
+  return ReactDOMServer.renderToString(<Printer {...props}/>)
 }
 
 function getBatchHtml(propsArr) {
   return ReactDOMServer.renderToString(
     <React.Fragment>
       {_.map(propsArr, (props) => (
-        <Printer {...props} />
+        <Printer {...props}/>
       ))}
     </React.Fragment>
   )
@@ -88,7 +88,7 @@ function doBatchPrint(
 
   const prefixUrl = extraCofnig.prefixUrl
 
-  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType, prefixUrl)
+  return toDoPrintBatch(list, extraCofnig.isPrint, isStation, isLongType, prefixUrl, isTest)
 }
 
 function toDoPrintBatch(
@@ -96,7 +96,8 @@ function toDoPrintBatch(
   isPrint = true,
   isStation = false,
   isLongType = false,
-  prefixUrl
+  prefixUrl,
+  isTest = false
 ) {
   return new window.Promise((resolve) => {
     const $app = $printer.contentWindow.document.getElementById('appContainer')
@@ -112,7 +113,7 @@ function toDoPrintBatch(
           afterImgAndSvgLoaded(() => {
             isPrint && $printer.contentWindow.print()
             resolve()
-          }, $app)
+          }, $app, isTest)
         }}
       />,
       $app

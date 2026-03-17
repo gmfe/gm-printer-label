@@ -47,7 +47,6 @@ function substring(target, start = 0, end) {
   return target.substring(start, end)
 }
 
-
 const price = (n, f = 2) => {
   /** 有些价格会有...,传给Big会报错，那么替换掉 */
   if (typeof n === 'string') {
@@ -74,9 +73,9 @@ const parseFloatFun = a => {
 function removeTrailingZeros(str) {
   const toString = String(str)
   return toString.replace(/(\d+(?:\.\d+)?)0*([^\d]*)/g, (match, number, unit) => {
-      // 使用parseFloat自动处理，然后转回字符串
-      return parseFloat(number) + (unit || '');
-  });
+    // 使用parseFloat自动处理，然后转回字符串
+    return parseFloat(number) + (unit || '')
+  })
 }
 
 function template(text, data) {
@@ -101,7 +100,7 @@ function template(text, data) {
 
 let timer
 
-function afterImgAndSvgLoaded(callback, $printer) {
+function afterImgAndSvgLoaded(callback, $printer, isTest = false) {
   const $imgList = $printer.querySelectorAll('img')
   const $svgList = $printer.querySelectorAll('svg')
 
@@ -109,11 +108,12 @@ function afterImgAndSvgLoaded(callback, $printer) {
 
   const everyThingIsOk =
     _.every($imgList, (img) => img.complete) &&
-    _.every($svgList, (svg) => svg.children.length)
+    (_.every($svgList, (svg) => svg.children.length) || isTest) // 模版测试打印时svg没有children
   if (everyThingIsOk) {
     callback()
   } else {
-    timer = setTimeout(afterImgAndSvgLoaded.bind(this, callback, $printer), 300)
+    // 递归调用时需要把 isTest 继续传下去，否则会使用默认值 false
+    timer = setTimeout(afterImgAndSvgLoaded.bind(this, callback, $printer, isTest), 300)
   }
 }
 const miniAppLink = 'https://miniapp.guanmai.cn/traceability/?id='
