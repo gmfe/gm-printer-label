@@ -330,6 +330,7 @@ function toKey (data, options = {}) {
     订单溯源码: order_security_code,
     商品码: package_id,
     自定义编码: outer_id,
+    仓位二维码: 'WMS-RACK-DEMO-0001',
 
     当前时间: moment().format('YYYY-MM-DD HH:mm:ss'),
     当前时间_时间: moment().format('HH:mm:ss'),

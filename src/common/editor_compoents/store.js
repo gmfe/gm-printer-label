@@ -263,6 +263,19 @@ class EditStore {
           },
         })
         break
+      case 'rack_qrcode':
+        this.config.blocks.push({
+          type,
+          rack_qrcode: i18next.t('{{仓位二维码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            width: '50px',
+            height: '50px',
+          },
+        })
+        break
       case 'customer_barcode':
         this.config.blocks.push({
           type,
