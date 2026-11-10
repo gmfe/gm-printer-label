@@ -197,6 +197,32 @@ class EditStore {
           },
         })
         break
+      case 'barcode_69':
+        this.config.blocks.push({
+          type,
+          barcode_69: i18next.t('{{条码_69码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px',
+          },
+        })
+        break
+      case 'spec_barcode':
+        this.config.blocks.push({
+          type,
+          spec_barcode: i18next.t('{{采购规格条码}}'),
+          style: {
+            position: 'absolute',
+            left: '0px',
+            top: '0px',
+            height: '30px',
+            width: '165px',
+          },
+        })
+        break
       case 'diyqrcode':
         this.config.blocks.push({
           type,

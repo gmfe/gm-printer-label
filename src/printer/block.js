@@ -124,6 +124,8 @@ class Block extends React.Component {
         style,
         barcode,
         in_stock_barcode,
+        barcode_69,
+        spec_barcode,
         package_id_qrcode,
         diycode,
         url,
@@ -280,6 +282,70 @@ class Block extends React.Component {
             data-height={parseInt(style.height) - 14}
             data-name={index}
             id={`package${template(barcode, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'barcode_69') {
+      content = isStation ? (
+        <>
+          <BarCode
+            needResize
+            value={template(barcode_69, data)}
+            textMargin={0}
+            margin={0}
+            height={parseInt(style.height) - 14}
+            width={1}
+            displayValue={false}
+            dataName={barcode_69}
+            background='transparent'
+          />
+          <div style={{ marginLeft: '50px' }}>{template(barcode_69, data)}</div>
+        </>
+      ) : (
+        <div
+          data-barcode69='采购规格69码'
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-barcode69={template(barcode_69, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`barcode69${template(barcode_69, data)}`}
+          />
+        </div>
+      )
+    } else if (type === 'spec_barcode') {
+      content = isStation ? (
+        <>
+          <BarCode
+            needResize
+            value={template(spec_barcode, data)}
+            textMargin={0}
+            margin={0}
+            height={parseInt(style.height) - 14}
+            width={1}
+            displayValue={false}
+            dataName={spec_barcode}
+            background='transparent'
+          />
+          <div style={{ marginLeft: '50px' }}>{template(spec_barcode, data)}</div>
+        </>
+      ) : (
+        <div
+          data-specbarcode='采购规格条码'
+          data-name={index}
+          style={{ width: '100%', height: '100%' }}
+        >
+          <svg
+            style={{ height: '100%', width: '100%' }}
+            data-specbarcode={template(spec_barcode, data)}
+            // 需要减去14才能打印出正确高度
+            data-height={parseInt(style.height) - 14}
+            data-name={index}
+            id={`specbarcode${template(spec_barcode, data)}`}
           />
         </div>
       )

@@ -171,6 +171,34 @@ class EditModifyFiled extends React.Component {
             </div>
           </div>
         )}
+        {type === 'barcode_69' && (
+          <div>
+            <Size
+              style={style}
+              withoutWidth
+              onChange={this.handleChangeBlock.bind(this, 'style')}
+            />
+            <div>
+              <button onClick={this.handleRotateBarcode}>
+                {i18next.t('旋转')}
+              </button>
+            </div>
+          </div>
+        )}
+        {type === 'spec_barcode' && (
+          <div>
+            <Size
+              style={style}
+              withoutWidth
+              onChange={this.handleChangeBlock.bind(this, 'style')}
+            />
+            <div>
+              <button onClick={this.handleRotateBarcode}>
+                {i18next.t('旋转')}
+              </button>
+            </div>
+          </div>
+        )}
         <TipInfo
           text={i18next.t('说明：请勿修改{}中的内容,避免出现数据异常')}
         />
