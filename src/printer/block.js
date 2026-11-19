@@ -287,7 +287,7 @@ class Block extends React.Component {
       )
     } else if (type === 'barcode_69') {
       content = isStation ? (
-        <>
+        <div style={{ display: 'inline-block', textAlign: 'center' }}>
           <BarCode
             needResize
             value={template(barcode_69, data)}
@@ -299,8 +299,8 @@ class Block extends React.Component {
             dataName={barcode_69}
             background='transparent'
           />
-          <div style={{ marginLeft: '50px' }}>{template(barcode_69, data)}</div>
-        </>
+          <div>{template(barcode_69, data)}</div>
+        </div>
       ) : (
         <div
           data-barcode69='采购规格69码'
@@ -319,7 +319,7 @@ class Block extends React.Component {
       )
     } else if (type === 'spec_barcode') {
       content = isStation ? (
-        <>
+        <div style={{ display: 'inline-block', textAlign: 'center' }}>
           <BarCode
             needResize
             value={template(spec_barcode, data)}
@@ -331,8 +331,8 @@ class Block extends React.Component {
             dataName={spec_barcode}
             background='transparent'
           />
-          <div style={{ marginLeft: '50px' }}>{template(spec_barcode, data)}</div>
-        </>
+          <div>{template(spec_barcode, data)}</div>
+        </div>
       ) : (
         <div
           data-specbarcode='采购规格条码'
@@ -685,11 +685,15 @@ class Block extends React.Component {
       )
     }
     const active = index === selected
+    const blockStyle =
+      isStation && (type === 'barcode_69' || type === 'spec_barcode')
+        ? { ...style, width: 'max-content' }
+        : style
 
     return (
       <div
         {...rest}
-        style={style}
+        style={blockStyle}
         className={classNames(
           'gm-printer-label-block',
           `gm-printer-label-block-type-${type}`,
